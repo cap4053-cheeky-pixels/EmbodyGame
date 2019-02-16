@@ -8,13 +8,17 @@ public class Enemy : Entity
     public delegate void Died(GameObject who);
     public event Died deathEvent;
 
-    
+
+    /* Called before the game starts. Sets up all necessary info.
+     */
     void Awake()
     {
         // Set up weapon and other necessary info
     }
-    
 
+
+    /* Called every frame.
+     */
     void Update()
     {
         
