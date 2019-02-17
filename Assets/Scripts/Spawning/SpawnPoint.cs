@@ -7,7 +7,7 @@ public class SpawnPoint : MonoBehaviour
     public GameObject enemyPrefab = null;
 
     // Used to customize the enemy that spawns at this point
-    public int maxHealth = 2;
+    public int maxHealth = 4;
     public int speed = 1;
     public float fireRate = 0.5f;
     public float yRotation = 0;
