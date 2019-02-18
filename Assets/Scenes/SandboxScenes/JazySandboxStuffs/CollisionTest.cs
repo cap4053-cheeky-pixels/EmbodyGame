@@ -53,7 +53,7 @@ public class CollisionTest : MonoBehaviour
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
         // Constantly called when touching the floor
-        if (hit.collider.tag == "Untagged" || timer < 5) return;
+        if (hit.collider.tag == "Finish" || timer < 5) return;
         timer = 0;
         Debug.Log(tag + " CC Hit: " + hit.collider.tag);
     }

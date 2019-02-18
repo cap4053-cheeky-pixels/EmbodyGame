@@ -14,7 +14,6 @@ public class CCMovey : MonoBehaviour
     void Start()
     {
         cc = GetComponent<CharacterController>();
-        cc.detectCollisions = detectCollisions;
         initialPosition = transform.position;
         move = new Vector3(speed, 0, 0);
     }
@@ -22,6 +21,7 @@ public class CCMovey : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        cc.detectCollisions = detectCollisions;
         if ((move.x > 0 && transform.position.x - initialPosition.x > offset)
             || (move.x < 0 && transform.position.x - initialPosition.x < -offset))
         {

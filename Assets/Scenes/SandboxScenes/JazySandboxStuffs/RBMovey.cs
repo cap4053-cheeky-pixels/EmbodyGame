@@ -27,7 +27,7 @@ public class RBMovey : MonoBehaviour
         if (rb.isKinematic)
         {
             float moveX = initialPosition.x + Mathf.PingPong(Time.time * speed, offset*2) - offset;
-            transform.position = new Vector3(moveX, transform.position.y, transform.position.z);
+            rb.MovePosition(new Vector3(moveX, transform.position.y, transform.position.z));
         }
         else
         {
