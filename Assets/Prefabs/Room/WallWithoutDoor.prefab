@@ -100,8 +100,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8722125027973036247}
+  - component: {fileID: 54287243018718098}
   m_Layer: 0
-  m_Name: WallWithoutDoors
+  m_Name: WallWithoutDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,3 +123,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &54287243018718098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722125027973036240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: debbd47347087054896929f295426e27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WallWidth: 30
