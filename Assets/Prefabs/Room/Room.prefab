@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8316170259252831861}
   - component: {fileID: 8316170259252831862}
+  - component: {fileID: 8283797635555167833}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -48,6 +49,19 @@ MonoBehaviour:
   doors: []
   width: 30
   length: 30
+--- !u!65 &8283797635555167833
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8316170259252831860}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.92, y: 1.5, z: 0.92}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8316170259260908322
 GameObject:
   m_ObjectHideFlags: 0
