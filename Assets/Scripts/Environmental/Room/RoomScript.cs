@@ -5,9 +5,6 @@ using UnityEngine;
 public class RoomScript : MonoBehaviour
 {
     public List<GameObject> doors;      // all doors this room is responsible for opening/closing
-    public float width = 30;            // x scaling (30 by default)
-    public float length = 30;           // z scaling (30 by default)
-
     private HashSet<GameObject> spawnedEnemies;
     private SpawnScript spawner;
     private WaitForSeconds wait;
@@ -18,19 +15,10 @@ public class RoomScript : MonoBehaviour
      */
     private void Awake()
     {
-        SetDimensions(width, length);
         spawner = gameObject.transform.Find("SpawnPoints").gameObject.GetComponent<SpawnScript>();
         spawnedEnemies = spawner.SpawnEnemies();
         numEnemies = spawnedEnemies.Count;
         SubscribeToEnemyDeath();
-    }
-
-
-    /* Sets the width (x scaling) and length (z scaling) of this room to the given values.
-     */ 
-    public void SetDimensions(float x, float z)
-    {
-        gameObject.transform.localScale = new Vector3(x, gameObject.transform.localScale.y, z);
     }
 
 
