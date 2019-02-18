@@ -11,7 +11,7 @@ public class CCBasicMovement : MonoBehaviour
         playerCC = GetComponent<CharacterController>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         float hori = Input.GetAxis("Horizontal");
         float vert = Input.GetAxis("Vertical");
