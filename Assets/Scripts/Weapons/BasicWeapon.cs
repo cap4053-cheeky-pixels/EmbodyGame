@@ -11,7 +11,7 @@ public class BasicWeapon : MonoBehaviour, IWeapon
     public float damage = 1;
     private float timer = 0;
     public float forwardOffset = 1.5f;
-    public float yOffset = 1.5f;
+    public float upwardOffset = 1.5f;
 
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class BasicWeapon : MonoBehaviour, IWeapon
         if (timer > timeBetweenShots)
         {
             // Spawn a projectile into the scene
-            Vector3 spawnPos = new Vector3(0, yOffset, 0) + transform.position + transform.forward * forwardOffset;
+            Vector3 spawnPos = new Vector3(0, upwardOffset, 0) + transform.position + transform.forward * forwardOffset;
             GameObject projectileInstance = Instantiate(projectile, spawnPos, transform.rotation);
             projectileInstance.tag = tag;
 
