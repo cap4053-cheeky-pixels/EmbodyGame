@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 5201852470759377922, guid: b6f35e75e8526ed45bcdd61f2531e14d,
         type: 3}
       propertyPath: m_Name
-      value: WallWithDoor40
+      value: HoriWallWithDoor
       objectReference: {fileID: 0}
     - target: {fileID: 5201852470759377921, guid: b6f35e75e8526ed45bcdd61f2531e14d,
         type: 3}
