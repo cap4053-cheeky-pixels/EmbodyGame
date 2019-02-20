@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Collider
   - Projectile
+  - PlayerProjectile
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX

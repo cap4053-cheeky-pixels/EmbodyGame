@@ -6,7 +6,7 @@ public class QuadshotWeapon : MonoBehaviour, IWeapon
 {
     public GameObject projectile;
     public float speed = 15;
-    public float interval = 1.5f;
+    public float timeBetweenShots = 1.5f;
     public float projectileLifetime = 10;
     public float damage = 1;
     public float forwardOffset = 1.5f;
@@ -28,7 +28,7 @@ public class QuadshotWeapon : MonoBehaviour, IWeapon
     public void Fire(string tag)
     {
         // Prevents continuous firing
-        if (timer > interval)
+        if (timer > timeBetweenShots)
         {
             // Fire 4 projectiles at "angularOffset" degrees displacement from center
             Vector3 forward = transform.forward.normalized;

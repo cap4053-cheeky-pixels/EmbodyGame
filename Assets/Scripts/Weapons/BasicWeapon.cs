@@ -14,8 +14,7 @@ public class BasicWeapon : MonoBehaviour, IWeapon
     public float upwardOffset = 1.5f;
 
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         timer += Time.deltaTime;
     }
@@ -23,7 +22,7 @@ public class BasicWeapon : MonoBehaviour, IWeapon
 
     /* Fires this weapon's projectile with the given tag. The tag is used by other entities
      * for the purposes of inflicting damage to themselves when they collide with the projectile.
-     */ 
+     */
     public void Fire(string tag)
     {
         // Prevents continuous firing
@@ -42,7 +41,7 @@ public class BasicWeapon : MonoBehaviour, IWeapon
             // Destroy the projectile once its lifetime elapses
             Destroy(projectileInstance, projectileLifetime);
 
-            // Be sure to reset the timer so a new shot can be fired after timeBetweenShots seconds elapse
+            // Reset the timer
             timer = 0;
         }
     }
