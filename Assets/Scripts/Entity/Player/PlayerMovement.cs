@@ -2,24 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
-    private CharacterController playerCC;
+    private Rigidbody rb;
 
     void Awake()
     {
-        playerCC = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    public void Move(Vector3 direction)
     {
-        float hori = Input.GetAxis("Horizontal");
-        float vert = Input.GetAxis("Vertical");
-
-        Vector3 move = (transform.forward * vert) + (transform.right * hori);
-        move *= speed;
-
-        playerCC.SimpleMove(move);
+        transform.forward = direction;
+        rb.AddForce(direction * speed);
     }
 }
