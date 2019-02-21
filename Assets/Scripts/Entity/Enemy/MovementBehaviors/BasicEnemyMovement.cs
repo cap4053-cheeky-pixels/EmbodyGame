@@ -20,7 +20,6 @@ public class BasicEnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(playerTransform);
-        em.Move(transform.forward);
+        em.MoveTo(playerTransform.position);
     }
 }

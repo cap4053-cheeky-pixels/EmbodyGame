@@ -5,12 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(EnemyMovement))]
 public class WanderEnemyMovement : MonoBehaviour
 {
+    public float wanderCircleRadius;
+    public float wanderStr;
     private Vector3 currentDirection;
+    private Vector3 wanderCirclePoint;
     private EnemyMovement em;
 
     void Awake()
     {
         em = GetComponent<EnemyMovement>();
+        wanderCirclePoint = new Vector3(0, 0, 0);
     }
 
     void Start()
@@ -22,12 +26,15 @@ public class WanderEnemyMovement : MonoBehaviour
     {
         Wander();
         em.Move(currentDirection);
-        transform.forward = currentDirection; // ew, get this shit outa here
     }
 
     void Wander()
     {
         // This is a very shit wander
-        currentDirection = Quaternion.Euler(0, Random.Range(-5, 5), 0) * currentDirection;
+        wanderCirclePoint.x = Mathf.Clamp(Mathf.Cos(wanderCirclePoint.x + Random.Range(-wanderStr, wanderStr)), -1, 1);
+        wanderCirclePoint.z = Mathf.Clamp(Mathf.Cos(wanderCirclePoint.z + Random.Range(-wanderStr, wanderStr)), -1, 1);
+
+        Vector3 wanderPoint = (wanderCircleRadius * wanderCirclePoint) + (transform.forward * wanderCircleRadius);
+        currentDirection = wanderPoint.normalized;
     }
 }

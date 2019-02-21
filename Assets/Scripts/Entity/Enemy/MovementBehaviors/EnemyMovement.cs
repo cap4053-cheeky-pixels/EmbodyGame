@@ -1,28 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 /**
     This class should be on every enemy that can move. No path finding
     or movement calculation should be done here, simple exposes a simple
     move method for scripts that do path finding.
 */
-[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(NavMeshAgent))]
 public class EnemyMovement : MonoBehaviour
 {
-    public float speed;
-    private CharacterController cc;
+    private NavMeshAgent nma;
     private Vector3 cachedDirection;
 
     void Awake()
     {
-        cc = GetComponent<CharacterController>();
-        cc.detectCollisions = false;
+        nma = GetComponent<NavMeshAgent>();
     }
 
     // Method should only be called once per frame
     public void Move(Vector3 direction)
     {
-        cc.SimpleMove(direction * speed);
+        nma.SetDestination(transform.position + direction);
+    }
+
+    public void MoveTo(Vector3 destination)
+    {
+        nma.SetDestination(destination);
     }
 }
