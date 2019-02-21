@@ -18,7 +18,7 @@ public class PushyCC : MonoBehaviour
 
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.rigidbody == null || hit.rigidbody.isKinematic) return;
+        if (!enabled || hit.rigidbody == null || hit.rigidbody.isKinematic) return;
         hit.rigidbody.AddForce(hit.moveDirection * 20);
     }
 }
