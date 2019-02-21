@@ -11,6 +11,7 @@ public class Player : Entity
     // Mainly used when pausing the game
     private bool actionsEnabled;
     public void SetEnabled(bool enabled) { actionsEnabled = enabled; }
+    public bool ActionsEnabled() { return actionsEnabled; }
 
 
     /* Called before the game starts. Sets up all necessary info.
@@ -18,8 +19,10 @@ public class Player : Entity
     void Awake()
     {
         SetEnabled(true);
+        SetWeapon(weapon);
         healthChangedEvent?.Invoke();
     }
+
 
     /* Changes this Player's max health by the given amount.
      */ 
@@ -28,6 +31,7 @@ public class Player : Entity
         MaxHealth += amount;
         healthChangedEvent?.Invoke();
     }
+
 
     /* Changes this Player's health by the given amount.
      */ 
@@ -40,6 +44,18 @@ public class Player : Entity
         if (Health == 0)
         {
             // SceneManager.LoadScene(0) // TODO make scene 0 be game over, uncomment this when done
+        }
+    }
+
+
+    /* Allows this Player to fire its weapon, assuming it has one.
+     */ 
+    public void FireWeapon()
+    {
+        if (fireableWeapon != null)
+        {
+            Debug.Log("???");
+            fireableWeapon.Fire("PlayerProjectile");
         }
     }
 }

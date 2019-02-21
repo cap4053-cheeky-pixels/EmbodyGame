@@ -61,8 +61,8 @@ public class RoomScript : MonoBehaviour
     {
         foreach (GameObject door in doors)
         {
-            // DoorController doorController = door.GetComponent<DoorController>(); // TODO re-enable once implemented
-            // doorController.Open();
+            DoorController doorController = door.GetComponent<DoorController>(); // TODO re-enable once implemented
+            doorController.Open();
         }
     }
 
@@ -73,8 +73,8 @@ public class RoomScript : MonoBehaviour
     {
         foreach (GameObject door in doors)
         {
-            // DoorController doorController = door.GetComponent<DoorController>(); // TODO re-enable once implemented
-            // doorController.Close();
+            DoorController doorController = door.GetComponent<DoorController>(); // TODO re-enable once implemented
+            doorController.Close();
         }
     }
 
