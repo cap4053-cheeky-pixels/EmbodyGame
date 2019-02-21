@@ -33,11 +33,9 @@ public class CameraMovement : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(destinationPoint.ToString());
         if (transform.position == destinationPoint) return;
         float traveled = (Time.time - startTime) * speed;
         float fracTraveled = traveled / distance;
-        Debug.Log(fracTraveled);
         transform.position = Vector3.Lerp(initialPoint, destinationPoint, fracTraveled);
     }
 }
