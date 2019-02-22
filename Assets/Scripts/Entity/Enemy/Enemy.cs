@@ -13,7 +13,7 @@ public class Enemy : Entity
      */
     void Awake()
     {
-        // Set up weapon and other necessary info
+        SetWeapon(weapon);
     }
 
 
@@ -53,6 +53,20 @@ public class Enemy : Entity
 
             // Signal the death of this enemy
             deathEvent?.Invoke(gameObject);
+        }
+    }
+
+
+    /* Called when this Enemy encounters another object.
+     */
+    private void OnTriggerEnter(Collider other)
+    {
+        // Detecting projectiles
+        if(other.gameObject.CompareTag("PlayerProjectile") && Health != 0)
+        {
+            Projectile projectile = other.gameObject.GetComponent<Projectile>();
+            ChangeHealthBy(projectile.damage);
+            Destroy(other.gameObject);
         }
     }
 }

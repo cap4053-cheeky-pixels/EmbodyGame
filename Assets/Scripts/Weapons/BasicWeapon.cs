@@ -8,7 +8,7 @@ public class BasicWeapon : MonoBehaviour, IWeapon
     public float speed = 15;
     public float timeBetweenShots = 1;
     public float projectileLifetime = 10;
-    public float damage = 1;
+    public int damage = 1;
     private float timer = 0;
     public float forwardOffset = 1.5f;
     public float upwardOffset = 1.5f;
