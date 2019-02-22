@@ -58,4 +58,18 @@ public class Player : Entity
             fireableWeapon.Fire("PlayerProjectile");
         }
     }
+
+
+    /* Called when this Player encounters another object.
+     */
+    private void OnTriggerEnter(Collider other)
+    {
+        // Detecting projectiles
+        if (other.gameObject.CompareTag("EnemyProjectile") && Health != 0)
+        {
+            Projectile projectile = other.gameObject.GetComponent<Projectile>();
+            ChangeHealthBy(projectile.damage);
+            Destroy(other.gameObject);
+        }
+    }
 }
