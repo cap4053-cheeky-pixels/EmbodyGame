@@ -14,6 +14,7 @@ public class Enemy : Entity
     void Awake()
     {
         // Set up weapon and other necessary info
+       
     }
 
 
@@ -50,7 +51,7 @@ public class Enemy : Entity
         if(Health <= 0)
         {
             // TODO add logic for possession and heart drops
-
+            setisDead();
             // Signal the death of this enemy
             deathEvent?.Invoke(gameObject);
         }

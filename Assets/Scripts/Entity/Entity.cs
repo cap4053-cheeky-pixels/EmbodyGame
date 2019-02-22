@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public abstract class Entity : MonoBehaviour
 {
     // This entity's current health (at most MaxHealth)
@@ -18,6 +19,13 @@ public abstract class Entity : MonoBehaviour
 
     // Generic reference to whatever weapon the entity uses for firing
     protected IWeapon fireableWeapon;
+
+    public void setisDead(){
+        gameObject.tag = "Dead";
+        gameObject.GetComponent<Collider>().isTrigger = true;
+        gameObject.GetComponent<CapsuleCollider>().radius = .7f;
+        //gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+    }
 
 
     /* Sets this entity's weapon to the given GameObject.
