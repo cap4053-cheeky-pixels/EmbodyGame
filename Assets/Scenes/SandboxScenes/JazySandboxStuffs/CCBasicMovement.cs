@@ -5,11 +5,12 @@ using UnityEngine;
 public class CCBasicMovement : MonoBehaviour
 {
     public float speed;
+    public bool detectCollisions;
     private CharacterController playerCC;
     void Start()
     {
         playerCC = GetComponent<CharacterController>();
-        playerCC.detectCollisions = false;
+        playerCC.detectCollisions = detectCollisions;
     }
 
     void Update()
