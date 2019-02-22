@@ -9,6 +9,7 @@ public class CCBasicMovement : MonoBehaviour
     void Start()
     {
         playerCC = GetComponent<CharacterController>();
+        playerCC.detectCollisions = false;
     }
 
     void Update()

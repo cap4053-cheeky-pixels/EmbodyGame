@@ -26,7 +26,8 @@ public class BasicMovement : MonoBehaviour
         {
             // If shift is held down then forcefully move the RB
             // (This is intended for Kinematic RBs)
-            playerRB.MovePosition(transform.position + move * Time.deltaTime);
+            //playerRB.MovePosition(transform.position + move * Time.deltaTime);
+            playerRB.AddForce(move * 10, ForceMode.VelocityChange);
         }
         else
         {
