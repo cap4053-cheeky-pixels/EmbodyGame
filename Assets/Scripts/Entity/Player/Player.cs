@@ -54,7 +54,6 @@ public class Player : Entity
     {
         if (fireableWeapon != null)
         {
-            Debug.Log("???");
             fireableWeapon.Fire("PlayerProjectile");
         }
     }

@@ -14,6 +14,8 @@ public class BasicWeapon : MonoBehaviour, IWeapon
     public float upwardOffset = 1.5f;
 
 
+    /* Accumulates the timer on each frame.
+     */ 
     private void Update()
     {
         timer += Time.deltaTime;

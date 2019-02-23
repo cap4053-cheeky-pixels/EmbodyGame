@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoomScript : MonoBehaviour
 {
-    public List<GameObject> doors;      // all doors this room is responsible for opening/closing
+    public List<GameObject> doors = new List<GameObject>();      // all doors this room is responsible for opening/closing
     private HashSet<GameObject> spawnedEnemies;
     private SpawnScript spawner;
     private WaitForSeconds wait;
@@ -59,11 +59,18 @@ public class RoomScript : MonoBehaviour
      */
     void UnlockAllDoors()
     {
-        foreach (GameObject door in doors)
+        if(doors != null)
         {
-            DoorController doorController = door.GetComponent<DoorController>(); // TODO re-enable once implemented
-            doorController.Open();
+            foreach (GameObject door in doors)
+            {
+                DoorController doorController = door.GetComponent<DoorController>(); // TODO re-enable once implemented
+                doorController.Open();
+            }
         }
+        else
+        {
+            Debug.Log("No doors assigned");
+        }        
     }
 
 
@@ -71,11 +78,18 @@ public class RoomScript : MonoBehaviour
      */
     void LockAllDoors()
     {
-        foreach (GameObject door in doors)
+        if(doors != null)
         {
-            DoorController doorController = door.GetComponent<DoorController>(); // TODO re-enable once implemented
-            doorController.Close();
+            foreach (GameObject door in doors)
+            {
+                DoorController doorController = door.GetComponent<DoorController>(); // TODO re-enable once implemented
+                doorController.Close();
+            }
         }
+        else
+        {
+            Debug.Log("No doors assigned");
+        }        
     }
 
 
