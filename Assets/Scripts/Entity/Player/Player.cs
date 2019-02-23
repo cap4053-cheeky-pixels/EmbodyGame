@@ -43,6 +43,12 @@ public class Player : Entity
      */ 
     public override void ChangeHealthBy(int amount)
     {
+        // Start the invincibility coroutine if we take damage
+        if(amount < 0)
+        {
+            StartCoroutine(BecomeTemporarilyInvincible());
+        }
+
         Health += amount;
         healthChangedEvent?.Invoke();
 
@@ -78,14 +84,12 @@ public class Player : Entity
                 Projectile projectile = other.gameObject.GetComponent<Projectile>();
                 ChangeHealthBy(projectile.damage);
                 Destroy(other.gameObject);
-                StartCoroutine(BecomeTemporarilyInvincible());
             }
 
             // Collision with enemy body
             else if(other.gameObject.CompareTag("Enemy"))
             {
                 ChangeHealthBy(-1);
-                StartCoroutine(BecomeTemporarilyInvincible());
             }
         }        
     }
@@ -98,7 +102,6 @@ public class Player : Entity
         if(!invincible && other.gameObject.CompareTag("Enemy"))
         {
             ChangeHealthBy(-1);
-            StartCoroutine(BecomeTemporarilyInvincible());
         }
     }
 
