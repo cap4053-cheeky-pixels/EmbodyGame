@@ -13,7 +13,8 @@ public class Enemy : Entity
      */
     void Awake()
     {
-        setisDead();
+        SetWeapon(weapon);
+        SetAsDead();
         // Set up weapon and other necessary info
        
     }
@@ -52,7 +53,7 @@ public class Enemy : Entity
         if(Health <= 0)
         {
             // TODO add logic for possession and heart drops
-            setisDead();
+            SetAsDead();
             // Signal the death of this enemy
             deathEvent?.Invoke(gameObject);
         }

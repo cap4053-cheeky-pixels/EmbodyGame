@@ -20,11 +20,9 @@ public abstract class Entity : MonoBehaviour
     // Generic reference to whatever weapon the entity uses for firing
     protected IWeapon fireableWeapon;
 
-    public void setisDead(){
+    //Used to indicate the Enemy has died, can no longer move due to collisions
+    public void SetAsDead(){
         gameObject.tag = "Dead";
-
-        //gameObject.GetComponent<Collider>().isTrigger = true;
-        gameObject.GetComponent<CapsuleCollider>().radius = .7f;
         gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 

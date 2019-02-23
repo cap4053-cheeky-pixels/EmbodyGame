@@ -21,7 +21,8 @@ public class Possession : MonoBehaviour
 
     void OnCollisionStay(Collision collision)
     {
-        if(collision.gameObject.tag == "Dead" && Input.GetKeyDown("space")){
+        if(collision.gameObject.tag == "Dead" && Input.GetAxis("Possess") != 0){
+            
             Enemy deadEnemy = collision.gameObject.GetComponent<Enemy>();
             player.MaxHealth = deadEnemy.MaxHealth;
             player.Health = deadEnemy.MaxHealth;
@@ -35,11 +36,18 @@ public class Possession : MonoBehaviour
             newModel.name = "Model";
 
             // Possess the enemy weapon
-            player.SetWeapon(deadEnemy.weapon);
+            GameObject playerWeapon = player.weapon;
+            GameObject enemyWeapon = deadEnemy.weapon;
+            // Clone the enemy weapon within the player
+            GameObject newWeapon = GameObject.Instantiate(enemyWeapon, transform);
+            player.SetWeapon(newWeapon);
 
 
             // Cleanup
             Destroy(playerModel);
+
+            //This line triggers the error "destroying assets is not permitted to avoid data loss"...
+            //Destroy(playerWeapon);
             // Remove the enemy
             Destroy(collision.gameObject);
         }
