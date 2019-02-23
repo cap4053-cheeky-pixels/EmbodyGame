@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 4556327631231747906}
   - component: {fileID: 3672507080587500165}
   - component: {fileID: 7253883188572331683}
+  - component: {fileID: 1869208889312884171}
   - component: {fileID: 2731797612632256719}
   - component: {fileID: 7626922195323549297}
   m_Layer: 0
@@ -82,7 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 6
   MaxHealth: 6
-  weapon: {fileID: 8985372404558189384}
+  weapon: {fileID: 0}
   Speed: 0
 --- !u!114 &3672507080587500165
 MonoBehaviour:
@@ -109,6 +110,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8245de4521abf3c468d3a55b619140f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1869208889312884171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2757827355002093931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f478840d7142f74c8b409e915224cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 8985372404558189384}
+  projectileTag: PlayerProjectile
 --- !u!136 &2731797612632256719
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -205,6 +220,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5455074748802241686, guid: 81daa4c07a3b70c498f863d39a24b47e,
+        type: 3}
+      propertyPath: upwardOffset
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81daa4c07a3b70c498f863d39a24b47e, type: 3}
