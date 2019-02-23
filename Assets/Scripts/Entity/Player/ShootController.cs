@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Player))]
 public class ShootController : MonoBehaviour
 {
     // A reference to the player that this script controls
@@ -9,43 +10,17 @@ public class ShootController : MonoBehaviour
 
 
     /* Used to set up this script.
-     */ 
+     */
     void Awake()
     {
         player = gameObject.GetComponent<Player>();
     }
 
-
-    /* Listens for key/joystick inputs, changes the player to face the corresponding direction,
-     * and instructs the player to fire its weapon in that direction.
-     */ 
-    void Update()
+    public void FireWeaponTowards(Vector3 direction)
     {
-        if (player.ActionsEnabled())
-        {
-            float Horizontal = Input.GetAxis("Horizontal");
-            float Vertical = Input.GetAxis("Vertical");
-
-            if (Input.GetAxis("FireLeft") != 0)
-            {
-                player.transform.forward = new Vector3(-1, 0, 0);
-                player.FireWeapon();
-            }
-            else if (Input.GetAxis("FireRight") != 0)
-            {
-                player.transform.forward = new Vector3(1, 0, 0);
-                player.FireWeapon();
-            }
-            else if (Input.GetAxis("FireUp") != 0)
-            {
-                player.transform.forward = new Vector3(0, 0, 1);
-                player.FireWeapon();
-            }
-            else if (Input.GetAxis("FireDown") != 0)
-            {
-                player.transform.forward = new Vector3(0, 0, -1);
-                player.FireWeapon();
-            }
-        }
+        // Turn the player
+        player.transform.forward = direction;
+        // TODO Extract FireWeapon logic in this object
+        player.FireWeapon();
     }
 }
