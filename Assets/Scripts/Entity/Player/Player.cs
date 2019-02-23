@@ -13,11 +13,17 @@ public class Player : Entity
     public void SetEnabled(bool enabled) { actionsEnabled = enabled; }
     public bool ActionsEnabled() { return actionsEnabled; }
 
+    public float invincibilityDurationSeconds;
+    private bool invincible = false;
+    private MeshRenderer playerRenderer;
+
 
     /* Called before the game starts. Sets up all necessary info.
      */ 
     void Awake()
     {
+        GameObject model = gameObject.transform.Find("Model").gameObject;
+        playerRenderer = model.transform.Find("Ghost").gameObject.GetComponent<MeshRenderer>();
         SetEnabled(true);
         SetWeapon(weapon);
         healthChangedEvent?.Invoke();
@@ -58,17 +64,61 @@ public class Player : Entity
         }
     }
 
-
+    
     /* Called when this Player encounters another object.
      */
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        // Detecting projectiles
-        if (other.gameObject.CompareTag("EnemyProjectile") && Health != 0)
+        // Don't bother doing anything if we can't take damage anyway
+        if(!invincible)
         {
-            Projectile projectile = other.gameObject.GetComponent<Projectile>();
-            ChangeHealthBy(projectile.damage);
-            Destroy(other.gameObject);
+            // Detecting projectiles
+            if (other.gameObject.CompareTag("EnemyProjectile"))
+            {
+                Projectile projectile = other.gameObject.GetComponent<Projectile>();
+                ChangeHealthBy(projectile.damage);
+                Destroy(other.gameObject);
+                StartCoroutine(BecomeTemporarilyInvincible());
+            }
+
+            // Collision with enemy body
+            else if(other.gameObject.CompareTag("Enemy"))
+            {
+                ChangeHealthBy(-1);
+                StartCoroutine(BecomeTemporarilyInvincible());
+            }
+        }        
+    }
+
+
+    /* Called every frame for which a collision persists.
+     */ 
+    private void OnCollisionStay(Collision other)
+    {
+        if(!invincible && other.gameObject.CompareTag("Enemy"))
+        {
+            ChangeHealthBy(-1);
+            StartCoroutine(BecomeTemporarilyInvincible());
         }
+    }
+
+
+    /* Temporarily turns the player invincible for invincibilityDurationSeconds seconds.
+     */
+    private IEnumerator BecomeTemporarilyInvincible()
+    {
+        Debug.Log("Player became invulnerable to damage!");
+        invincible = true;
+        float tick = 1 / invincibilityDurationSeconds;
+
+        for(float i = 0; i < invincibilityDurationSeconds; i += tick)
+        {
+            playerRenderer.enabled = !playerRenderer.enabled;
+            yield return new WaitForSeconds(tick);
+        }
+
+        Debug.Log("Player is no longer invulnerable!");
+        playerRenderer.enabled = true;
+        invincible = false;
     }
 }
