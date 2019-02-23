@@ -46,8 +46,8 @@ public class Possession : MonoBehaviour
             // Cleanup
             Destroy(playerModel);
 
-            //This line triggers the error "destroying assets is not permitted to avoid data loss"...
-            //Destroy(playerWeapon);
+
+            Destroy(playerWeapon);
             // Remove the enemy
             Destroy(collision.gameObject);
         }
