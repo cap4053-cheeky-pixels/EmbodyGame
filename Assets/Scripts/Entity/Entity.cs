@@ -10,9 +10,11 @@ public abstract class Entity : MonoBehaviour
     // The maximum health this entity can currently have
     public int MaxHealth;
 
+    // TODO Remove FireWeapon logic as this will now live in ShootController.cs
     // The weapon this entity uses for attacking
     public GameObject weapon;
 
+    // TODO Remove speed as this should be set/handled by a MovementController
     // How quickly this entity moves
     public int Speed;
 
@@ -21,6 +23,7 @@ public abstract class Entity : MonoBehaviour
 
 
     /* Sets this entity's weapon to the given GameObject.
+       TODO Remove FireWeapon logic as this will now live in ShootController.cs
      */
     public void SetWeapon(GameObject weapon)
     {
