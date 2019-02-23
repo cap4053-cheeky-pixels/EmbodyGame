@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BasicWeapon : MonoBehaviour, IWeapon
 {
+    // TODO Remove these instantiations
+    // Let the inspector instantiate values you dope
     public GameObject projectile;
     public float speed = 15;
     public float timeBetweenShots = 1;
