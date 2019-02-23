@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShootController : MonoBehaviour
 {
     public GameObject weapon;
+    public string projectileTag;
     private IWeapon fireableWeapon;
 
 
@@ -40,6 +41,6 @@ public class ShootController : MonoBehaviour
     public void FireWeapon()
     {
         if (fireableWeapon == null) return;
-        fireableWeapon.Fire("PlayerProjectile");
+        fireableWeapon.Fire(projectileTag);
     }
 }
