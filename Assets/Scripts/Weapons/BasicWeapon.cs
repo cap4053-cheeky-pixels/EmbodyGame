@@ -14,8 +14,13 @@ public class BasicWeapon : MonoBehaviour, IWeapon
     private float timer = 0;
     public float forwardOffset = 1.5f;
     public float upwardOffset = 1.5f;
+    public bool projectileInheritMomentum;
+    private Rigidbody rb;
 
-
+    void Awake()
+    {
+        rb = GetComponentInParent<Rigidbody>();
+    }
     private void Update()
     {
         timer += Time.deltaTime;
@@ -39,6 +44,12 @@ public class BasicWeapon : MonoBehaviour, IWeapon
             Projectile projectileScript = projectileInstance.GetComponent<Projectile>();
             projectileScript.velocity = transform.forward * speed;
             projectileScript.damage = damage;
+
+            // Add momentum
+            if (projectileInheritMomentum && rb != null)
+            {
+                projectileScript.velocity += rb.velocity;
+            }
 
             // Destroy the projectile once its lifetime elapses
             Destroy(projectileInstance, projectileLifetime);
