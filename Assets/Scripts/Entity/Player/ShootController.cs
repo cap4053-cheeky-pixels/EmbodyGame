@@ -2,25 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Player))]
 public class ShootController : MonoBehaviour
 {
-    // A reference to the player that this script controls
-    Player player;
+    public GameObject weapon;
+    private IWeapon fireableWeapon;
 
 
     /* Used to set up this script.
      */
     void Awake()
     {
-        player = gameObject.GetComponent<Player>();
+        SetWeapon(weapon);
     }
 
+    /**
+        This method should be called to set this controller's weapon.
+        The controller will handle firing the weapon through the exposed fire
+        methods.
+     */
+    public void SetWeapon(GameObject w)
+    {
+        weapon = w;
+        fireableWeapon = weapon.GetComponentInChildren<IWeapon>();
+    }
+
+    /**
+        This method will fire the weapon whilst ensuring this GameObject is facing
+        the correct direction first.
+     */
     public void FireWeaponTowards(Vector3 direction)
     {
-        // Turn the player
-        player.transform.forward = direction;
-        // TODO Extract FireWeapon logic in this object
-        player.FireWeapon();
+        // Turn the GameObject
+        transform.forward = direction;
+        FireWeapon();
+    }
+
+    public void FireWeapon()
+    {
+        if (fireableWeapon == null) return;
+        fireableWeapon.Fire("PlayerProjectile");
     }
 }
