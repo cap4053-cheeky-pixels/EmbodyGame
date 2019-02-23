@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 2969138910325395413}
   - component: {fileID: 5197661496776785838}
   - component: {fileID: 472186136510542646}
+  - component: {fileID: 5520106532405105190}
   m_Layer: 0
   m_Name: BasicEnemy
   m_TagString: Enemy
@@ -283,6 +284,25 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &5520106532405105190
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2969138910325395412}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 41f047aff65004471baff8034b01e7f8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2969138911120223783
 GameObject:
   m_ObjectHideFlags: 0

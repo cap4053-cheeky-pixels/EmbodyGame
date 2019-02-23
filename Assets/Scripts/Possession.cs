@@ -19,10 +19,10 @@ public class Possession : MonoBehaviour
         
     }
 
-    void OnTriggerStay(Collider other)
+    void OnCollisionStay(Collision collision)
     {
-        if(other.gameObject.tag == "Dead" && Input.GetKeyDown("space")){
-            Enemy deadEnemy = other.gameObject.GetComponent<Enemy>();
+        if(collision.gameObject.tag == "Dead" && Input.GetKeyDown("space")){
+            Enemy deadEnemy = collision.gameObject.GetComponent<Enemy>();
             player.MaxHealth = deadEnemy.MaxHealth;
             player.Health = deadEnemy.MaxHealth;
 
@@ -41,7 +41,7 @@ public class Possession : MonoBehaviour
             // Cleanup
             Destroy(playerModel);
             // Remove the enemy
-            Destroy(other.gameObject);
+            Destroy(collision.gameObject);
         }
 
     }

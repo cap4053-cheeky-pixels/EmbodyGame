@@ -22,9 +22,10 @@ public abstract class Entity : MonoBehaviour
 
     public void setisDead(){
         gameObject.tag = "Dead";
-        gameObject.GetComponent<Collider>().isTrigger = true;
+
+        //gameObject.GetComponent<Collider>().isTrigger = true;
         gameObject.GetComponent<CapsuleCollider>().radius = .7f;
-        //gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 
 

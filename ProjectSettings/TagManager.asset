@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - PlayerProjectile
   - EnemyProjectile
+  - Dead
   layers:
   - Default
   - TransparentFX

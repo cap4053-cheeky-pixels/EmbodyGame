@@ -13,6 +13,7 @@ public class Enemy : Entity
      */
     void Awake()
     {
+        setisDead();
         // Set up weapon and other necessary info
        
     }
