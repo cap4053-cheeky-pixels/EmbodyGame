@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public Vector3 velocity;
-    public float damage = 1;
+    public int damage = 1;
 
 
     /* Projectiles self-destruct when colliding with walls.
