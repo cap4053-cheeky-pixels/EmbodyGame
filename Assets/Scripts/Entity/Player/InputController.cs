@@ -7,16 +7,16 @@ using UnityEngine;
 [RequireComponent(typeof(ShootController))]
 public class InputController : MonoBehaviour
 {
-    private Player p;
-    private PlayerMovement pm;
-    private ShootController sc;
+    private Player player;
+    private PlayerMovement playerMovement;
+    private ShootController shootController;
 
     // Start is called before the first frame update
     void Awake()
     {
-        p = GetComponent<Player>();
-        pm = GetComponent<PlayerMovement>();
-        sc = GetComponent<ShootController>();
+        player = GetComponent<Player>();
+        playerMovement = GetComponent<PlayerMovement>();
+        shootController = GetComponent<ShootController>();
     }
 
     // Update is called once per frame
@@ -33,7 +33,7 @@ public class InputController : MonoBehaviour
 
         if (hori != 0 || vert != 0)
         {
-            pm.Move(new Vector3(hori, 0, vert));
+            playerMovement.Move(new Vector3(hori, 0, vert));
         }
     }
 
@@ -48,12 +48,12 @@ public class InputController : MonoBehaviour
             if (Mathf.Abs(fireHori) > Mathf.Abs(fireVert))
             {
                 // Firing horizontally
-                sc.FireWeaponTowards(new Vector3(fireHori, 0, 0).normalized);
+                shootController.FireWeaponTowards(new Vector3(fireHori, 0, 0).normalized);
             }
             else
             {
                 // Firing vertically
-                sc.FireWeaponTowards(new Vector3(0, 0, fireVert).normalized);
+                shootController.FireWeaponTowards(new Vector3(0, 0, fireVert).normalized);
             }
         }
     }
