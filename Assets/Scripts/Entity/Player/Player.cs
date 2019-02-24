@@ -8,22 +8,21 @@ public class Player : Entity
     public delegate void HealthChanged();
     public event HealthChanged healthChangedEvent;
 
-    // Mainly used when pausing the game
+    // All of this is mainly used for pausing the game
     private bool actionsEnabled;
     public void SetEnabled(bool enabled) { actionsEnabled = enabled; }
     public bool ActionsEnabled() { return actionsEnabled; }
 
+    // All of this is used for invincibility frames
     public float invincibilityDurationSeconds;
     public float delayBetweenInvincibilityFlashes;
     private bool invincible = false;
-    private GameObject model;
 
 
     /* Called before the game starts. Sets up all necessary info.
      */ 
     void Awake()
     {
-        model = gameObject.transform.Find("Model").gameObject;
         SetEnabled(true);
         SetWeapon(weapon);
         healthChangedEvent?.Invoke();
@@ -76,16 +75,15 @@ public class Player : Entity
     private void OnCollisionEnter(Collision other)
     {
         // Don't bother doing anything if we can't take damage anyway
-        if(!invincible)
+        if (invincible) return;
+
+        // Detecting projectiles
+        if (other.gameObject.CompareTag("EnemyProjectile"))
         {
-            // Detecting projectiles
-            if (other.gameObject.CompareTag("EnemyProjectile"))
-            {
-                Projectile projectile = other.gameObject.GetComponent<Projectile>();
-                ChangeHealthBy(projectile.damage);
-                Destroy(other.gameObject);
-            }
-        }        
+            Projectile projectile = other.gameObject.GetComponent<Projectile>();
+            ChangeHealthBy(projectile.damage);
+            Destroy(other.gameObject);
+        }       
     }
 
 
@@ -93,8 +91,11 @@ public class Player : Entity
      */ 
     private void OnCollisionStay(Collision other)
     {
+        // Don't bother doing anything if we can't take damage anyway
+        if (invincible) return;
+
         // Collision with enemies and traps will deal a constant half a heart of damage
-        if(!invincible && (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Trap")))
+        if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Trap"))
         {
             ChangeHealthBy(-1);
         }
@@ -105,16 +106,21 @@ public class Player : Entity
      */
     private IEnumerator BecomeTemporarilyInvincible()
     {
-        Debug.Log("Player became invulnerable to damage!");
+        Debug.Log("Player turned invincible!");
         invincible = true;
 
+        // Flash on and off for roughly invincibilityDurationSeconds seconds
         for(float i = 0; i < invincibilityDurationSeconds; i += delayBetweenInvincibilityFlashes)
         {
-            model.SetActive(!model.activeSelf);
+            // Alternate between 0 and 1 scale to simulate flashing without actually disabling anything
+            if (model.transform.localScale == Vector3.one) model.transform.localScale = Vector3.zero;
+            else model.transform.localScale = Vector3.one;
+            
+            // Wait for this many seconds before flashing again
             yield return new WaitForSeconds(delayBetweenInvincibilityFlashes);
         }
 
-        Debug.Log("Player is no longer invulnerable!");
+        Debug.Log("Player no longer invincible!");
         model.SetActive(true);
         invincible = false;
     }
