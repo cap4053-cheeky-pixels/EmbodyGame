@@ -48,7 +48,7 @@ public class BasicWeapon : MonoBehaviour, IWeapon
             // Add momentum
             if (projectileInheritMomentum && rb != null)
             {
-                projectileScript.velocity += rb.velocity;
+                projectileScript.velocity += Vector3.Project(rb.velocity, transform.right);
             }
 
             // Destroy the projectile once its lifetime elapses
