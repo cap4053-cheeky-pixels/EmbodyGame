@@ -13,9 +13,6 @@ public abstract class Entity : MonoBehaviour
     // The weapon this entity uses for attacking
     public GameObject weapon;
 
-    // How quickly this entity moves
-    public int Speed;
-
     // Generic reference to whatever weapon the entity uses for firing
     protected IWeapon fireableWeapon;
 
