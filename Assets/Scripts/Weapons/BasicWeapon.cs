@@ -2,33 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicWeapon : MonoBehaviour, IWeapon
+public class BasicWeapon : ProjectileWeapon
 {
-    public GameObject projectile;
-    public float speed = 15;
-    public float timeBetweenShots = 1;
-    public float projectileLifetime = 10;
-    public int damage = 1;
-    private float timer = 0;
-    public float forwardOffset = 1.5f;
-    public float upwardOffset = 1.5f;
-
-
-    /* Accumulates the timer on each frame.
-     */ 
-    private void Update()
-    {
-        timer += Time.deltaTime;
-    }
-
-
     /* Fires this weapon's projectile with the given tag. The tag is used by other entities
      * for the purposes of inflicting damage to themselves when they collide with the projectile.
      */
-    public void Fire(string tag)
+    public override void Attack(string tag)
     {
         // Prevents continuous firing
-        if (timer > timeBetweenShots)
+        if (timer > timeBetweenAttacks)
         {
             // Spawn a projectile into the scene
             Vector3 spawnPos = new Vector3(0, upwardOffset, 0) + transform.position + transform.forward * forwardOffset;
