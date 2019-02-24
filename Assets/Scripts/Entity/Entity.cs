@@ -13,16 +13,15 @@ public abstract class Entity : MonoBehaviour
     // The weapon this entity uses for attacking
     public GameObject weapon;
 
-    // Generic reference to whatever weapon the entity uses for firing
-    protected IWeapon fireableWeapon;
-
+    // Reference to the script of the weapon
+    protected Weapon attackingWeapon;
 
     /* Sets this entity's weapon to the given GameObject.
      */
     public void SetWeapon(GameObject weapon)
     {
         this.weapon = weapon;
-        fireableWeapon = this.weapon.GetComponent<IWeapon>();
+        attackingWeapon = weapon.GetComponent<Weapon>();
     }
 
 

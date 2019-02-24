@@ -52,9 +52,9 @@ public class Player : Entity
      */ 
     public void FireWeapon()
     {
-        if (fireableWeapon != null)
+        if (attackingWeapon != null)
         {
-            fireableWeapon.Fire("PlayerProjectile");
+            attackingWeapon.Attack("PlayerProjectile");
         }
     }
 
