@@ -16,6 +16,11 @@ public abstract class Entity : MonoBehaviour
     // Reference to the script of the weapon
     protected Weapon attackingWeapon;
 
+    // The model that's expected to be a child of this game object
+    public GameObject model;
+    public void SetModel(GameObject model) { this.model = model; }
+
+
     /* Sets this entity's weapon to the given GameObject.
      */
     public void SetWeapon(GameObject weapon)
