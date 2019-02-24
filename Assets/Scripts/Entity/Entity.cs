@@ -13,11 +13,8 @@ public abstract class Entity : MonoBehaviour
     // The weapon this entity uses for attacking
     public GameObject weapon;
 
-    // How quickly this entity moves
-    public int Speed;
-
-    // Generic reference to whatever weapon the entity uses for firing
-    protected IWeapon fireableWeapon;
+    // Reference to the script of the weapon
+    protected Weapon attackingWeapon;
 
     // The model that's expected to be a child of this game object
     public GameObject model;
@@ -29,7 +26,7 @@ public abstract class Entity : MonoBehaviour
     public void SetWeapon(GameObject weapon)
     {
         this.weapon = weapon;
-        fireableWeapon = this.weapon.GetComponent<IWeapon>();
+        attackingWeapon = weapon.GetComponent<Weapon>();
     }
 
 
