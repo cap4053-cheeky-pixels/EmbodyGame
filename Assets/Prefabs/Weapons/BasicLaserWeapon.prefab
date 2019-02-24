@@ -43,10 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 146c2564e7be99f4f9cf3afeebdda5d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laser: {fileID: 6890617483861474357, guid: 4f7473403c4cded4bbc8eb6bf3e093f7, type: 3}
-  speed: 30
-  timeBetweenShots: 1.5
-  projectileLifetime: 10
   damage: 2
+  timeBetweenAttacks: 1
+  projectile: {fileID: 6890617483861474357, guid: 4f7473403c4cded4bbc8eb6bf3e093f7,
+    type: 3}
+  speed: 30
+  projectileLifetime: 5
   forwardOffset: 0.5
   upwardOffset: 1.5
