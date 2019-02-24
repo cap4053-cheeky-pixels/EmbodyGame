@@ -14,16 +14,16 @@ public class Player : Entity
     public bool ActionsEnabled() { return actionsEnabled; }
 
     public float invincibilityDurationSeconds;
+    public float delayBetweenInvincibilityFlashes;
     private bool invincible = false;
-    private MeshRenderer playerRenderer;
+    private GameObject model;
 
 
     /* Called before the game starts. Sets up all necessary info.
      */ 
     void Awake()
     {
-        GameObject model = gameObject.transform.Find("Model").gameObject;
-        playerRenderer = model.transform.Find("Ghost").gameObject.GetComponent<MeshRenderer>();
+        model = gameObject.transform.Find("Model").gameObject;
         SetEnabled(true);
         SetWeapon(weapon);
         healthChangedEvent?.Invoke();
@@ -107,16 +107,15 @@ public class Player : Entity
     {
         Debug.Log("Player became invulnerable to damage!");
         invincible = true;
-        float tick = 1 / invincibilityDurationSeconds;
 
-        for(float i = 0; i < invincibilityDurationSeconds; i += tick)
+        for(float i = 0; i < invincibilityDurationSeconds; i += delayBetweenInvincibilityFlashes)
         {
-            playerRenderer.enabled = !playerRenderer.enabled;
-            yield return new WaitForSeconds(tick);
+            model.SetActive(!model.activeSelf);
+            yield return new WaitForSeconds(delayBetweenInvincibilityFlashes);
         }
 
         Debug.Log("Player is no longer invulnerable!");
-        playerRenderer.enabled = true;
+        model.SetActive(true);
         invincible = false;
     }
 }

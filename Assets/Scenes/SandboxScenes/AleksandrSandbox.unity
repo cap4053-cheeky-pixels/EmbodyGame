@@ -187,7 +187,12 @@ PrefabInstance:
     - target: {fileID: 4556327631231747906, guid: 224198badb8d31847a3ab6b59ec2d3ff,
         type: 3}
       propertyPath: invincibilityDurationSeconds
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556327631231747906, guid: 224198badb8d31847a3ab6b59ec2d3ff,
+        type: 3}
+      propertyPath: delayBetweenInvincibilityFlashes
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4163168156916070476, guid: 224198badb8d31847a3ab6b59ec2d3ff,
         type: 3}

@@ -83,6 +83,8 @@ MonoBehaviour:
   MaxHealth: 6
   weapon: {fileID: 0}
   Speed: 0
+  invincibilityDurationSeconds: 2
+  delayBetweenInvincibilityFlashes: 0.2
 --- !u!114 &3672507080587500165
 MonoBehaviour:
   m_ObjectHideFlags: 0
