@@ -19,6 +19,10 @@ public abstract class Entity : MonoBehaviour
     // Generic reference to whatever weapon the entity uses for firing
     protected IWeapon fireableWeapon;
 
+    // The model that's expected to be a child of this game object
+    public GameObject model;
+    public void SetModel(GameObject model) { this.model = model; }
+
 
     /* Sets this entity's weapon to the given GameObject.
      */

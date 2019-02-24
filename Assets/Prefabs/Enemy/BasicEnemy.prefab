@@ -207,6 +207,7 @@ MonoBehaviour:
   MaxHealth: 2
   weapon: {fileID: 0}
   Speed: 0
+  model: {fileID: 2969138911120223783}
 --- !u!114 &5840654222195740049
 MonoBehaviour:
   m_ObjectHideFlags: 0
