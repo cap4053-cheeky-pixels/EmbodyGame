@@ -85,12 +85,6 @@ public class Player : Entity
                 ChangeHealthBy(projectile.damage);
                 Destroy(other.gameObject);
             }
-
-            // Collision with enemy body
-            else if(other.gameObject.CompareTag("Enemy"))
-            {
-                ChangeHealthBy(-1);
-            }
         }        
     }
 
@@ -99,7 +93,8 @@ public class Player : Entity
      */ 
     private void OnCollisionStay(Collision other)
     {
-        if(!invincible && other.gameObject.CompareTag("Enemy"))
+        // Collision with enemies and traps will deal a constant half a heart of damage
+        if(!invincible && (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Trap")))
         {
             ChangeHealthBy(-1);
         }
