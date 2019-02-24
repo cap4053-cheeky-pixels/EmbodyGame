@@ -7,7 +7,7 @@ public abstract class Weapon : MonoBehaviour
     // The amount of damage this weapon deals
     public int damage;
 
-    // The number of seconds between shots
+    // The number of seconds between attacks
     public float timeBetweenAttacks;
 
     // Used for spreading out attacks in timeBetweenAttacks intervals
