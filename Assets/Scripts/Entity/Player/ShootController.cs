@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShootController : MonoBehaviour, IWeaponController
 {
     [SerializeField]
-    private string projectileTag;
+    private string projectileTag = "Untagged";
     [SerializeField]
     private GameObject weaponInstance;
 
