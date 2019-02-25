@@ -4,48 +4,43 @@ using UnityEngine;
 
 public class ShootController : MonoBehaviour
 {
-    // A reference to the player that this script controls
-    Player player;
+    public GameObject weapon;
+    public string projectileTag;
+    private IWeapon fireableWeapon;
 
 
     /* Used to set up this script.
-     */ 
+     */
     void Awake()
     {
-        player = gameObject.GetComponent<Player>();
+        SetWeapon(weapon);
     }
 
-
-    /* Listens for key/joystick inputs, changes the player to face the corresponding direction,
-     * and instructs the player to fire its weapon in that direction.
-     */ 
-    void Update()
+    /**
+        This method should be called to set this controller's weapon.
+        The controller will handle firing the weapon through the exposed fire
+        methods.
+     */
+    public void SetWeapon(GameObject w)
     {
-        if (player.ActionsEnabled())
-        {
-            float Horizontal = Input.GetAxis("Horizontal");
-            float Vertical = Input.GetAxis("Vertical");
+        weapon = w;
+        fireableWeapon = weapon.GetComponentInChildren<IWeapon>();
+    }
 
-            if (Input.GetAxis("FireLeft") != 0)
-            {
-                player.transform.forward = new Vector3(-1, 0, 0);
-                player.FireWeapon();
-            }
-            else if (Input.GetAxis("FireRight") != 0)
-            {
-                player.transform.forward = new Vector3(1, 0, 0);
-                player.FireWeapon();
-            }
-            else if (Input.GetAxis("FireUp") != 0)
-            {
-                player.transform.forward = new Vector3(0, 0, 1);
-                player.FireWeapon();
-            }
-            else if (Input.GetAxis("FireDown") != 0)
-            {
-                player.transform.forward = new Vector3(0, 0, -1);
-                player.FireWeapon();
-            }
-        }
+    /**
+        This method will fire the weapon whilst ensuring this GameObject is facing
+        the correct direction first.
+     */
+    public void FireWeaponTowards(Vector3 direction)
+    {
+        // Turn the GameObject
+        transform.forward = direction;
+        FireWeapon();
+    }
+
+    public void FireWeapon()
+    {
+        if (fireableWeapon == null) return;
+        fireableWeapon.Fire(projectileTag);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SpawnScript : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class SpawnScript : MonoBehaviour
 
                 script.MaxHealth = spawnPoint.maxHealth;
                 script.Health = spawnPoint.maxHealth;
-                script.Speed = spawnPoint.speed;
+                script.gameObject.GetComponent<NavMeshAgent>().speed = spawnPoint.speed;
                 // TODO uncomment once implemented script.attemptFirerate = spawnPoint.fireRate;
 
                 spawned.Add(spawnedEnemy);

@@ -12,3 +12,4 @@ Embody is a dungeon crawler where you play as a ghost that can possess any enemy
 - [Interface Sounds Starter Pack by p0ss](https://opengameart.org/content/interface-sounds-starter-pack)
 - [Menu Selection Click by NenadSimic](https://opengameart.org/content/menu-selection-click)
 - [Animated Torch by William Thompson](https://opengameart.org/content/lpc-animated-torch)
+- Spike traps: [Dungeon Traps, Unity Asset Store](https://assetstore.unity.com/packages/3d/environments/dungeons/dungeon-traps-50655)
