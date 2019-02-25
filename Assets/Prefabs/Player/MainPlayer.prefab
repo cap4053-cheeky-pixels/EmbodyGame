@@ -83,8 +83,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 6
   MaxHealth: 6
-  weapon: {fileID: 0}
-  Speed: 0
   model: {fileID: 1224860693315704524}
   invincibilityDurationSeconds: 2
   delayBetweenInvincibilityFlashes: 0.2
@@ -125,8 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f478840d7142f74c8b409e915224cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 8985372404558189384}
   projectileTag: PlayerProjectile
+  weaponInstance: {fileID: 8985372404558189384}
 --- !u!136 &2731797612632256719
 CapsuleCollider:
   m_ObjectHideFlags: 0
