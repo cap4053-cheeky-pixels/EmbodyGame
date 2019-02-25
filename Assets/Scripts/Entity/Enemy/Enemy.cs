@@ -8,11 +8,14 @@ public class Enemy : Entity
     public delegate void Died(GameObject who);
     public event Died deathEvent;
 
+    //Can this entity be Possessed 
+    public bool isPossessable = false;
 
     /* Called before the game starts. Sets up all necessary info.
      */
     void Awake()
     {
+        isPossessable = true;
         SetWeapon(weapon);
     }
 
