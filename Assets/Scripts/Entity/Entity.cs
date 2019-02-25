@@ -10,28 +10,12 @@ public abstract class Entity : MonoBehaviour
     // The maximum health this entity can currently have
     public int MaxHealth;
 
-    // The weapon this entity uses for attacking
-    public GameObject weapon;
-
-    // How quickly this entity moves
-    public int Speed;
-
-    // Generic reference to whatever weapon the entity uses for firing
-    protected IWeapon fireableWeapon;
-
-
-    /* Sets this entity's weapon to the given GameObject.
-     */
-    public void SetWeapon(GameObject weapon)
-    {
-        this.weapon = weapon;
-        fireableWeapon = this.weapon.GetComponent<IWeapon>();
-    }
-
+    // The model that's expected to be a child of this game object
+    public GameObject model;
+    public void SetModel(GameObject model) { this.model = model; }
 
     // Changes this entity's maximum health by the given amount
     public abstract void ChangeMaxHealthBy(int amount);
-
 
     // Changes this entity's current health by the given amount
     public abstract void ChangeHealthBy(int amount);

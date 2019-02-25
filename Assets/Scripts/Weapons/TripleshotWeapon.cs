@@ -2,33 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TripleshotWeapon : MonoBehaviour, IWeapon
+public class TripleshotWeapon : ProjectileWeapon
 {
-    public GameObject projectile;
-    public float speed = 15;
-    public float timeBetweenShots = 1;
-    public float projectileLifetime = 10;
-    public float damage = 1;
-    public float angularOffset = 30;
-    public float forwardOffset = 1.5f;
-    public float upwardOffset = 1.5f;
-    private float timer = 0;
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        timer += Time.deltaTime;
-    }
+    // The angular offset from the forward vector at which the other two shots should be fired
+    public float angularOffset;
 
 
     /* Fires this weapon's projectile with the given tag. The tag is used by other entities
      * for the purposes of inflicting damage to themselves when they collide with the projectile.
      */
-    public void Fire(string tag)
+    public override void Attack(string tag)
     {
         // Prevents continuous firing
-        if (timer > timeBetweenShots)
+        if (timer > timeBetweenAttacks)
         {
             // We'll fire 3 projectiles at "angularOffset" degrees displacement from center
             Vector3 forward = transform.forward;

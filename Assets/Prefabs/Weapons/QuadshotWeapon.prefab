@@ -43,11 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b016dadb2e3398142a2d39a11e2db72f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 2
+  timeBetweenAttacks: 0.45
   projectile: {fileID: 2452410868603154768, guid: a28506f24a9cd7544bb1c828f16ebdfc,
     type: 3}
   speed: 15
-  interval: 0.7
-  projectileLifetime: 10
-  damage: 1
+  projectileLifetime: 5
   forwardOffset: 0.5
-  upwardOffset: 1.5
+  upwardOffset: 1
