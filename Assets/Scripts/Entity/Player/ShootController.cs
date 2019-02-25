@@ -16,7 +16,7 @@ public class ShootController : MonoBehaviour, IWeaponController
      */
     void Awake()
     {
-        if (!weaponInstance.activeSelf)
+        if (weaponInstance.scene.name == null)
             Debug.LogError("ShootController has non-active weapon reference!!");
 
         SetWeaponInstance(weaponInstance);
@@ -31,7 +31,7 @@ public class ShootController : MonoBehaviour, IWeaponController
     {
         weaponInstance = w;
         // Maybe this should look for ProjectileWeapon?
-        weapon = weapon.GetComponentInChildren<Weapon>();
+        weapon = weaponInstance.GetComponentInChildren<Weapon>();
     }
     public GameObject GetWeaponInstance()
     {
