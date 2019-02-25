@@ -8,14 +8,14 @@ public class Enemy : Entity
     public delegate void Died(GameObject who);
     public event Died deathEvent;
 
-    //Can this entity be Possessed 
+    //Can this entity be possessed 
     public bool isPossessable = false;
 
     /* Called before the game starts. Sets up all necessary info.
      */
     void Awake()
     {
-        isPossessable = true;
+       
         SetWeapon(weapon);
     }
 
@@ -52,8 +52,8 @@ public class Enemy : Entity
 
         if(Health <= 0)
         {
-            // TODO add logic for possession and heart drops
-
+            // TODO add logic for heart drops
+            isPossessable = true;
             // Signal the death of this enemy
             deathEvent?.Invoke(gameObject);
         }
