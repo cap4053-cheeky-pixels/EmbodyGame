@@ -7,10 +7,12 @@ using UnityEngine.Animations;
 public class DevilAnimationTest : MonoBehaviour
 {
     Animator animator;
+    Enemy devil;
 
     private void Awake()
     {
         animator = gameObject.GetComponent<Enemy>().model.GetComponent<Animator>();
+        devil = gameObject.GetComponent<Enemy>();
     }
 
     // Update is called once per frame
@@ -33,6 +35,7 @@ public class DevilAnimationTest : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.G))
         {
+            devil.Health -= 1;
             animator.SetTrigger("RecoilFromDamage");
         }
 
