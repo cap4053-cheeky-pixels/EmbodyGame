@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player : Entity
 {
-    // TODO Remove FireWeapon logic as this will now live in ShootController.cs
     // Used to signal health change events to the heart container system
     public delegate void HealthChanged();
     public event HealthChanged healthChangedEvent;
@@ -25,7 +24,6 @@ public class Player : Entity
     void Awake()
     {
         SetEnabled(true);
-        //SetWeapon(weapon);
         healthChangedEvent?.Invoke();
     }
 
@@ -59,18 +57,6 @@ public class Player : Entity
         }
     }
 
-
-    /* Allows this Player to fire its weapon, assuming it has one.
-     */ 
-    public void FireWeapon()
-    {
-        if (attackingWeapon != null)
-        {
-            attackingWeapon.Attack("PlayerProjectile");
-        }
-    }
-
-    
     /* Called when this Player encounters another object.
      */
     private void OnCollisionEnter(Collision other)
@@ -84,7 +70,7 @@ public class Player : Entity
             Projectile projectile = other.gameObject.GetComponent<Projectile>();
             ChangeHealthBy(projectile.damage);
             Destroy(other.gameObject);
-        }       
+        }
     }
 
 

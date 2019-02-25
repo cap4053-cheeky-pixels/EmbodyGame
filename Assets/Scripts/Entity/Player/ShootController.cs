@@ -2,18 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootController : MonoBehaviour
+public class ShootController : MonoBehaviour, IWeaponController
 {
-    public GameObject weapon;
-    public string projectileTag;
-    private IWeapon fireableWeapon;
+    [SerializeField]
+    private string projectileTag;
+    [SerializeField]
+    private GameObject weaponInstance;
+
+    private Weapon weapon;
 
 
     /* Used to set up this script.
      */
     void Awake()
     {
-        SetWeapon(weapon);
+        if (!weaponInstance.activeSelf)
+            Debug.LogError("ShootController has non-active weapon reference!!");
+
+        SetWeaponInstance(weaponInstance);
     }
 
     /**
@@ -21,10 +27,15 @@ public class ShootController : MonoBehaviour
         The controller will handle firing the weapon through the exposed fire
         methods.
      */
-    public void SetWeapon(GameObject w)
+    public void SetWeaponInstance(GameObject w)
     {
-        weapon = w;
-        fireableWeapon = weapon.GetComponentInChildren<IWeapon>();
+        weaponInstance = w;
+        // Maybe this should look for ProjectileWeapon?
+        weapon = weapon.GetComponentInChildren<Weapon>();
+    }
+    public GameObject GetWeaponInstance()
+    {
+        return weaponInstance;
     }
 
     /**
@@ -40,7 +51,7 @@ public class ShootController : MonoBehaviour
 
     public void FireWeapon()
     {
-        if (fireableWeapon == null) return;
-        fireableWeapon.Fire(projectileTag);
+        if (weapon == null) return;
+        weapon.Attack(projectileTag);
     }
 }
