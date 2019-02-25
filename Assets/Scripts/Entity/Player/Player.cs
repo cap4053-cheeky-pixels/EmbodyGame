@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : Entity
 {
+    // TODO Remove FireWeapon logic as this will now live in ShootController.cs
     // Used to signal health change events to the heart container system
     public delegate void HealthChanged();
     public event HealthChanged healthChangedEvent;
@@ -24,7 +25,7 @@ public class Player : Entity
     void Awake()
     {
         SetEnabled(true);
-        SetWeapon(weapon);
+        //SetWeapon(weapon);
         healthChangedEvent?.Invoke();
     }
 
