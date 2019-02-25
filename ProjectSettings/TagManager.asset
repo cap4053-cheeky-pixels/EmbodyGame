@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - PlayerProjectile
   - EnemyProjectile
+  - Half-Heart
+  - Heart
   layers:
   - Default
   - TransparentFX
