@@ -1,8 +1,8 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicWeapon : ProjectileWeapon
+public class BasicLaserWeapon : ProjectileWeapon
 {
     /* Fires this weapon's projectile with the given tag. The tag is used by other entities
      * for the purposes of inflicting damage to themselves when they collide with the projectile.

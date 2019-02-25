@@ -14,12 +14,12 @@ public abstract class Entity : MonoBehaviour
     // The weapon this entity uses for attacking
     public GameObject weapon;
 
-    // TODO Remove speed as this should be set/handled by a MovementController
-    // How quickly this entity moves
-    public int Speed;
+    // Reference to the script of the weapon
+    protected Weapon attackingWeapon;
 
-    // Generic reference to whatever weapon the entity uses for firing
-    protected IWeapon fireableWeapon;
+    // The model that's expected to be a child of this game object
+    public GameObject model;
+    public void SetModel(GameObject model) { this.model = model; }
 
 
     /* Sets this entity's weapon to the given GameObject.
@@ -28,7 +28,7 @@ public abstract class Entity : MonoBehaviour
     public void SetWeapon(GameObject weapon)
     {
         this.weapon = weapon;
-        fireableWeapon = this.weapon.GetComponent<IWeapon>();
+        attackingWeapon = weapon.GetComponent<Weapon>();
     }
 
 
