@@ -116,13 +116,13 @@ public class Player : Entity
             // Alternate between 0 and 1 scale to simulate flashing without actually disabling anything
             if (model.transform.localScale == Vector3.one) model.transform.localScale = Vector3.zero;
             else model.transform.localScale = Vector3.one;
-            
+
             // Wait for this many seconds before flashing again
             yield return new WaitForSeconds(delayBetweenInvincibilityFlashes);
         }
 
         Debug.Log("Player no longer invincible!");
-        model.SetActive(true);
+        model.transform.localScale = Vector3.one;
         invincible = false;
     }
 }
