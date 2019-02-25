@@ -13,7 +13,6 @@ public class Enemy : Entity
      */
     void Awake()
     {
-        SetWeapon(weapon);
     }
 
 
