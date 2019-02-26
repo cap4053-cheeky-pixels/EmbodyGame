@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,47 +7,48 @@ public class Enemy : Entity
     // Used to signal an enemy's death to the rooms that spawned them
     public delegate void Died(GameObject who);
     public event Died deathEvent;
-
-
+    
+    public bool isPossessable = false;
+    
     /* Called before the game starts. Sets up all necessary info.
      */
     void Awake()
     {
     }
-
-
+    
+    
     /* Called every frame.
      */
     void Update()
     {
         
     }
-
-
+    
+    
     /* Changes this Enemy's max health by the given amount.
-     */ 
+     */
     public override void ChangeMaxHealthBy(int amount)
     {
         MaxHealth += amount;
     }
-
-
+    
+    
     /* Changes this Enemy's health by the given amount.
-     */ 
+     */
     public override void ChangeHealthBy(int amount)
     {
         Health += amount;
-
+        
         if(Health <= 0)
         {
-            // TODO add logic for possession and heart drops
-
+            // TODO add logic for heart drops
+            isPossessable = true;
             // Signal the death of this enemy
             deathEvent?.Invoke(gameObject);
         }
     }
-
-
+    
+    
     /* Called when this Enemy encounters another object.
      */
     private void OnTriggerEnter(Collider other)
