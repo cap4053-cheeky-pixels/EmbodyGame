@@ -49,8 +49,8 @@ public class Possession : MonoBehaviour
         GameObject newModel = GameObject.Instantiate(enemy.GetComponent<Entity>().model,transform);
         GameObject currentPlayerModel = player.model;
         //Possess the enemy weapon
-        GameObject playerWeapon = player.GetComponent<ShootController>().GetWeaponInstance();
-        GameObject enemyWeapon = enemy.GetComponent<ShootController>().GetWeaponInstance();
+        GameObject playerWeapon = player.GetComponent<IWeaponController>().GetWeaponInstance();
+        GameObject enemyWeapon = enemy.GetComponent<IWeaponController>().GetWeaponInstance();
         //Clone the enemy weapon within the player
         GameObject newWeapon = GameObject.Instantiate(enemyWeapon, transform);
         player.SetModel(newModel);
