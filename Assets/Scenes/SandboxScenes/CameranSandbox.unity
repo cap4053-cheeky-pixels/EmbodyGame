@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028346, g: 0.22571373, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -188,7 +188,7 @@ PrefabInstance:
     - target: {fileID: 5197661496776785838, guid: 80b0dfc6e68170945889c04fec75dc50,
         type: 3}
       propertyPath: m_UseGravity
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80b0dfc6e68170945889c04fec75dc50, type: 3}
@@ -358,6 +358,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f478840d7142f74c8b409e915224cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectileTag: Untagged
+  weaponInstance: {fileID: 0}
 --- !u!1001 &1027856781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -562,6 +564,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316170259938772301, guid: bd6d38f092a20524cbb893325e78777b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6d38f092a20524cbb893325e78777b, type: 3}
