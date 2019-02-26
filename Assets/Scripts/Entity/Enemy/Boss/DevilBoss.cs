@@ -25,6 +25,11 @@ public class DevilBoss : MonoBehaviour
 
     // The animator for this boss
     private Animator animator;
+
+    // Used to control the delay between damage recoil animations
+    [SerializeField]
+    private float delayBetweenDamageRecoils;
+    private float damageRecoilTimer;
     
 
     /* Initialize all members.
@@ -37,7 +42,7 @@ public class DevilBoss : MonoBehaviour
         animator = self.model.GetComponent<Animator>();
 
         // When moving towards the player, the boss will always stop within its ranged attack radius
-        agent.stoppingDistance = rangedDistance - 1;
+        agent.stoppingDistance = rangedDistance - 1; // TODO magic number, I know...
 
         // Boss subscribes to its own health change events
         self.healthChangedEvent += OnBossHealthChanged;
@@ -47,11 +52,22 @@ public class DevilBoss : MonoBehaviour
 
         // And finally, boss subscribes to the player's death (for victory animation)
         player.GetComponent<Player>().deathEvent += OnPlayerDied;
+
+        // Set the damage recoil timer to the delay for starters
+        damageRecoilTimer = delayBetweenDamageRecoils;
+    }
+
+
+    /* Called every frame.
+     */ 
+    private void Update()
+    {
+        damageRecoilTimer += Time.deltaTime;
     }
 
 
     /* Returns a reference to this boss's NavMeshAgent.
-     */ 
+     */
     public NavMeshAgent GetAgent() { return agent; }
 
 
@@ -60,7 +76,7 @@ public class DevilBoss : MonoBehaviour
     public GameObject GetPlayer() { return player; }
 
 
-    /* Called when this boss dies.
+    /* Called when this boss dies. Plays the boss's death animation.
      */ 
     private void OnBossDied(GameObject boss)
     {
@@ -70,7 +86,7 @@ public class DevilBoss : MonoBehaviour
     }
 
 
-    /* Called when the player dies.
+    /* Called when the player dies. Plays the boss's victory animation.
      */ 
     private void OnPlayerDied()
     {
@@ -84,6 +100,13 @@ public class DevilBoss : MonoBehaviour
      */
     private void OnBossHealthChanged()
     {
+        // Play the RecoilFromDamage animation every delayBetweenDamageRecoils seconds
+        if(damageRecoilTimer > delayBetweenDamageRecoils)
+        {
+            animator.SetTrigger("RecoilFromDamage");
+            damageRecoilTimer = 0.0f;
+        }       
+
         // If half health remaining, play stunned animation
         // TODO but this will play only if it's exactly half... what if overshoots?
         if(self.Health == self.MaxHealth / 2)
