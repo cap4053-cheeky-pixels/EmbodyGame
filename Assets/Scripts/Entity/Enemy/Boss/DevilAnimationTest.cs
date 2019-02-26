@@ -39,7 +39,7 @@ public class DevilAnimationTest : MonoBehaviour
             animator.SetTrigger("RecoilFromDamage");
         }
 
-        if(Input.GetKeyDown(KeyCode.S))
+        if(Input.GetKeyDown(KeyCode.N))
         {
             animator.SetTrigger("BecomeStunned");
         }
@@ -49,7 +49,7 @@ public class DevilAnimationTest : MonoBehaviour
             animator.SetTrigger("VictoryPose");
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             animator.SetTrigger("DeathPose");
         }
