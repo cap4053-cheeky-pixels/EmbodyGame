@@ -8,6 +8,10 @@ public class Player : Entity
     public delegate void HealthChanged();
     public event HealthChanged healthChangedEvent;
 
+    // Used to signal player's death
+    public delegate void Died();
+    public event Died deathEvent;
+
     // All of this is mainly used for pausing the game
     private bool actionsEnabled;
     public void SetEnabled(bool enabled) { actionsEnabled = enabled; }
@@ -41,18 +45,19 @@ public class Player : Entity
      */ 
     public override void ChangeHealthBy(int amount)
     {
+        Health += amount;
+        healthChangedEvent?.Invoke();
+
         // Start the invincibility coroutine if we take damage
-        if(amount < 0)
+        if (amount < 0)
         {
             StartCoroutine(BecomeTemporarilyInvincible());
         }
 
-        Health += amount;
-        healthChangedEvent?.Invoke();
-
         // Player died
-        if (Health == 0)
+        if (Health <= 0)
         {
+            deathEvent?.Invoke();
             // SceneManager.LoadScene(0) // TODO make scene 0 be game over, uncomment this when done
         }
     }

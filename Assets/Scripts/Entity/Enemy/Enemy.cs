@@ -8,6 +8,10 @@ public class Enemy : Entity
     public delegate void Died(GameObject who);
     public event Died deathEvent;
 
+    // Signals an enemy's health change; mainly used for the boss
+    public delegate void HealthChanged();
+    public event HealthChanged healthChangedEvent;
+
 
     /* Called before the game starts. Sets up all necessary info.
      */
@@ -52,6 +56,10 @@ public class Enemy : Entity
 
             // Signal the death of this enemy
             deathEvent?.Invoke(gameObject);
+        }
+        else
+        {
+            healthChangedEvent?.Invoke();
         }
     }
 
