@@ -19,17 +19,17 @@ public class BossHealth : MonoBehaviour
         slider = gameObject.GetComponent<Slider>();
         slider.maxValue = boss.MaxHealth;
         slider.minValue = 0;
+        boss.deathEvent += OnBossHealthChanged;
 
         // Will be re-activated externally when the boss fight begins
         gameObject.SetActive(false);
     }
 
 
-    /* Each frame, while the game object is active, update the slider
-     * to reflect the boss's health.
+    /* Called when the boss's health changes. Updates its health bar accordingly.
      */ 
-    private void Update()
+    private void OnBossHealthChanged(GameObject boss)
     {
-        slider.value = boss.Health;
+        slider.value = this.boss.Health;
     }
 }
