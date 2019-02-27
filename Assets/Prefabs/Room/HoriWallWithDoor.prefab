@@ -92,5 +92,25 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 5201852470926328231, guid: b6f35e75e8526ed45bcdd61f2531e14d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201852469919257429, guid: b6f35e75e8526ed45bcdd61f2531e14d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201852468815127093, guid: b6f35e75e8526ed45bcdd61f2531e14d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1816386468429429351, guid: b6f35e75e8526ed45bcdd61f2531e14d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6f35e75e8526ed45bcdd61f2531e14d, type: 3}
