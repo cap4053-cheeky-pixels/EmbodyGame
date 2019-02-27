@@ -595,7 +595,7 @@ PrefabInstance:
     - target: {fileID: 4556327631231747906, guid: 224198badb8d31847a3ab6b59ec2d3ff,
         type: 3}
       propertyPath: Health
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 224198badb8d31847a3ab6b59ec2d3ff, type: 3}
@@ -923,6 +923,16 @@ PrefabInstance:
         type: 3}
       propertyPath: MaxHealth
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543977890848250396, guid: 2f51eefa808f91b49944970b36353284,
+        type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543977890848250396, guid: 2f51eefa808f91b49944970b36353284,
+        type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f51eefa808f91b49944970b36353284, type: 3}

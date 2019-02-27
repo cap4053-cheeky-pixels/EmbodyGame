@@ -23,6 +23,12 @@ public class DevilBoss : MonoBehaviour
     // The distance within which the boss can initiate melee attacks
     public float meleeDistance;
 
+    // The pitchfork the devil uses for attacking
+    public MeleeWeapon meleeWeapon;
+
+    // Used to delay melee attacks
+    private float meleeAttackTimer;
+
     // The animator for this boss
     private Animator animator;
 
@@ -56,6 +62,9 @@ public class DevilBoss : MonoBehaviour
         // Set the damage recoil timer to the delay for starters
         damageRecoilTimer = delayBetweenDamageRecoils;
 
+        // Set the melee attack timer to the delay for starters
+        meleeAttackTimer = meleeWeapon.timeBetweenAttacks;
+
         // Disable the script until the boss is awoken
         // TODO uncomment this.enabled = false;
     }
@@ -66,6 +75,7 @@ public class DevilBoss : MonoBehaviour
     private void Update()
     {
         damageRecoilTimer += Time.deltaTime;
+        meleeAttackTimer += Time.deltaTime;
         SelectBehavior();
     }
 
@@ -148,11 +158,12 @@ public class DevilBoss : MonoBehaviour
             animator.SetTrigger("AttackRanged");
         }
         // Melee
-        else
+        else if (meleeAttackTimer > meleeWeapon.timeBetweenAttacks)
         {
             animator.ResetTrigger("Fly");
             animator.ResetTrigger("AttackRanged");
             animator.SetTrigger("AttackMelee");
+            meleeAttackTimer = 0.0f;
         }
     }
 
