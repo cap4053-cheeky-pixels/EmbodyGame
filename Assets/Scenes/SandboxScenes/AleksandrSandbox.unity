@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43667564, g: 0.48427135, b: 0.5645232, a: 1}
+  m_IndirectSpecularColor: {r: 0.172768, g: 0.21589169, b: 0.29782546, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -225,6 +225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f478840d7142f74c8b409e915224cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectileTag: Untagged
+  weaponInstance: {fileID: 0}
 --- !u!1001 &132236672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -890,6 +892,26 @@ PrefabInstance:
     - target: {fileID: 6579575115544237508, guid: 03970afa7a367334fae181b5d93b7194,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 522477909687996718, guid: 03970afa7a367334fae181b5d93b7194,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.12999725
+      objectReference: {fileID: 0}
+    - target: {fileID: 7982539100699008773, guid: 03970afa7a367334fae181b5d93b7194,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.40000153
+      objectReference: {fileID: 0}
+    - target: {fileID: 8475087102614903760, guid: 03970afa7a367334fae181b5d93b7194,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8475087102614903760, guid: 03970afa7a367334fae181b5d93b7194,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
