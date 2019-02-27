@@ -42,7 +42,6 @@ public class InputController : MonoBehaviour
 
     void HandleFiring()
     {
-        // TODO if player actions are disabled, return
         float fireHori = Input.GetAxis("FireHorizontal");
         float fireVert = Input.GetAxis("FireVertical");
 
