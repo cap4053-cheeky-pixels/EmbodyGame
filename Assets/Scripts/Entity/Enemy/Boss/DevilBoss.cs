@@ -14,7 +14,7 @@ public class DevilBoss : MonoBehaviour
     // Reference to the Enemy script attached to the boss
     private Enemy self;
 
-    // A reference to the player
+    // A reference to the player game object
     private GameObject player;
 
     // The distance within which the boss can initiate ranged attacks
@@ -55,6 +55,9 @@ public class DevilBoss : MonoBehaviour
 
         // Set the damage recoil timer to the delay for starters
         damageRecoilTimer = delayBetweenDamageRecoils;
+
+        // Disable the script until the boss is awoken
+        // TODO uncomment this.enabled = false;
     }
 
 
@@ -63,6 +66,7 @@ public class DevilBoss : MonoBehaviour
     private void Update()
     {
         damageRecoilTimer += Time.deltaTime;
+        SelectBehavior();
     }
 
 
@@ -71,18 +75,20 @@ public class DevilBoss : MonoBehaviour
     public NavMeshAgent GetAgent() { return agent; }
 
 
-    /* Returns a reference to the player this boss is fighting.
-     */ 
-    public GameObject GetPlayer() { return player; }
-
-
     /* Called when this boss dies. Plays the boss's death animation.
      */ 
     private void OnBossDied(GameObject boss)
     {
         // TODO after music has been added, stop it here
         // TODO maybe add victory audio... or perhaps that goes in RoomScript.cs
+        animator.ResetTrigger("Fly");
+        animator.ResetTrigger("AttackMelee");
+        animator.ResetTrigger("AttackRanged");
         animator.SetTrigger("DeathPose");
+
+        // Prevent this script and the navmesh agent from doing anything else
+        this.enabled = false;
+        agent.isStopped = true;
     }
 
 
@@ -90,7 +96,13 @@ public class DevilBoss : MonoBehaviour
      */ 
     private void OnPlayerDied()
     {
+        animator.ResetTrigger("Fly");
+        animator.ResetTrigger("AttackMelee");
+        animator.ResetTrigger("AttackRanged");
         animator.SetTrigger("VictoryPose");
+
+        // Prevent this script from doing anything else
+        this.enabled = false;
     }
 
 
@@ -107,11 +119,40 @@ public class DevilBoss : MonoBehaviour
             damageRecoilTimer = 0.0f;
         }       
 
-        // If half health remaining, play stunned animation
-        // TODO but this will play only if it's exactly half... what if overshoots?
-        if(self.Health == self.MaxHealth / 2)
-        {
+        // TODO stunned
+    }
 
+
+    /* Selects one of three behaviors to perform, depending on the boss's distance
+     * from the player. If the boss is within ranged attack range, then it will
+     * proceed to attack with projectiles. If the boss is within melee range, it will
+     * poke the player with its pitchfork. Otherwise, it will fly towards the player
+     * until it is within ranged attack range.
+     */ 
+    public void SelectBehavior()
+    {
+        Vector3 vectorToPlayer = player.transform.position - gameObject.transform.position;
+
+        // Flight
+        if(vectorToPlayer.magnitude > agent.stoppingDistance)
+        {
+            animator.ResetTrigger("AttackMelee");
+            animator.ResetTrigger("AttackRanged");
+            animator.SetTrigger("Fly");
+        }
+        // Ranged
+        else if(vectorToPlayer.magnitude > meleeDistance)
+        {
+            animator.ResetTrigger("Fly");
+            animator.ResetTrigger("AttackMelee");
+            animator.SetTrigger("AttackRanged");
+        }
+        // Melee
+        else
+        {
+            animator.ResetTrigger("Fly");
+            animator.ResetTrigger("AttackRanged");
+            animator.SetTrigger("AttackMelee");
         }
     }
 
@@ -136,7 +177,4 @@ public class DevilBoss : MonoBehaviour
             }
         }
     }
-
-
-
 }

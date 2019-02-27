@@ -1980,9 +1980,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be9dc56fee26c4742ba88aff04595f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
-  MaxHealth: 100
+  Health: 6
+  MaxHealth: 6
   model: {fileID: 3623955584563446959}
+  isPossessable: 0
 --- !u!114 &1341685312921882385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1995,8 +1996,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cdba1d4eefb7694aabeedc9c0aa9a24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangedDistance: 8
-  meleeDistance: 4
+  rangedDistance: 10
+  meleeDistance: 5
   delayBetweenDamageRecoils: 2
 --- !u!1 &3623955585192508341
 GameObject:
