@@ -58,7 +58,6 @@ public class Player : Entity
         if (Health <= 0)
         {
             deathEvent?.Invoke();
-            // SceneManager.LoadScene(0) // TODO make scene 0 be game over, uncomment this when done
         }
     }
 
@@ -73,7 +72,7 @@ public class Player : Entity
         if (other.gameObject.CompareTag("EnemyProjectile"))
         {
             Projectile projectile = other.gameObject.GetComponent<Projectile>();
-            ChangeHealthBy(projectile.damage);
+            ChangeHealthBy(-projectile.damage);
             Destroy(other.gameObject);
         }
     }
