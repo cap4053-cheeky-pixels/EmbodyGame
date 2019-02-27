@@ -1878,14 +1878,14 @@ GameObject:
   m_Component:
   - component: {fileID: 3623955585191402957}
   - component: {fileID: 5999082961572605887}
-  - component: {fileID: 6775110856139149350}
+  - component: {fileID: 7997384126198602589}
   - component: {fileID: 47550044525783650}
   - component: {fileID: 4189417250660119705}
   - component: {fileID: 2168712736380528939}
   - component: {fileID: 1341685312921882385}
   m_Layer: 0
   m_Name: Devil
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1913,27 +1913,29 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3623955585191402956}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 1.325, z: 0.45}
+  m_Size: {x: 0.5, y: 1.325, z: 0.4}
   m_Center: {x: 0, y: 0.65, z: 0}
---- !u!54 &6775110856139149350
-Rigidbody:
+--- !u!143 &7997384126198602589
+CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3623955585191402956}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 4
-  m_CollisionDetection: 0
+  m_Height: 1
+  m_Radius: 0.3
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!195 &47550044525783650
 NavMeshAgent:
   m_ObjectHideFlags: 0
