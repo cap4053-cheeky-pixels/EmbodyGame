@@ -914,6 +914,16 @@ PrefabInstance:
       propertyPath: m_Center.x
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 2168712736380528939, guid: 2f51eefa808f91b49944970b36353284,
+        type: 3}
+      propertyPath: Health
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2168712736380528939, guid: 2f51eefa808f91b49944970b36353284,
+        type: 3}
+      propertyPath: MaxHealth
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f51eefa808f91b49944970b36353284, type: 3}
 --- !u!114 &3623955585086575573 stripped

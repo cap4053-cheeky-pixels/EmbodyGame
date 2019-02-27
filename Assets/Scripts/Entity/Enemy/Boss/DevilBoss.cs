@@ -171,7 +171,6 @@ public class DevilBoss : MonoBehaviour
             {
                 if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
                 {
-                    // TODO a little buggy because it sometimes immediately goes to idle...
                     animator.SetTrigger("StopFlying");
                 }
             }
