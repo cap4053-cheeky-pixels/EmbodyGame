@@ -2015,6 +2015,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rangedDistance: 20
   rangedWeapon: {fileID: 1976051220946920971}
+  meteorShower: {fileID: 165786, guid: d7b50f004cdc74b409188d8b822292fc, type: 3}
+  timeToMeteorShower: 10
   meleeDistance: 5
   meleeWeapon: {fileID: 5543977890848250396}
   delayBetweenDamageRecoils: 2

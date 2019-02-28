@@ -23,6 +23,14 @@ public class DevilBoss : MonoBehaviour
     [SerializeField] private ProjectileWeapon rangedWeapon;
     // Used to delay ranged attacks
     private float rangedAttackTimer;
+    
+    // Meteor shower prefab
+    [SerializeField] private GameObject meteorShower;
+    // Timer used to actually spawn meteor shower
+    private float meteorShowerTimer;
+    // Regulates the intervals at which they spawn
+    public float timeToMeteorShower;
+
 
     // The distance within which the boss can initiate melee attacks
     public float meleeDistance;
@@ -33,6 +41,7 @@ public class DevilBoss : MonoBehaviour
 
     // The animator for this boss
     private Animator animator;
+    private bool inPhaseTwo;
 
     // Used to control the delay between damage recoil animations
     [SerializeField] private float delayBetweenDamageRecoils;
@@ -47,6 +56,7 @@ public class DevilBoss : MonoBehaviour
         agent = gameObject.GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
         animator = self.model.GetComponent<Animator>();
+        inPhaseTwo = false;
 
         // When moving towards the player, the boss will always stop within its ranged attack radius
         agent.stoppingDistance = rangedDistance - 1; 
@@ -69,6 +79,9 @@ public class DevilBoss : MonoBehaviour
         // Set the ranged attack timer to the delay initially
         rangedAttackTimer = rangedWeapon.timeBetweenAttacks;
 
+        // Set this to zero, no meteor showers just yet
+        meteorShowerTimer = 0.0f;
+
         // Disable the script until the boss is awoken
         // TODO uncomment this.enabled = false;
     }
@@ -81,8 +94,22 @@ public class DevilBoss : MonoBehaviour
         damageRecoilTimer += Time.deltaTime;
         meleeAttackTimer += Time.deltaTime;
         rangedAttackTimer += Time.deltaTime;
+
         RotateToFacePlayer();
         SelectBehavior();
+
+        // Meteor strikes
+        if(inPhaseTwo)
+        {
+            meteorShowerTimer += Time.deltaTime;
+
+            // Bonus meteor attack
+            if (meteorShowerTimer > timeToMeteorShower)
+            {
+                Instantiate(meteorShower, gameObject.transform.parent);
+                meteorShowerTimer = 0.0f;
+            }
+        }
     }
 
 
@@ -90,8 +117,6 @@ public class DevilBoss : MonoBehaviour
      */ 
     private void OnBossDied(GameObject boss)
     {
-        // TODO after music has been added, stop it here
-        // TODO maybe add victory audio... or perhaps that goes in RoomScript.cs
         animator.ResetTrigger("Fly");
         animator.ResetTrigger("AttackMelee");
         animator.ResetTrigger("AttackRanged");
@@ -130,7 +155,12 @@ public class DevilBoss : MonoBehaviour
             damageRecoilTimer = 0.0f;
         }       
 
-        // TODO stunned
+        // Initiate phase 2
+        if(self.Health < self.MaxHealth / 2 && !inPhaseTwo)
+        {
+            animator.SetTrigger("BecomeStunned");
+            inPhaseTwo = true;
+        }
     }
 
 
