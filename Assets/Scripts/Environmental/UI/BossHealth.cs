@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class BossHealth : MonoBehaviour
 {
     // A reference to the Enemy script belonging to the boss enemy
-    public Enemy boss;
+    private Enemy boss;
 
     // The slider that reflects the boss's health in the UI
     private Slider slider;    
@@ -16,13 +16,28 @@ public class BossHealth : MonoBehaviour
      */ 
     private void Awake()
     {
-        slider = gameObject.GetComponent<Slider>();
-        slider.maxValue = boss.MaxHealth;
-        slider.minValue = 0;
-        boss.healthChangedEvent += OnBossHealthChanged;
+        AssociateWithLevelBoss();
 
         // Will be re-activated externally when the boss fight begins
         // TODO uncomment gameObject.SetActive(false);
+    }
+
+
+    /* Can be used to assign the health bar to a boss.
+     */ 
+    public void AssociateWithLevelBoss()
+    {
+        GameObject theBoss = GameObject.FindGameObjectWithTag("Boss");
+
+        if (theBoss != null)
+        {
+            boss = theBoss.GetComponent<Enemy>();
+            slider = gameObject.GetComponent<Slider>();
+            slider.maxValue = boss.MaxHealth;
+            slider.minValue = 0;
+            slider.value = slider.maxValue;
+            boss.healthChangedEvent += OnBossHealthChanged;
+        }
     }
 
 

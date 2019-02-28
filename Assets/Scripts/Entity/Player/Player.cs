@@ -72,7 +72,9 @@ public class Player : Entity
         if (invincible) return;
 
         // Collision with enemies and traps will deal a constant half a heart of damage
-        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Trap"))
+        if (other.gameObject.CompareTag("Enemy") || 
+            other.gameObject.CompareTag("Boss") ||
+            other.gameObject.CompareTag("Trap"))
         {
             ChangeHealthBy(-1);
         }

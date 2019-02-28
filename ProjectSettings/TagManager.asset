@@ -12,6 +12,7 @@ TagManager:
   - Trap
   - Wall
   - EnemyMeleeWeapon
+  - Boss
   layers:
   - Default
   - TransparentFX

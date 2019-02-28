@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(AudioSource))]
 public class RoomScript : MonoBehaviour
 {
-    public List<GameObject> doors = new List<GameObject>();      // all doors this room is responsible for opening/closing
+    // All doors this room is responsible for opening/closing
+    public List<GameObject> doors = new List<GameObject>();
+    private AudioSource theme;
     private HashSet<GameObject> spawnedEnemies;
     private SpawnScript spawner;
-    private WaitForSeconds wait;
     private int numEnemies = 0;
 
 
@@ -19,6 +22,13 @@ public class RoomScript : MonoBehaviour
         spawnedEnemies = spawner.SpawnEnemies();
         numEnemies = spawnedEnemies.Count;
         SubscribeToEnemyDeath();
+
+        theme = gameObject.GetComponent<AudioSource>();
+
+        if(theme.clip != null)
+        {
+            theme.Play();
+        }
     }
 
 
@@ -51,6 +61,11 @@ public class RoomScript : MonoBehaviour
         if (numEnemies == 0)
         {
             UnlockAllDoors();
+
+            if (theme.clip != null)
+            {
+                theme.Stop();
+            }
         }
     }
 
