@@ -1999,7 +1999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangedDistance: 10
-  meleeDistance: 5
+  meleeDistance: 4
   meleeWeapon: {fileID: 5543977890848250396}
   delayBetweenDamageRecoils: 2
 --- !u!1 &3623955585192508341

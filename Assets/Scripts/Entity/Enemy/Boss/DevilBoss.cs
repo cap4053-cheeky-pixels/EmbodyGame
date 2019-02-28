@@ -31,8 +31,7 @@ public class DevilBoss : MonoBehaviour
     private Animator animator;
 
     // Used to control the delay between damage recoil animations
-    [SerializeField]
-    private float delayBetweenDamageRecoils;
+    [SerializeField] private float delayBetweenDamageRecoils;
     private float damageRecoilTimer;
     
 
@@ -46,7 +45,7 @@ public class DevilBoss : MonoBehaviour
         animator = self.model.GetComponent<Animator>();
 
         // When moving towards the player, the boss will always stop within its ranged attack radius
-        agent.stoppingDistance = rangedDistance - 1; // TODO magic number, I know...
+        agent.stoppingDistance = rangedDistance - 1; 
 
         // Boss subscribes to its own health change events
         self.healthChangedEvent += OnBossHealthChanged;
@@ -74,13 +73,9 @@ public class DevilBoss : MonoBehaviour
     {
         damageRecoilTimer += Time.deltaTime;
         meleeAttackTimer += Time.deltaTime;
+        RotateToFacePlayer();
         SelectBehavior();
     }
-
-
-    /* Returns a reference to this boss's NavMeshAgent.
-     */
-    public NavMeshAgent GetAgent() { return agent; }
 
 
     /* Called when this boss dies. Plays the boss's death animation.
@@ -154,7 +149,6 @@ public class DevilBoss : MonoBehaviour
             animator.ResetTrigger("Fly");
             animator.ResetTrigger("AttackMelee");
             animator.SetTrigger("AttackRanged");
-            transform.LookAt(player.transform.position);
         }
         // Melee
         else if (meleeAttackTimer > meleeWeapon.timeBetweenAttacks)
@@ -162,19 +156,17 @@ public class DevilBoss : MonoBehaviour
             animator.ResetTrigger("Fly");
             animator.ResetTrigger("AttackRanged");
             animator.SetTrigger("AttackMelee");
-            transform.LookAt(player.transform.position);
             meleeAttackTimer = 0.0f;
         }
     }
 
 
-    // TODO unfortunately, because the model is also moving, this results in stuttering :(
     /* It's in the name.
      */ 
     private void RotateToFacePlayer()
     {
-        Quaternion newRotation = Quaternion.LookRotation(player.transform.position - gameObject.transform.position);
-        gameObject.transform.rotation = Quaternion.Lerp(gameObject.transform.rotation, newRotation, 0.0f);
+        Quaternion newRotation = Quaternion.LookRotation(player.transform.position - self.model.transform.position);
+        self.model.transform.rotation = Quaternion.RotateTowards(self.model.transform.rotation, newRotation, 5);
     }
 
 
@@ -192,7 +184,7 @@ public class DevilBoss : MonoBehaviour
             {
                 if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
                 {
-                    animator.SetTrigger("StopFlying");
+                    animator.SetTrigger("Idle");
                 }
             }
         }
