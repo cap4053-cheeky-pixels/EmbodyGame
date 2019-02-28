@@ -429,11 +429,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4955890571277369522, guid: 03970afa7a367334fae181b5d93b7194,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8475087102614903760, guid: 03970afa7a367334fae181b5d93b7194,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -443,6 +438,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4955890571277369522, guid: 03970afa7a367334fae181b5d93b7194,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3666022068323325122, guid: 03970afa7a367334fae181b5d93b7194,
         type: 3}
@@ -601,7 +601,12 @@ PrefabInstance:
     - target: {fileID: 4556327631231747906, guid: 224198badb8d31847a3ab6b59ec2d3ff,
         type: 3}
       propertyPath: Health
-      value: 6
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556327631231747906, guid: 224198badb8d31847a3ab6b59ec2d3ff,
+        type: 3}
+      propertyPath: MaxHealth
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 224198badb8d31847a3ab6b59ec2d3ff, type: 3}

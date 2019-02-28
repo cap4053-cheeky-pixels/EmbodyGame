@@ -19,11 +19,15 @@ public class DevilBoss : MonoBehaviour
 
     // The distance within which the boss can initiate ranged attacks
     public float rangedDistance;
+    // The ranged weapon the devil uses to fire projectiles
+    [SerializeField] private ProjectileWeapon rangedWeapon;
+    // Used to delay ranged attacks
+    private float rangedAttackTimer;
 
     // The distance within which the boss can initiate melee attacks
     public float meleeDistance;
     // The pitchfork the devil uses for attacking
-    public MeleeWeapon meleeWeapon;
+    [SerializeField] private MeleeWeapon meleeWeapon;
     // Used to delay melee attacks
     private float meleeAttackTimer;
 
@@ -56,11 +60,14 @@ public class DevilBoss : MonoBehaviour
         // And finally, boss subscribes to the player's death (for victory animation)
         player.GetComponent<Player>().deathEvent += OnPlayerDied;
 
-        // Set the damage recoil timer to the delay for starters
+        // Set the damage recoil timer to the delay initially
         damageRecoilTimer = delayBetweenDamageRecoils;
-
-        // Set the melee attack timer to the delay for starters
+        
+        // Set the melee attack timer to the delay initially
         meleeAttackTimer = meleeWeapon.timeBetweenAttacks;
+        
+        // Set the ranged attack timer to the delay initially
+        rangedAttackTimer = rangedWeapon.timeBetweenAttacks;
 
         // Disable the script until the boss is awoken
         // TODO uncomment this.enabled = false;
@@ -73,6 +80,7 @@ public class DevilBoss : MonoBehaviour
     {
         damageRecoilTimer += Time.deltaTime;
         meleeAttackTimer += Time.deltaTime;
+        rangedAttackTimer += Time.deltaTime;
         RotateToFacePlayer();
         SelectBehavior();
     }
@@ -134,24 +142,27 @@ public class DevilBoss : MonoBehaviour
      */ 
     public void SelectBehavior()
     {
-        Vector3 vectorToPlayer = player.transform.position - gameObject.transform.position;
+        float distanceToPlayer = (player.transform.position - gameObject.transform.position).magnitude;
 
         // Flight
-        if(vectorToPlayer.magnitude > agent.stoppingDistance)
+        if(distanceToPlayer > agent.stoppingDistance)
         {
             animator.ResetTrigger("AttackMelee");
             animator.ResetTrigger("AttackRanged");
             animator.SetTrigger("Fly");
         }
         // Ranged
-        else if(vectorToPlayer.magnitude > meleeDistance)
+        else if(distanceToPlayer > meleeDistance &&
+                rangedAttackTimer > rangedWeapon.timeBetweenAttacks)
         {
             animator.ResetTrigger("Fly");
             animator.ResetTrigger("AttackMelee");
             animator.SetTrigger("AttackRanged");
+            rangedAttackTimer = 0.0f;
         }
         // Melee
-        else if (meleeAttackTimer > meleeWeapon.timeBetweenAttacks)
+        else if (distanceToPlayer <= meleeDistance &&
+                 meleeAttackTimer > meleeWeapon.timeBetweenAttacks)
         {
             animator.ResetTrigger("Fly");
             animator.ResetTrigger("AttackRanged");
@@ -165,8 +176,8 @@ public class DevilBoss : MonoBehaviour
      */ 
     private void RotateToFacePlayer()
     {
-        Quaternion newRotation = Quaternion.LookRotation(player.transform.position - self.model.transform.position);
-        self.model.transform.rotation = Quaternion.RotateTowards(self.model.transform.rotation, newRotation, 5);
+        Quaternion newRotation = Quaternion.LookRotation(player.transform.position - gameObject.transform.position);
+        gameObject.transform.rotation = Quaternion.RotateTowards(gameObject.transform.rotation, newRotation, 5);
     }
 
 
