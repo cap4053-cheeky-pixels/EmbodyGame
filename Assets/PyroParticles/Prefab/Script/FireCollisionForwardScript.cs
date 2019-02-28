@@ -20,6 +20,20 @@ namespace DigitalRuby.PyroParticles
 
         public void OnCollisionEnter(Collision col)
         {
+            // Damaging the player
+            if(col.gameObject.CompareTag("Player") && gameObject.transform.parent.CompareTag("EnemyProjectile"))
+            {
+                Firebolt firebolt = gameObject.transform.parent.GetComponent<Firebolt>();
+                col.gameObject.GetComponent<Player>().ChangeHealthBy(-firebolt.damage);
+            }
+
+            // Damaging the enemy
+            else if (col.gameObject.CompareTag("Enemy") && gameObject.transform.parent.CompareTag("PlayerProjectile"))
+            {
+                Firebolt firebolt = gameObject.transform.parent.GetComponent<Firebolt>();
+                col.gameObject.GetComponent<Player>().ChangeHealthBy(-firebolt.damage);
+            }
+
             CollisionHandler.HandleCollision(gameObject, col);
         }
     }

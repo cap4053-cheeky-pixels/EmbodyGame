@@ -4858,6 +4858,8 @@ GameObject:
   - component: {fileID: 11415228}
   - component: {fileID: 8299452}
   - component: {fileID: 8285056}
+  - component: {fileID: 2658148413985173327}
+  - component: {fileID: 817198619559651936}
   m_Layer: 0
   m_Name: Firebolt
   m_TagString: Untagged
@@ -4907,7 +4909,7 @@ MonoBehaviour:
   ProjectileCollisionSound: {fileID: 8299452}
   ProjectileExplosionParticleSystem: {fileID: 19843370}
   ProjectileExplosionRadius: 3
-  ProjectileExplosionForce: 500
+  ProjectileExplosionForce: 0
   ProjectileColliderDelay: 0
   ProjectileColliderSpeed: 25
   ProjectileDirection: {x: 0, y: 0, z: 1}
@@ -5179,6 +5181,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!135 &2658148413985173327
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141530}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &817198619559651936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e3276f42178c2f40af681e7725384e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
 --- !u!1 &150962
 GameObject:
   m_ObjectHideFlags: 0
@@ -9930,7 +9958,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 151328}
   serializedVersion: 2
-  m_Mass: 50
+  m_Mass: 0.0000001
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
