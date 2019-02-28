@@ -22,10 +22,8 @@ public class DevilBoss : MonoBehaviour
 
     // The distance within which the boss can initiate melee attacks
     public float meleeDistance;
-
     // The pitchfork the devil uses for attacking
     public MeleeWeapon meleeWeapon;
-
     // Used to delay melee attacks
     private float meleeAttackTimer;
 
