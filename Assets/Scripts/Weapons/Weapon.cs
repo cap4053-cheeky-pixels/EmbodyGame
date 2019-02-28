@@ -31,5 +31,5 @@ public abstract class Weapon : MonoBehaviour
 
 
     // All weapons must implement this method
-    public abstract void Attack(string tag);
+    public abstract void Attack(string tag, GameObject target = null);
 }

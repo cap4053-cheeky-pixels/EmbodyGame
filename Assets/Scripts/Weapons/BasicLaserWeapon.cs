@@ -7,7 +7,7 @@ public class BasicLaserWeapon : ProjectileWeapon
     /* Fires this weapon's projectile with the given tag. The tag is used by other entities
      * for the purposes of inflicting damage to themselves when they collide with the projectile.
      */
-    public override void Attack(string tag)
+    public override void Attack(string tag, GameObject target)
     {
         // Prevents continuous firing
         if (timer > timeBetweenAttacks)

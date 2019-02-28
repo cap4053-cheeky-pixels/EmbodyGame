@@ -75,7 +75,7 @@ public class Enemy : Entity
         if(other.gameObject.CompareTag("PlayerProjectile") && Health != 0)
         {
             Projectile projectile = other.gameObject.GetComponent<Projectile>();
-            ChangeHealthBy(projectile.damage);
+            ChangeHealthBy(-projectile.damage);
             Destroy(other.gameObject);
         }
     }

@@ -22,8 +22,11 @@ public class InputController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleMovement();
-        HandleFiring();
+        if(player.ActionsEnabled())
+        {
+            HandleMovement();
+            HandleFiring();
+        }
     }
 
     void HandleMovement()
@@ -39,7 +42,6 @@ public class InputController : MonoBehaviour
 
     void HandleFiring()
     {
-        // TODO if player actions are disabled, return
         float fireHori = Input.GetAxis("FireHorizontal");
         float fireVert = Input.GetAxis("FireVertical");
 
