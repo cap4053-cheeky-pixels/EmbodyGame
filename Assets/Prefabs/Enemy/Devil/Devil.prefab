@@ -2277,7 +2277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e725c72fc9ae20b41af3c8456c3a1e9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 4
-  timeBetweenAttacks: 5
+  damage: 2
+  timeBetweenAttacks: 1
   weapon: {fileID: 3623955585305986208}
   meleeSound: {fileID: 396658304540375954}

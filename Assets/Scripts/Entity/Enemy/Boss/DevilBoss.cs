@@ -154,6 +154,7 @@ public class DevilBoss : MonoBehaviour
             animator.ResetTrigger("Fly");
             animator.ResetTrigger("AttackMelee");
             animator.SetTrigger("AttackRanged");
+            transform.LookAt(player.transform.position);
         }
         // Melee
         else if (meleeAttackTimer > meleeWeapon.timeBetweenAttacks)
@@ -161,8 +162,19 @@ public class DevilBoss : MonoBehaviour
             animator.ResetTrigger("Fly");
             animator.ResetTrigger("AttackRanged");
             animator.SetTrigger("AttackMelee");
+            transform.LookAt(player.transform.position);
             meleeAttackTimer = 0.0f;
         }
+    }
+
+
+    // TODO unfortunately, because the model is also moving, this results in stuttering :(
+    /* It's in the name.
+     */ 
+    private void RotateToFacePlayer()
+    {
+        Quaternion newRotation = Quaternion.LookRotation(player.transform.position - gameObject.transform.position);
+        gameObject.transform.rotation = Quaternion.Lerp(gameObject.transform.rotation, newRotation, 0.0f);
     }
 
 
