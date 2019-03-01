@@ -50,4 +50,4 @@ MonoBehaviour:
   speed: 15
   projectileLifetime: 5
   forwardOffset: 0.5
-  upwardOffset: 1
+  upwardOffset: 0

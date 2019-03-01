@@ -57,11 +57,7 @@ public class Enemy : Entity
         
         if(Health <= 0)
         {
-            isDead = true;
-            isPossessable = true;
-            
-            // Signal the death of this enemy
-            deathEvent?.Invoke(gameObject);
+            OnEnemyDied();
         }
         else
         {
@@ -80,6 +76,20 @@ public class Enemy : Entity
             Projectile projectile = other.gameObject.GetComponent<Projectile>();
             ChangeHealthBy(-projectile.damage);
             Destroy(other.gameObject);
+        }
+    }
+
+    private void OnEnemyDied()
+    {
+        // TODO add logic for heart drops
+        isDead = true;
+        isPossessable = true;
+        // Signal the death of this enemy
+        deathEvent?.Invoke(gameObject);
+        // Call the death method on any appropriate controllers
+        foreach (IOnDeathController odc in GetComponents<IOnDeathController>())
+        {
+            odc.OnDeath();
         }
     }
 }
