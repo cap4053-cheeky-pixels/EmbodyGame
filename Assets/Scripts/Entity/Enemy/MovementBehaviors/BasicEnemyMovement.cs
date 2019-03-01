@@ -6,10 +6,16 @@ using UnityEngine;
     Basic enemy movement that moves towards the player.
  */
 [RequireComponent(typeof(EnemyMovement))]
-public class BasicEnemyMovement : MonoBehaviour
+public class BasicEnemyMovement : MonoBehaviour, IOnDeathController
 {
     private EnemyMovement em;
     private Transform playerTransform;
+
+    public void OnDeath()
+    {
+        enabled = false;
+        em.Stop();
+    }
 
     void Awake()
     {

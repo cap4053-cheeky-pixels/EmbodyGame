@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2023975005997634555
+--- !u!1 &1448039419924807990
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7507557188721224129}
-  - component: {fileID: 3189315024068623013}
+  - component: {fileID: 1448039419924807991}
+  - component: {fileID: 1448039419924807984}
   m_Layer: 0
-  m_Name: BasicLaserWeapon
+  m_Name: BurstShooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7507557188721224129
+--- !u!4 &1448039419924807991
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2023975005997634555}
+  m_GameObject: {fileID: 1448039419924807990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.457891, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3189315024068623013
+--- !u!114 &1448039419924807984
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2023975005997634555}
+  m_GameObject: {fileID: 1448039419924807990}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 146c2564e7be99f4f9cf3afeebdda5d6, type: 3}
+  m_Script: {fileID: 11500000, guid: d5e139f7900b4fb4f90efdace1bb63a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  timeBetweenAttacks: 0.5
-  projectile: {fileID: 6890617483861474357, guid: 4f7473403c4cded4bbc8eb6bf3e093f7,
+  timeBetweenAttacks: 1
+  projectile: {fileID: 2452410868603154768, guid: a28506f24a9cd7544bb1c828f16ebdfc,
     type: 3}
-  speed: 40
-  projectileLifetime: 5
-  forwardOffset: 0.5
+  speed: 30
+  projectileLifetime: 10
+  forwardOffset: 1
   upwardOffset: 0
+  burstCount: 3
+  burstIntervalSec: 0.1

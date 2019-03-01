@@ -29,4 +29,15 @@ public class EnemyMovement : MonoBehaviour
     {
         nma.SetDestination(destination);
     }
+
+    public void Stop()
+    {
+        nma.isStopped = true;
+    }
+
+    // Avoid calling this if possible
+    public void Disable()
+    {
+        nma.enabled = false;
+    }
 }
