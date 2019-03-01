@@ -10,7 +10,7 @@ public class BurstShooter : ProjectileWeapon
     IEnumerator burstRoutine;
     float burstStartTime;
 
-    public override void Attack(string tag)
+    public override void Attack(string tag, GameObject target)
     {
         if (timer < timeBetweenAttacks) return;
 
