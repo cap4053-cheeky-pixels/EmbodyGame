@@ -7,14 +7,14 @@ public class Enemy : Entity
     // Used to signal an enemy's death to the rooms that spawned them
     public delegate void Died(GameObject who);
     public event Died deathEvent;
+    private bool isDead;
+    public bool IsDead() { return isDead; }
+    public bool isPossessable = false;
 
     // Signals an enemy's health change; mainly used for the boss
     public delegate void HealthChanged();
     public event HealthChanged healthChangedEvent;
 
-
-    
-    public bool isPossessable = false;
     
     /* Called before the game starts. Sets up all necessary info.
      */
@@ -51,12 +51,15 @@ public class Enemy : Entity
      */
     public override void ChangeHealthBy(int amount)
     {
+        if (isDead) return;
+
         Health += amount;
         
         if(Health <= 0)
         {
-            // TODO add logic for heart drops
+            isDead = true;
             isPossessable = true;
+            
             // Signal the death of this enemy
             deathEvent?.Invoke(gameObject);
         }

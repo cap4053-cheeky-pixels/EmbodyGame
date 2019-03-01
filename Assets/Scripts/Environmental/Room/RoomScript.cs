@@ -7,7 +7,6 @@ using UnityEngine;
 public class RoomScript : MonoBehaviour
 {
     public List<GameObject> doors = new List<GameObject>();
-    [SerializeField] private AudioSource doorSound;
     [SerializeField] private AudioSource audioTheme;
 
     private HashSet<GameObject> spawnedEnemies;
@@ -60,11 +59,6 @@ public class RoomScript : MonoBehaviour
         if (numEnemies == 0)
         {
             UnlockAllDoors();
-
-            if (audioTheme != null && audioTheme.clip != null)
-            {
-                audioTheme.Stop();
-            }
         }
     }
 
@@ -83,11 +77,6 @@ public class RoomScript : MonoBehaviour
                     doorController.Open();
                 }
             }
-
-            if (doorSound != null && doorSound.clip != null)
-            {
-                doorSound.Play();
-            }
         }
         else
         {
@@ -100,8 +89,6 @@ public class RoomScript : MonoBehaviour
      */
     void LockAllDoors()
     {
-        Debug.Log(doors.Count);
-
         if(doors.Count != 0)
         {
             foreach (GameObject door in doors)
@@ -111,11 +98,6 @@ public class RoomScript : MonoBehaviour
                     DoorController doorController = door.GetComponent<DoorController>();
                     doorController.Close();
                 }                
-            }
-
-            if (doorSound != null && doorSound.clip != null)
-            {
-                doorSound.Play();
             }
         }
         else
