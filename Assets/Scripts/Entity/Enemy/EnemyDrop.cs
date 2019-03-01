@@ -12,7 +12,7 @@ public class EnemyDrop : MonoBehaviour
     */
     public void DropHeart()
     {
-        var heartTypeChance = (int)Random.Range(0f, heartPrefabs.Count - 1);
+        var heartTypeChance = (int)Mathf.Round(Random.Range(0f, heartPrefabs.Count - 1));
         var heartType = heartPrefabs[heartTypeChance];
 
         var chance = Random.value;
