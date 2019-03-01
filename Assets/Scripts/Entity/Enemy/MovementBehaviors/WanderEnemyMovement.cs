@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyMovement))]
-public class WanderEnemyMovement : MonoBehaviour
+public class WanderEnemyMovement : MonoBehaviour, IOnDeathController
 {
     public float wanderCircleRadius;
     public float wanderStr;
     private Vector3 currentDirection;
     private Vector3 wanderCirclePoint;
     private EnemyMovement em;
+
+    public void OnDeath()
+    {
+        enabled = false;
+        em.Stop();
+    }
 
     void Awake()
     {
