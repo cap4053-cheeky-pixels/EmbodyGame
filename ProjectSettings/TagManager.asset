@@ -10,7 +10,6 @@ TagManager:
   - PlayerProjectile
   - EnemyProjectile
   - Trap
-  - Half-Heart
   - Heart
   layers:
   - Default
