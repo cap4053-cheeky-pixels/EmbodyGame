@@ -6,7 +6,6 @@ using UnityEngine;
 public class AIAttackController : MonoBehaviour, IOnDeathController
 {
     ShootController sc;
-    GameObject playerGO;
 
     public void OnDeath()
     {
@@ -16,13 +15,10 @@ public class AIAttackController : MonoBehaviour, IOnDeathController
     void Awake()
     {
         sc = GetComponent<ShootController>(); // Should be an AttackController interface
-        playerGO = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
     {
-        Vector3 direction = playerGO.transform.position - transform.position;
-        direction.y = 0;
-        sc.FireWeaponTowards(direction.normalized);
+        sc.FireWeapon();
     }
 }
