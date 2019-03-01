@@ -6,9 +6,10 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class RoomScript : MonoBehaviour
 {
-    // All doors this room is responsible for opening/closing
     public List<GameObject> doors = new List<GameObject>();
-    private AudioSource theme;
+    [SerializeField] private AudioSource doorSound;
+    [SerializeField] private AudioSource audioTheme;
+
     private HashSet<GameObject> spawnedEnemies;
     private SpawnScript spawner;
     private int numEnemies = 0;
@@ -23,11 +24,9 @@ public class RoomScript : MonoBehaviour
         numEnemies = spawnedEnemies.Count;
         SubscribeToEnemyDeath();
 
-        theme = gameObject.GetComponent<AudioSource>();
-
-        if(theme.clip != null)
+        if(audioTheme != null && audioTheme.clip != null)
         {
-            theme.Play();
+            audioTheme.Play();
         }
     }
 
@@ -62,9 +61,9 @@ public class RoomScript : MonoBehaviour
         {
             UnlockAllDoors();
 
-            if (theme.clip != null)
+            if (audioTheme != null && audioTheme.clip != null)
             {
-                theme.Stop();
+                audioTheme.Stop();
             }
         }
     }
@@ -74,12 +73,20 @@ public class RoomScript : MonoBehaviour
      */
     void UnlockAllDoors()
     {
-        if(doors != null)
+        if(doors.Count != 0)
         {
             foreach (GameObject door in doors)
             {
-                DoorController doorController = door.GetComponent<DoorController>(); // TODO re-enable once implemented
-                doorController.Open();
+                if(door != null)
+                {
+                    DoorController doorController = door.GetComponent<DoorController>();
+                    doorController.Open();
+                }
+            }
+
+            if (doorSound != null && doorSound.clip != null)
+            {
+                doorSound.Play();
             }
         }
         else
@@ -93,12 +100,22 @@ public class RoomScript : MonoBehaviour
      */
     void LockAllDoors()
     {
-        if(doors != null)
+        Debug.Log(doors.Count);
+
+        if(doors.Count != 0)
         {
             foreach (GameObject door in doors)
             {
-                DoorController doorController = door.GetComponent<DoorController>(); // TODO re-enable once implemented
-                doorController.Close();
+                if(door != null)
+                {
+                    DoorController doorController = door.GetComponent<DoorController>();
+                    doorController.Close();
+                }                
+            }
+
+            if (doorSound != null && doorSound.clip != null)
+            {
+                doorSound.Play();
             }
         }
         else
