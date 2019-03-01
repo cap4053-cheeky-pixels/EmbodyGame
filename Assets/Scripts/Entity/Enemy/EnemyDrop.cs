@@ -8,9 +8,24 @@ public class EnemyDrop : MonoBehaviour
     public List<GameObject> heartPrefabs = new List<GameObject>();
     public float healthDropProbability;
 
+    private void Awake()
+    {
+        SubscribeToEnemyDeath();
+    }
+
+    void SubscribeToEnemyDeath()
+    {
+        Enemy enemy = transform.GetComponent<Enemy>();
+
+        if (enemy != null)
+        {
+            enemy.deathEvent += DropHeart;
+        }
+    }
+
     /* Called when an enemy has died. Spawns a heart with random probability.
     */
-    public void DropHeart()
+    public void DropHeart(GameObject enemy)
     {
         var heartTypeChance = (int)Mathf.Round(Random.Range(0f, heartPrefabs.Count - 1));
         var heartType = heartPrefabs[heartTypeChance];
