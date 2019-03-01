@@ -7,6 +7,9 @@ public class EnemyDrop : MonoBehaviour
 
     public List<GameObject> heartPrefabs = new List<GameObject>();
     public float healthDropProbability;
+    public int xzRange = 600;
+    public int yForce = 800;
+    public float spawnHeight = 2.5f;
 
     private void Awake()
     {
@@ -33,13 +36,13 @@ public class EnemyDrop : MonoBehaviour
         var chance = Random.value;
         if (chance <= healthDropProbability)
         {
-            var randX = Random.Range(-600, 600);
-            var randZ = Random.Range(-600, 600);
-            var heart = Instantiate(heartType, transform.position + new Vector3(0, 2.5f, 0), heartType.transform.rotation);
+            var randX = Random.Range(-xzRange, xzRange);
+            var randZ = Random.Range(-xzRange, xzRange);
+            var heart = Instantiate(heartType, transform.position + new Vector3(0, spawnHeight, 0), heartType.transform.rotation);
 
             var heartRb = heart.GetComponent<Rigidbody>();
 
-            heartRb.AddForce(new Vector3(randX, 800, randZ));
+            heartRb.AddForce(new Vector3(randX, yForce, randZ));
         }
     }
 }
