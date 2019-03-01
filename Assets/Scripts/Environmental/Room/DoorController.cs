@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class DoorController : MonoBehaviour
 {
-    Animator animator;
-    bool doorOpen;
+    private Animator animator;
+
+    private bool doorOpen;
+    public bool IsOpen() { return doorOpen; }
 
 
     /* Called on scene enter */
