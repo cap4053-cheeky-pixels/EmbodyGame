@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doors: []
   audioTheme: {fileID: 0}
+  spawnerObject: {fileID: 8316170259260908322}
 --- !u!82 &2383204964577108538
 AudioSource:
   m_ObjectHideFlags: 0
