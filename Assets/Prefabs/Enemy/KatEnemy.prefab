@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2506059092821221656}
   - component: {fileID: 2506059092821221657}
   - component: {fileID: 2506059092821221653}
+  - component: {fileID: 5960857235701816549}
   m_Layer: 0
   m_Name: KatEnemy
   m_TagString: Enemy
@@ -171,6 +172,25 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
+--- !u!114 &5960857235701816549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2506059092821221663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7b283cff05ce34f944d10e06d8a98e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartPrefabs:
+  - {fileID: 3676220467416633035, guid: c0e19f4f0d1f2ea458756409aa801246, type: 3}
+  - {fileID: 6058534631205044202, guid: cfdc812ad6d2939458ab1a2e2b5e3f34, type: 3}
+  healthDropProbability: 0.65
+  xzRange: 600
+  yForce: 800
+  spawnHeight: 2.5
 --- !u!1001 &2506059093331976648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -259,25 +279,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2506059092821221662}
     m_Modifications:
-    - target: {fileID: 100010, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
-      propertyPath: m_Name
-      value: SimpleEnemyModel
-      objectReference: {fileID: 0}
     - target: {fileID: 100014, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
       propertyPath: m_Name
       value: KatEnemyModel
       objectReference: {fileID: 0}
-    - target: {fileID: 400010, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400010, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400010, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
+    - target: {fileID: 100010, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
+      propertyPath: m_Name
+      value: SimpleEnemyModel
       objectReference: {fileID: 0}
     - target: {fileID: 400014, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
       propertyPath: m_LocalPosition.x
@@ -321,6 +329,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400014, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
+      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
