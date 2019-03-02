@@ -2013,10 +2013,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cdba1d4eefb7694aabeedc9c0aa9a24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangedDistance: 20
+  rangedDistance: 18
   rangedWeapon: {fileID: 4383480593671820873}
   meteorShower: {fileID: 165786, guid: d7b50f004cdc74b409188d8b822292fc, type: 3}
-  timeToMeteorShower: 10
+  timeToMeteorShower: 15
   meleeDistance: 5
   meleeWeapon: {fileID: 5543977890848250396}
   delayBetweenDamageRecoils: 2

@@ -9,9 +9,12 @@ public class RoomScript : MonoBehaviour
     public List<GameObject> doors = new List<GameObject>();
     [SerializeField] private AudioSource audioTheme;
 
+    private CameraController cameraController;
+    private float desiredCameraHeight;
+
     private HashSet<GameObject> spawnedEnemies;
     private SpawnScript spawner;
-    private int numEnemies = 0;
+    private int numEnemies;
 
 
     /* Sets up the room by spawning enemies and subscribing to all their death events.
@@ -23,10 +26,8 @@ public class RoomScript : MonoBehaviour
         numEnemies = spawnedEnemies.Count;
         SubscribeToEnemyDeath();
 
-        if(audioTheme != null && audioTheme.clip != null)
-        {
-            audioTheme.Play();
-        }
+        cameraController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
+        desiredCameraHeight = 19.7f;
     }
 
 
@@ -133,11 +134,19 @@ public class RoomScript : MonoBehaviour
         // When the player enters this room
         if (c.gameObject.tag == "Player")
         {
+            // Move the camera to the new room
+            cameraController.MoveTo(transform.position + new Vector3(0, desiredCameraHeight, 0));
+
             // If there are enemies remaining, lock all doors and have enemies follow player
             if (numEnemies != 0)
             {
                 LockAllDoors();
                 DispatchEnemiesToFollowPlayer();
+
+                if (audioTheme != null && audioTheme.clip != null)
+                {
+                    audioTheme.Play();
+                }
             }
             // If player entered an empty room, keep doors unlocked
             else
