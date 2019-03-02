@@ -150,7 +150,7 @@ public class RoomScript : MonoBehaviour
                 LockAllDoors();
                 DispatchEnemiesToFollowPlayer();
 
-                if (audioTheme != null && audioTheme.clip != null)
+                if (audioTheme != null && audioTheme.clip != null && !audioTheme.isPlaying)
                 {
                     audioTheme.Play();
                 }
