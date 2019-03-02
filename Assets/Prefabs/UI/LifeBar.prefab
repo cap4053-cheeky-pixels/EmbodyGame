@@ -106,6 +106,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8b18e0e5e8c369b4fb3c806f873d19fa, type: 3}
   - {fileID: 21300002, guid: 8b18e0e5e8c369b4fb3c806f873d19fa, type: 3}
   - {fileID: 21300004, guid: 8b18e0e5e8c369b4fb3c806f873d19fa, type: 3}
+  delayBetweenCriticalHealthFlashes: 0.3
 --- !u!1 &901317563624363125
 GameObject:
   m_ObjectHideFlags: 0
