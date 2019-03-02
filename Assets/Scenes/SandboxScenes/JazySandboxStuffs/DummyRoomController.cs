@@ -20,6 +20,7 @@ public class DummyRoomController : MonoBehaviour
 
     void OnTriggerEnter(Collider c)
     {
+        if (cc == null) return;
         Debug.Log("Apples");
         if (c.tag == "Player")
         {
