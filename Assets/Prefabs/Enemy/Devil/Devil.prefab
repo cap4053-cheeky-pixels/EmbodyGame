@@ -1968,6 +1968,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phaseTwoAttack: {fileID: 165786, guid: d7b50f004cdc74b409188d8b822292fc, type: 3}
+  phaseTwoProps: {fileID: 197921236134390015, guid: 7ac4b5425eaebbe45833217016869d39,
+    type: 3}
   timeToPhaseTwoAttack: 10
 --- !u!65 &5999082961572605887
 BoxCollider:

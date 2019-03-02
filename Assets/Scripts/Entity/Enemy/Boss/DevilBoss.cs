@@ -128,6 +128,11 @@ public class DevilBoss : MonoBehaviour
             animator.SetTrigger("BecomeStunned");
             phaseTwoAudio.Play();
             phaseTwo.enabled = true;
+
+            if(phaseTwo.phaseTwoProps != null)
+            {
+                Instantiate(phaseTwo.phaseTwoProps, gameObject.transform.parent);
+            }
         }
     }
 

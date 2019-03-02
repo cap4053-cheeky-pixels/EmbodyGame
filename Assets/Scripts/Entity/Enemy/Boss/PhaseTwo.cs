@@ -7,6 +7,9 @@ public class PhaseTwo : MonoBehaviour
     // Phase two attack prefab
     [SerializeField] private GameObject phaseTwoAttack;
 
+    // How the environment should change in phase two
+    public GameObject phaseTwoProps;
+
     // Timer used to actually spawn the phase two attack
     private float phaseTwoAttackTimer;
 
