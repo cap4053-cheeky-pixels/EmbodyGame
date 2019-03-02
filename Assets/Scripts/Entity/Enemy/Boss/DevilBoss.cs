@@ -42,10 +42,7 @@ public class DevilBoss : MonoBehaviour
     // The animator for this boss
     private Animator animator;
     private bool inPhaseTwo;
-
-    // Used to control the delay between damage recoil animations
-    [SerializeField] private float delayBetweenDamageRecoils;
-    private float damageRecoilTimer;
+    [SerializeField] AudioSource phaseTwoAudio;
     
 
     /* Initialize all members.
@@ -56,6 +53,7 @@ public class DevilBoss : MonoBehaviour
         agent = gameObject.GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
         animator = self.model.GetComponent<Animator>();
+
         inPhaseTwo = false;
 
         // When moving towards the player, the boss will always stop within its ranged attack radius
@@ -69,9 +67,6 @@ public class DevilBoss : MonoBehaviour
 
         // And finally, boss subscribes to the player's death (for victory animation)
         player.GetComponent<Player>().deathEvent += OnPlayerDied;
-
-        // Set the damage recoil timer to the delay initially
-        damageRecoilTimer = delayBetweenDamageRecoils;
         
         // Set the melee attack timer to the delay initially
         meleeAttackTimer = meleeWeapon.timeBetweenAttacks;
@@ -91,7 +86,6 @@ public class DevilBoss : MonoBehaviour
      */ 
     private void Update()
     {
-        damageRecoilTimer += Time.deltaTime;
         meleeAttackTimer += Time.deltaTime;
         rangedAttackTimer += Time.deltaTime;
 
@@ -103,10 +97,10 @@ public class DevilBoss : MonoBehaviour
         {
             meteorShowerTimer += Time.deltaTime;
 
-            // Bonus meteor attack
+            // Meteor attack
             if (meteorShowerTimer > timeToMeteorShower)
             {
-                Instantiate(meteorShower, gameObject.transform.parent);
+                Instantiate(meteorShower, gameObject.transform);
                 meteorShowerTimer = 0.0f;
             }
         }
@@ -148,18 +142,12 @@ public class DevilBoss : MonoBehaviour
      */
     private void OnBossHealthChanged()
     {
-        // Play the RecoilFromDamage animation every delayBetweenDamageRecoils seconds
-        if(damageRecoilTimer > delayBetweenDamageRecoils)
-        {
-            animator.SetTrigger("RecoilFromDamage");
-            damageRecoilTimer = 0.0f;
-        }       
-
         // Initiate phase 2
         if(self.Health < self.MaxHealth / 2 && !inPhaseTwo)
         {
             animator.SetTrigger("BecomeStunned");
             inPhaseTwo = true;
+            phaseTwoAudio.Play();
         }
     }
 

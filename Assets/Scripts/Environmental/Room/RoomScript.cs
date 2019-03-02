@@ -57,9 +57,16 @@ public class RoomScript : MonoBehaviour
         spawnedEnemies.Remove(enemy);
         numEnemies--;
 
+        // When all enemies in the room have been slain
         if (numEnemies == 0)
         {
             UnlockAllDoors();
+
+            // Stop the theme music for the current room, if there is one
+            if(audioTheme != null && audioTheme.clip != null)
+            {
+                audioTheme.Stop();
+            }
         }
     }
 
