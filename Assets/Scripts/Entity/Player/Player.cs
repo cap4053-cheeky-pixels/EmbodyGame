@@ -71,23 +71,6 @@ public class Player : Entity
         // Don't bother doing anything if we can't take damage anyway
         if (invincible) return;
 
-        // Detecting projectiles
-        if (other.gameObject.CompareTag("EnemyProjectile"))
-        {
-            Projectile projectile = other.gameObject.GetComponent<Projectile>();
-            ChangeHealthBy(projectile.damage);
-            Destroy(other.gameObject);
-        }
-    }
-
-
-    /* Called every frame for which a collision persists.
-     */ 
-    private void OnCollisionStay(Collision other)
-    {
-        // Don't bother doing anything if we can't take damage anyway
-        if (invincible) return;
-
         // Collision with enemies and traps will deal a constant half a heart of damage
         if (other.gameObject.CompareTag("Enemy") || 
             other.gameObject.CompareTag("Boss") ||
