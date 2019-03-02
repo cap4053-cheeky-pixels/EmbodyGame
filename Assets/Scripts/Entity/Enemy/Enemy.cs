@@ -31,14 +31,6 @@ public class Enemy : Entity
     }
     
     
-    /* Called when an enemy has died. Spawns a heart with random probability.
-     */
-    void DropHeart()
-    {
-        
-    }
-    
-    
     /* Changes this Enemy's max health by the given amount.
      */
     public override void ChangeMaxHealthBy(int amount)
