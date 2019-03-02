@@ -78,12 +78,6 @@ public class Player : Entity
             ChangeHealthBy(projectile.damage);
             Destroy(other.gameObject);
         }
-        else if (other.gameObject.CompareTag("Heart"))
-        {
-            Heart heart = other.gameObject.GetComponent<Heart>();
-            ChangeHealthBy(heart.health);
-            Destroy(other.gameObject);
-        }
     }
 
 
