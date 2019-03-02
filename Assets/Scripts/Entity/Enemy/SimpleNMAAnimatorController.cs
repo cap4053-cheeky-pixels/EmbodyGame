@@ -9,7 +9,7 @@ using UnityEngine.AI;
  */
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(Enemy))]
-public class SimpleAnimatorController : MonoBehaviour
+public class SimpleNMAAnimatorController : MonoBehaviour
 {
     Animator ani;
     NavMeshAgent nma;
