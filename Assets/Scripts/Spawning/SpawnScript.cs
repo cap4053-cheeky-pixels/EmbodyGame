@@ -27,6 +27,7 @@ public class SpawnScript : MonoBehaviour
                 script.MaxHealth = spawnPoint.maxHealth;
                 script.Health = spawnPoint.maxHealth;
                 script.gameObject.GetComponent<NavMeshAgent>().speed = spawnPoint.speed;
+                script.gameObject.transform.localScale *= spawnPoint.scale;
                 // TODO uncomment once implemented script.attemptFirerate = spawnPoint.fireRate;
 
                 spawned.Add(spawnedEnemy);

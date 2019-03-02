@@ -45,7 +45,8 @@ public class ShootController : MonoBehaviour, IWeaponController
     public void FireWeaponTowards(Vector3 direction)
     {
         // Turn the GameObject
-        transform.forward = direction;
+        if (direction.magnitude > 0)
+            transform.forward = direction;
         FireWeapon();
     }
 

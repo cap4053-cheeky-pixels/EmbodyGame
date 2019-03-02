@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(AudioSource))]
 public class RoomScript : MonoBehaviour
 {
-    public List<GameObject> doors = new List<GameObject>();      // all doors this room is responsible for opening/closing
+    public List<GameObject> doors = new List<GameObject>();
+    [SerializeField] private AudioSource audioTheme;
+
     private HashSet<GameObject> spawnedEnemies;
     private SpawnScript spawner;
-    private WaitForSeconds wait;
     private int numEnemies = 0;
 
 
@@ -19,6 +22,11 @@ public class RoomScript : MonoBehaviour
         spawnedEnemies = spawner.SpawnEnemies();
         numEnemies = spawnedEnemies.Count;
         SubscribeToEnemyDeath();
+
+        if(audioTheme != null && audioTheme.clip != null)
+        {
+            audioTheme.Play();
+        }
     }
 
 
@@ -59,12 +67,15 @@ public class RoomScript : MonoBehaviour
      */
     void UnlockAllDoors()
     {
-        if(doors != null)
+        if(doors.Count != 0)
         {
             foreach (GameObject door in doors)
             {
-                DoorController doorController = door.GetComponent<DoorController>(); // TODO re-enable once implemented
-                doorController.Open();
+                if(door != null)
+                {
+                    DoorController doorController = door.GetComponent<DoorController>();
+                    doorController.Open();
+                }
             }
         }
         else
@@ -78,12 +89,15 @@ public class RoomScript : MonoBehaviour
      */
     void LockAllDoors()
     {
-        if(doors != null)
+        if(doors.Count != 0)
         {
             foreach (GameObject door in doors)
             {
-                DoorController doorController = door.GetComponent<DoorController>(); // TODO re-enable once implemented
-                doorController.Close();
+                if(door != null)
+                {
+                    DoorController doorController = door.GetComponent<DoorController>();
+                    doorController.Close();
+                }                
             }
         }
         else

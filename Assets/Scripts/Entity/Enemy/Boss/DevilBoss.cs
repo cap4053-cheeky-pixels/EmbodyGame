@@ -14,21 +14,37 @@ public class DevilBoss : MonoBehaviour
     // Reference to the Enemy script attached to the boss
     private Enemy self;
 
-    // A reference to the player
+    // A reference to the player game object
     private GameObject player;
 
     // The distance within which the boss can initiate ranged attacks
     public float rangedDistance;
+    // The ranged weapon the devil uses to fire projectiles
+    [SerializeField] private ProjectileWeapon rangedWeapon;
+    // Used to delay ranged attacks
+    private float rangedAttackTimer;
+    
+    // Meteor shower prefab
+    [SerializeField] private GameObject meteorShower;
+    // Timer used to actually spawn meteor shower
+    private float meteorShowerTimer;
+    // Regulates the intervals at which they spawn
+    public float timeToMeteorShower;
+
 
     // The distance within which the boss can initiate melee attacks
     public float meleeDistance;
+    // The pitchfork the devil uses for attacking
+    [SerializeField] private MeleeWeapon meleeWeapon;
+    // Used to delay melee attacks
+    private float meleeAttackTimer;
 
     // The animator for this boss
     private Animator animator;
+    private bool inPhaseTwo;
 
     // Used to control the delay between damage recoil animations
-    [SerializeField]
-    private float delayBetweenDamageRecoils;
+    [SerializeField] private float delayBetweenDamageRecoils;
     private float damageRecoilTimer;
     
 
@@ -40,9 +56,10 @@ public class DevilBoss : MonoBehaviour
         agent = gameObject.GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
         animator = self.model.GetComponent<Animator>();
+        inPhaseTwo = false;
 
         // When moving towards the player, the boss will always stop within its ranged attack radius
-        agent.stoppingDistance = rangedDistance - 1; // TODO magic number, I know...
+        agent.stoppingDistance = rangedDistance - 1; 
 
         // Boss subscribes to its own health change events
         self.healthChangedEvent += OnBossHealthChanged;
@@ -53,8 +70,20 @@ public class DevilBoss : MonoBehaviour
         // And finally, boss subscribes to the player's death (for victory animation)
         player.GetComponent<Player>().deathEvent += OnPlayerDied;
 
-        // Set the damage recoil timer to the delay for starters
+        // Set the damage recoil timer to the delay initially
         damageRecoilTimer = delayBetweenDamageRecoils;
+        
+        // Set the melee attack timer to the delay initially
+        meleeAttackTimer = meleeWeapon.timeBetweenAttacks;
+        
+        // Set the ranged attack timer to the delay initially
+        rangedAttackTimer = rangedWeapon.timeBetweenAttacks;
+
+        // Set this to zero, no meteor showers just yet
+        meteorShowerTimer = 0.0f;
+
+        // Disable the script until the boss is awoken
+        // TODO uncomment this.enabled = false;
     }
 
 
@@ -63,26 +92,39 @@ public class DevilBoss : MonoBehaviour
     private void Update()
     {
         damageRecoilTimer += Time.deltaTime;
+        meleeAttackTimer += Time.deltaTime;
+        rangedAttackTimer += Time.deltaTime;
+
+        RotateToFacePlayer();
+        SelectBehavior();
+
+        // Meteor strikes
+        if(inPhaseTwo)
+        {
+            meteorShowerTimer += Time.deltaTime;
+
+            // Bonus meteor attack
+            if (meteorShowerTimer > timeToMeteorShower)
+            {
+                Instantiate(meteorShower, gameObject.transform.parent);
+                meteorShowerTimer = 0.0f;
+            }
+        }
     }
-
-
-    /* Returns a reference to this boss's NavMeshAgent.
-     */
-    public NavMeshAgent GetAgent() { return agent; }
-
-
-    /* Returns a reference to the player this boss is fighting.
-     */ 
-    public GameObject GetPlayer() { return player; }
 
 
     /* Called when this boss dies. Plays the boss's death animation.
      */ 
     private void OnBossDied(GameObject boss)
     {
-        // TODO after music has been added, stop it here
-        // TODO maybe add victory audio... or perhaps that goes in RoomScript.cs
+        animator.ResetTrigger("Fly");
+        animator.ResetTrigger("AttackMelee");
+        animator.ResetTrigger("AttackRanged");
         animator.SetTrigger("DeathPose");
+
+        // Prevent this script and the navmesh agent from doing anything else
+        this.enabled = false;
+        agent.isStopped = true;
     }
 
 
@@ -90,7 +132,13 @@ public class DevilBoss : MonoBehaviour
      */ 
     private void OnPlayerDied()
     {
+        animator.ResetTrigger("Fly");
+        animator.ResetTrigger("AttackMelee");
+        animator.ResetTrigger("AttackRanged");
         animator.SetTrigger("VictoryPose");
+
+        // Prevent this script from doing anything else
+        this.enabled = false;
     }
 
 
@@ -107,12 +155,59 @@ public class DevilBoss : MonoBehaviour
             damageRecoilTimer = 0.0f;
         }       
 
-        // If half health remaining, play stunned animation
-        // TODO but this will play only if it's exactly half... what if overshoots?
-        if(self.Health == self.MaxHealth / 2)
+        // Initiate phase 2
+        if(self.Health < self.MaxHealth / 2 && !inPhaseTwo)
         {
-
+            animator.SetTrigger("BecomeStunned");
+            inPhaseTwo = true;
         }
+    }
+
+
+    /* Selects one of three behaviors to perform, depending on the boss's distance
+     * from the player. If the boss is within ranged attack range, then it will
+     * proceed to attack with projectiles. If the boss is within melee range, it will
+     * poke the player with its pitchfork. Otherwise, it will fly towards the player
+     * until it is within ranged attack range.
+     */ 
+    public void SelectBehavior()
+    {
+        float distanceToPlayer = (player.transform.position - gameObject.transform.position).magnitude;
+
+        // Flight
+        if(distanceToPlayer > agent.stoppingDistance)
+        {
+            animator.ResetTrigger("AttackMelee");
+            animator.ResetTrigger("AttackRanged");
+            animator.SetTrigger("Fly");
+        }
+        // Ranged
+        else if(distanceToPlayer > meleeDistance &&
+                rangedAttackTimer > rangedWeapon.timeBetweenAttacks)
+        {
+            animator.ResetTrigger("Fly");
+            animator.ResetTrigger("AttackMelee");
+            animator.SetTrigger("AttackRanged");
+            rangedAttackTimer = 0.0f;
+        }
+        // Melee
+        else if (distanceToPlayer <= meleeDistance &&
+                 meleeAttackTimer > meleeWeapon.timeBetweenAttacks)
+        {
+            animator.ResetTrigger("Fly");
+            animator.ResetTrigger("AttackRanged");
+            animator.SetTrigger("AttackMelee");
+            meleeAttackTimer = 0.0f;
+        }
+    }
+
+
+    /* It's in the name.
+     */ 
+    private void RotateToFacePlayer()
+    {
+        Quaternion newRotation = Quaternion.LookRotation(player.transform.position - gameObject.transform.position);
+        gameObject.transform.rotation = Quaternion.RotateTowards(gameObject.transform.rotation, newRotation, 5);
     }
 
 
@@ -130,13 +225,9 @@ public class DevilBoss : MonoBehaviour
             {
                 if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
                 {
-                    // TODO a little buggy because it sometimes immediately goes to idle...
-                    animator.SetTrigger("StopFlying");
+                    animator.SetTrigger("Idle");
                 }
             }
         }
     }
-
-
-
 }

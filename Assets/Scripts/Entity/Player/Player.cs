@@ -45,6 +45,8 @@ public class Player : Entity
      */ 
     public override void ChangeHealthBy(int amount)
     {
+        if (invincible) return;
+
         Health += amount;
         healthChangedEvent?.Invoke();
 
@@ -58,9 +60,9 @@ public class Player : Entity
         if (Health <= 0)
         {
             deathEvent?.Invoke();
-            // SceneManager.LoadScene(0) // TODO make scene 0 be game over, uncomment this when done
         }
     }
+
 
     /* Called when this Player encounters another object.
      */
@@ -93,7 +95,9 @@ public class Player : Entity
         if (invincible) return;
 
         // Collision with enemies and traps will deal a constant half a heart of damage
-        if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Trap"))
+        if (other.gameObject.CompareTag("Enemy") || 
+            other.gameObject.CompareTag("Boss") ||
+            other.gameObject.CompareTag("Trap"))
         {
             ChangeHealthBy(-1);
         }
@@ -104,7 +108,7 @@ public class Player : Entity
      */
     private IEnumerator BecomeTemporarilyInvincible()
     {
-        Debug.Log("Player turned invincible!");
+        //Debug.Log("Player turned invincible!");
         invincible = true;
 
         // Flash on and off for roughly invincibilityDurationSeconds seconds
@@ -118,7 +122,7 @@ public class Player : Entity
             yield return new WaitForSeconds(delayBetweenInvincibilityFlashes);
         }
 
-        Debug.Log("Player no longer invincible!");
+        //Debug.Log("Player no longer invincible!");
         model.transform.localScale = Vector3.one;
         invincible = false;
     }

@@ -10,6 +10,10 @@ TagManager:
   - PlayerProjectile
   - EnemyProjectile
   - Trap
+  - Wall
+  - EnemyMeleeWeapon
+  - Boss
+  - Fire
   - Heart
   layers:
   - Default
@@ -22,7 +26,7 @@ TagManager:
   - 
   - PostProcessing
   - Enemy
-  - 
+  - FireLayer
   - 
   - 
   - 
