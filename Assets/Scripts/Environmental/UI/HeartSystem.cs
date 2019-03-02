@@ -23,9 +23,15 @@ public class HeartSystem : MonoBehaviour
     // All heart sprites (in our case, three: empty, half, full)
     public Sprite[] heartSprites;
 
+    // Used for critical health
+    private bool playerAtCriticalHealth;
+
+    // The delay in seconds between each flash of a critical heart
+    public float delayBetweenCriticalHealthFlashes;
+
 
     /* Called before the game starts. Sets up all necessary fields.
-     */ 
+     */
     void Awake()
     {
         healthPerHeart = heartSprites.Length - 1;
@@ -48,18 +54,54 @@ public class HeartSystem : MonoBehaviour
      * maximum number of heart containers that are to be displayed on screen, and also
      * updates the sprites for all of those containers according to the player's health.
      */ 
-    void OnPlayerHealthChanged()
+    private void OnPlayerHealthChanged()
     {
         maxPlayerHeartContainers = (player.MaxHealth + 1) / healthPerHeart;
         SetVisibleHeartContainers();
         FillHearts();
+
+        // Critical health
+        if (player.Health <= 2 && player.Health != 0 && player.Health < player.MaxHealth)
+        {
+            playerAtCriticalHealth = true;
+            StartCoroutine(BlinkCriticalHealth());
+        }
+        else
+        {
+            playerAtCriticalHealth = false;
+        }
+    }
+
+
+    /* Repeatedly flashes the lowermost heart container when the player is low on health.
+     */ 
+    private IEnumerator BlinkCriticalHealth()
+    {
+        Image firstHeart = heartImages[0];
+        Vector3 defaultHeartScale = heartImages[0].transform.localScale;
+
+        while (playerAtCriticalHealth)
+        {
+            if (firstHeart.transform.localScale == defaultHeartScale)
+            {
+                firstHeart.transform.localScale = Vector3.zero;
+            }
+            else
+            {
+                firstHeart.transform.localScale = defaultHeartScale;
+            }
+
+            yield return new WaitForSeconds(delayBetweenCriticalHealthFlashes);
+        }
+
+        firstHeart.transform.localScale = defaultHeartScale;
     }
 
 
     /* Loops through all heart containers the game supports and enables/disables them according
      * to the player's current max heart containers.
      */
-    void SetVisibleHeartContainers()
+    private void SetVisibleHeartContainers()
     {
         // Loop through all hearts
         for (int i = 0; i < maxAttainableHearts; i++)
@@ -81,7 +123,7 @@ public class HeartSystem : MonoBehaviour
     /* Fills all available empty heart containers with the appropriate sprites, according to the
      * player's current health.
      */ 
-    void FillHearts()
+    private void FillHearts()
     {
         // In other words, index of the last visible heart container that's either half or full
         // e.g., if Health = 6 (3 hearts) and MaxHealth is 8 (4 hearts), last non-empty heart is at index = 7 / 2 - 1 = 2

@@ -48,6 +48,7 @@ public class Player : Entity
         if (invincible) return;
 
         Health += amount;
+        if (Health < 0) Health = 0;
         healthChangedEvent?.Invoke();
 
         // Start the invincibility coroutine if we take damage

@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 [RequireComponent(typeof(Enemy))]
 [RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(PhaseTwo))]
 public class DevilBoss : MonoBehaviour
 {
     // The NavMeshAgent this boss will use to navigate the room
@@ -23,14 +24,6 @@ public class DevilBoss : MonoBehaviour
     [SerializeField] private ProjectileWeapon rangedWeapon;
     // Used to delay ranged attacks
     private float rangedAttackTimer;
-    
-    // Meteor shower prefab
-    [SerializeField] private GameObject meteorShower;
-    // Timer used to actually spawn meteor shower
-    private float meteorShowerTimer;
-    // Regulates the intervals at which they spawn
-    public float timeToMeteorShower;
-
 
     // The distance within which the boss can initiate melee attacks
     public float meleeDistance;
@@ -41,22 +34,23 @@ public class DevilBoss : MonoBehaviour
 
     // The animator for this boss
     private Animator animator;
-    private bool inPhaseTwo;
 
-    // Used to control the delay between damage recoil animations
-    [SerializeField] private float delayBetweenDamageRecoils;
-    private float damageRecoilTimer;
-    
+    // Phase two stuff
+    private bool inPhaseTwo;
+    [SerializeField] AudioSource phaseTwoAudio;
+    private PhaseTwo phaseTwo;
+
 
     /* Initialize all members.
      */ 
     private void Awake()
     {
+        // All standard components
         self = gameObject.GetComponent<Enemy>();
         agent = gameObject.GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
         animator = self.model.GetComponent<Animator>();
-        inPhaseTwo = false;
+        phaseTwo = gameObject.GetComponent<PhaseTwo>();
 
         // When moving towards the player, the boss will always stop within its ranged attack radius
         agent.stoppingDistance = rangedDistance - 1; 
@@ -69,18 +63,12 @@ public class DevilBoss : MonoBehaviour
 
         // And finally, boss subscribes to the player's death (for victory animation)
         player.GetComponent<Player>().deathEvent += OnPlayerDied;
-
-        // Set the damage recoil timer to the delay initially
-        damageRecoilTimer = delayBetweenDamageRecoils;
         
         // Set the melee attack timer to the delay initially
         meleeAttackTimer = meleeWeapon.timeBetweenAttacks;
         
         // Set the ranged attack timer to the delay initially
         rangedAttackTimer = rangedWeapon.timeBetweenAttacks;
-
-        // Set this to zero, no meteor showers just yet
-        meteorShowerTimer = 0.0f;
 
         // Disable the script until the boss is awoken
         // TODO uncomment this.enabled = false;
@@ -91,25 +79,11 @@ public class DevilBoss : MonoBehaviour
      */ 
     private void Update()
     {
-        damageRecoilTimer += Time.deltaTime;
         meleeAttackTimer += Time.deltaTime;
         rangedAttackTimer += Time.deltaTime;
 
         RotateToFacePlayer();
         SelectBehavior();
-
-        // Meteor strikes
-        if(inPhaseTwo)
-        {
-            meteorShowerTimer += Time.deltaTime;
-
-            // Bonus meteor attack
-            if (meteorShowerTimer > timeToMeteorShower)
-            {
-                Instantiate(meteorShower, gameObject.transform.parent);
-                meteorShowerTimer = 0.0f;
-            }
-        }
     }
 
 
@@ -148,18 +122,17 @@ public class DevilBoss : MonoBehaviour
      */
     private void OnBossHealthChanged()
     {
-        // Play the RecoilFromDamage animation every delayBetweenDamageRecoils seconds
-        if(damageRecoilTimer > delayBetweenDamageRecoils)
-        {
-            animator.SetTrigger("RecoilFromDamage");
-            damageRecoilTimer = 0.0f;
-        }       
-
         // Initiate phase 2
-        if(self.Health < self.MaxHealth / 2 && !inPhaseTwo)
+        if(self.Health < self.MaxHealth / 2 && !phaseTwo.enabled)
         {
             animator.SetTrigger("BecomeStunned");
-            inPhaseTwo = true;
+            phaseTwoAudio.Play();
+            phaseTwo.enabled = true;
+
+            if(phaseTwo.phaseTwoProps != null)
+            {
+                Instantiate(phaseTwo.phaseTwoProps, gameObject.transform.parent);
+            }
         }
     }
 

@@ -54,8 +54,9 @@ public class Enemy : Entity
         if (isDead) return;
 
         Health += amount;
-        
-        if(Health <= 0)
+        if (Health < 0) Health = 0;
+
+        if(Health == 0)
         {
             OnEnemyDied();
         }

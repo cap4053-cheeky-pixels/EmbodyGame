@@ -1891,12 +1891,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3623955585191402957}
+  - component: {fileID: 2168712736380528939}
+  - component: {fileID: 1341685312921882385}
+  - component: {fileID: 848345790902503960}
   - component: {fileID: 5999082961572605887}
   - component: {fileID: 7997384126198602589}
   - component: {fileID: 47550044525783650}
   - component: {fileID: 4189417250660119705}
-  - component: {fileID: 2168712736380528939}
-  - component: {fileID: 1341685312921882385}
+  - component: {fileID: 5794415566753781701}
   m_Layer: 0
   m_Name: Devil
   m_TagString: Boss
@@ -1920,6 +1922,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2168712736380528939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3623955585191402956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be9dc56fee26c4742ba88aff04595f2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 100
+  MaxHealth: 100
+  model: {fileID: 3623955584563446959}
+  isPossessable: 0
+--- !u!114 &1341685312921882385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3623955585191402956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cdba1d4eefb7694aabeedc9c0aa9a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangedDistance: 18
+  rangedWeapon: {fileID: 4383480593671820873}
+  meleeDistance: 5
+  meleeWeapon: {fileID: 5543977890848250396}
+  phaseTwoAudio: {fileID: 5794415566753781701}
+--- !u!114 &848345790902503960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3623955585191402956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9cb1034b6ac0e447960aad754076364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phaseTwoAttack: {fileID: 165786, guid: d7b50f004cdc74b409188d8b822292fc, type: 3}
+  phaseTwoProps: {fileID: 197921236134390015, guid: 7ac4b5425eaebbe45833217016869d39,
+    type: 3}
+  timeToPhaseTwoAttack: 10
 --- !u!65 &5999082961572605887
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1985,41 +2036,102 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb8aa12fcf71d814db18800597748370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2168712736380528939
-MonoBehaviour:
+--- !u!82 &5794415566753781701
+AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3623955585191402956}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be9dc56fee26c4742ba88aff04595f2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: 6
-  MaxHealth: 6
-  model: {fileID: 3623955584563446959}
-  isPossessable: 0
---- !u!114 &1341685312921882385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3623955585191402956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cdba1d4eefb7694aabeedc9c0aa9a24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rangedDistance: 20
-  rangedWeapon: {fileID: 4383480593671820873}
-  meteorShower: {fileID: 165786, guid: d7b50f004cdc74b409188d8b822292fc, type: 3}
-  timeToMeteorShower: 10
-  meleeDistance: 5
-  meleeWeapon: {fileID: 5543977890848250396}
-  delayBetweenDamageRecoils: 2
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4cb3442c855c99e46be606673e2d3d36, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3623955585192508341
 GameObject:
   m_ObjectHideFlags: 0
