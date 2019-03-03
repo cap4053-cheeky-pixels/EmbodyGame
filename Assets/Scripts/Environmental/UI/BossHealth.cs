@@ -19,7 +19,7 @@ public class BossHealth : MonoBehaviour
      */ 
     private void Awake()
     {
-        DevilBoss.bossBattleStarted += AssociateWithLevelBoss;
+        Boss.bossBattleStarted += AssociateWithLevelBoss;
         defaultScale = gameObject.transform.localScale;
 
         Hide();

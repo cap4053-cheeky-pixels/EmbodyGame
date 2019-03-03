@@ -4,20 +4,9 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-[RequireComponent(typeof(Enemy))]
-[RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(PhaseTwo))]
-public class DevilBoss : MonoBehaviour
+public class DevilBoss : Boss
 {
-    // The NavMeshAgent this boss will use to navigate the room
-    private NavMeshAgent agent;
-
-    // Reference to the Enemy script attached to the boss
-    private Enemy self;
-
-    // A reference to the player game object
-    private GameObject player;
-
     // The distance within which the boss can initiate ranged attacks
     public float rangedDistance;
     // The ranged weapon the devil uses to fire projectiles
@@ -32,30 +21,18 @@ public class DevilBoss : MonoBehaviour
     // Used to delay melee attacks
     private float meleeAttackTimer;
 
-    // The animator for this boss
-    private Animator animator;
-
     // Phase two stuff
     private bool inPhaseTwo;
     [SerializeField] AudioSource phaseTwoAudio;
     private PhaseTwo phaseTwo;
 
-    // Used to display the boss's health in game
-    public delegate void BossBattleStarted();
-    public static event BossBattleStarted bossBattleStarted;
-
 
     /* Initialize all members.
      */
-    private void Awake()
+    protected override void Awake()
     {
-        bossBattleStarted?.Invoke();
-
-        // All standard components
-        self = gameObject.GetComponent<Enemy>();
-        agent = gameObject.GetComponent<NavMeshAgent>();
-        player = GameObject.FindGameObjectWithTag("Player");
-        animator = self.model.GetComponent<Animator>();
+        // Standard Boss setup and specialized DevilBoss setup
+        base.Awake();
         phaseTwo = gameObject.GetComponent<PhaseTwo>();
 
         // When moving towards the player, the boss will always stop within its ranged attack radius
@@ -75,6 +52,9 @@ public class DevilBoss : MonoBehaviour
         
         // Set the ranged attack timer to the delay initially
         rangedAttackTimer = rangedWeapon.timeBetweenAttacks;
+
+        // Let the games begin
+        SignalStartOfBossBattle();
     }
 
 
