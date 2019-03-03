@@ -16,6 +16,11 @@ public class Heart : MonoBehaviour
                 player.ChangeHealthBy(Health);
                 Destroy(transform.gameObject);
             }
+            else if (player.Health != player.MaxHealth)
+            {
+                player.Health = player.MaxHealth;
+                Destroy(transform.gameObject);
+            }
         }
     }
 }
