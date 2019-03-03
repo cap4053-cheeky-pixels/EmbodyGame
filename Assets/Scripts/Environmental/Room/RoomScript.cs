@@ -8,6 +8,7 @@ public class RoomScript : MonoBehaviour
 {
     public List<GameObject> doors = new List<GameObject>();
     [SerializeField] private AudioSource audioTheme;
+    [SerializeField] private AudioSource doorAudio;
 
     private CameraController cameraController;
     private float desiredCameraHeight;
@@ -60,9 +61,9 @@ public class RoomScript : MonoBehaviour
         // When all enemies in the room have been slain
         if (numEnemies == 0)
         {
+            doorAudio.Play();
             OpenAllDoors();
-            StopThemeMusic();
-            
+            StopThemeMusic();            
         }
     }
 
@@ -154,6 +155,7 @@ public class RoomScript : MonoBehaviour
                 // And there are enemies to spawn
                 if(spawner.Size() > 0)
                 {
+                    doorAudio.Play();
                     CloseAllDoors();
 
                     spawnedEnemies = spawner.SpawnEnemies();
@@ -166,6 +168,15 @@ public class RoomScript : MonoBehaviour
                 else
                 {
                     OpenAllDoors();
+
+                    // That is, if there are other doors in the room
+                    // besides the one the player just went through
+                    // Otherwise, don't just play the audio for the open
+                    // door you went in through... Lol
+                    if(doors.Count > 1)
+                    {
+                        doorAudio.Play();
+                    }
                 }
 
                 playerWasHereBefore = true;
