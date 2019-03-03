@@ -74,11 +74,12 @@ public class Enemy : Entity
 
     private void OnEnemyDied()
     {
-        // TODO add logic for heart drops
         isDead = true;
         isPossessable = true;
+
         // Signal the death of this enemy
         deathEvent?.Invoke(gameObject);
+        
         // Call the death method on any appropriate controllers
         foreach (IOnDeathController odc in GetComponents<IOnDeathController>())
         {

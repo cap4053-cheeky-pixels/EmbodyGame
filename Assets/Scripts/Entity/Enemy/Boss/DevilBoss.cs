@@ -40,11 +40,17 @@ public class DevilBoss : MonoBehaviour
     [SerializeField] AudioSource phaseTwoAudio;
     private PhaseTwo phaseTwo;
 
+    // Used to display the boss's health in game
+    public delegate void BossBattleStarted();
+    public static event BossBattleStarted bossBattleStarted;
+
 
     /* Initialize all members.
-     */ 
+     */
     private void Awake()
     {
+        bossBattleStarted?.Invoke();
+
         // All standard components
         self = gameObject.GetComponent<Enemy>();
         agent = gameObject.GetComponent<NavMeshAgent>();
@@ -69,9 +75,6 @@ public class DevilBoss : MonoBehaviour
         
         // Set the ranged attack timer to the delay initially
         rangedAttackTimer = rangedWeapon.timeBetweenAttacks;
-
-        // Disable the script until the boss is awoken
-        // TODO uncomment this.enabled = false;
     }
 
 
