@@ -51,11 +51,13 @@ public class BossHealth : MonoBehaviour
         if (theBoss != null)
         {
             boss = theBoss.GetComponent<Enemy>();
+            boss.healthChangedEvent += OnBossHealthChanged;
+            boss.deathEvent += OnBossDied;
+
             slider = gameObject.GetComponent<Slider>();
             slider.maxValue = boss.MaxHealth;
             slider.minValue = 0;
             slider.value = slider.maxValue;
-            boss.healthChangedEvent += OnBossHealthChanged;
 
             Show();
         }
@@ -67,14 +69,15 @@ public class BossHealth : MonoBehaviour
     private void OnBossHealthChanged()
     {
         slider.value = boss.Health;
+    }
 
-        // Unsubscribe to health changes for that boss if it died
-        if(boss.Health == 0)
-        {
-            boss.healthChangedEvent -= OnBossHealthChanged;
-            boss = null;
 
-            Hide();
-        }
+    /* Called when the boss dies.
+     */ 
+    private void OnBossDied(GameObject theBoss)
+    {
+        boss.healthChangedEvent -= OnBossHealthChanged;
+        boss = null;
+        Hide();
     }
 }
