@@ -190,6 +190,11 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1754847794275997100, guid: 80b0dfc6e68170945889c04fec75dc50,
+        type: 3}
+      propertyPath: healthDropProbability
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80b0dfc6e68170945889c04fec75dc50, type: 3}
 --- !u!1001 &887936159
@@ -445,31 +450,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1063006211}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1784576151 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2969138910325395412, guid: 80b0dfc6e68170945889c04fec75dc50,
-    type: 3}
-  m_PrefabInstance: {fileID: 445249728}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1784576159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1784576151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de7b283cff05ce34f944d10e06d8a98e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heartPrefabs:
-  - {fileID: 3676220467416633035, guid: c0e19f4f0d1f2ea458756409aa801246, type: 3}
-  - {fileID: 6058534631205044202, guid: cfdc812ad6d2939458ab1a2e2b5e3f34, type: 3}
-  healthDropProbability: 1
-  xzRange: 600
-  yForce: 800
-  spawnHeight: 2.5
 --- !u!1 &1837747991
 GameObject:
   m_ObjectHideFlags: 0
