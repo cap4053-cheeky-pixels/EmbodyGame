@@ -10,11 +10,13 @@ public class LoadSceneOnClick : MonoBehaviour
      */ 
     public void Load(string sceneName)
     {
-        if(sceneName == "Quit")
+        if(sceneName.Equals("Quit"))
         {
             Application.Quit();
         }
-
-        SceneManager.LoadScene(sceneName);
+        else
+        {
+            SceneManager.LoadScene(sceneName);
+        }
     }
 }
