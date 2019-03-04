@@ -40,6 +40,7 @@ public class MenuMusic : MonoBehaviour
         // That is, the music will span the menu and controls scenes
         if(next.name != "Menu" && next.name != "Controls")
         {
+            SceneManager.activeSceneChanged -= NewSceneLoaded;
             Destroy(gameObject);
         }
     }

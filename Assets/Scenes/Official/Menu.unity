@@ -712,6 +712,16 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5815966501301216915, guid: 6e1fa95d53a198d4cafd678e9fdd3bd2,
+        type: 3}
+      propertyPath: menuMusic
+      value: 
+      objectReference: {fileID: 8417709449562034625}
+    - target: {fileID: 5815966501301216915, guid: 6e1fa95d53a198d4cafd678e9fdd3bd2,
+        type: 3}
+      propertyPath: delay
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e1fa95d53a198d4cafd678e9fdd3bd2, type: 3}
 --- !u!224 &705081905 stripped
@@ -1303,3 +1313,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bb4a84b1b44c38448ef37101b06ef0f, type: 3}
+--- !u!82 &8417709449562034625 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8417709450145052522, guid: 3bb4a84b1b44c38448ef37101b06ef0f,
+    type: 3}
+  m_PrefabInstance: {fileID: 8417709449562034624}
+  m_PrefabAsset: {fileID: 0}

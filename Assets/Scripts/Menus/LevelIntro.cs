@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -9,8 +10,7 @@ public class LevelIntro : MonoBehaviour
     public static string nameOfSceneToLoad = "Level1";
 
     // Used for regulating 
-    [SerializeField] private float timeToWaitBeforeLoading;
-    private float sceneDurationTimer;
+    [SerializeField] private float timeToWaitBeforeSceneChange;
 
     [SerializeField] private Text text;
     private string[] intros = { "WELCOME\nTO\nHELL", "9 CIRCLES\n1 LIFE", "TIRED YET?",
@@ -21,25 +21,31 @@ public class LevelIntro : MonoBehaviour
                                 "THOSE WHO COME HERE\nNEVER LEAVE", "PERIL LIES AHEAD",
                                 "YOU ARE NOT\nTHE FIRST"};
 
-    /* Set up all the text.
+
+    /* Set up all the text and start the timer.
      */ 
     private void Start()
     {
         int index = Random.Range(0, intros.Length - 1);
         text.text = intros[index];
-        sceneDurationTimer = 0.0f;
+        StartCoroutine(SceneTimer());
     }
 
 
-    /* Runs each frame.
+    /* Waits the given number of seconds before emitting the signal to change scenes.
      */ 
-    private void Update()
+    private IEnumerator SceneTimer()
     {
-        sceneDurationTimer += Time.deltaTime;
+        yield return new WaitForSeconds(timeToWaitBeforeSceneChange);
+        ChangeScene();
+    }
 
-        if(sceneDurationTimer >= timeToWaitBeforeLoading)
-        {
-            SceneManager.LoadScene(nameOfSceneToLoad);
-        }
+
+    /* Called when it's time to change the scene. Loads the scene specified
+     * by the string field.
+     */ 
+    private void ChangeScene()
+    {
+        SceneManager.LoadScene(nameOfSceneToLoad);
     }
 }
