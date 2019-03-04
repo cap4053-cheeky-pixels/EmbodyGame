@@ -9,6 +9,7 @@ public class MenuMusic : MonoBehaviour
     // Singleton design pattern to avoid audio duplication
     private static MenuMusic instance = null;
     public static MenuMusic Instance { get { return instance; } }
+    public static AudioSource GetMusic() { return Instance.GetComponent<AudioSource>(); }
 
 
     /* Set up the menu music manager.

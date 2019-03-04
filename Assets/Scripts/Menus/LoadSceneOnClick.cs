@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LoadSceneOnClick : MonoBehaviour
 {
-    [SerializeField] private AudioSource menuMusic;
+    // Spaghetti, I know
+    private AudioSource menuMusic;
     [SerializeField] private float delay;
 
 
@@ -14,24 +15,25 @@ public class LoadSceneOnClick : MonoBehaviour
      */ 
     public void Load(string sceneName)
     {
-        if(sceneName.Equals("Quit"))
-        {
-            Application.Quit();
-        }
-        else if(sceneName.Equals("Menu") || sceneName.Equals("Controls"))
+        if (sceneName.Equals("Menu") || sceneName.Equals("Controls"))
         {
             SceneManager.LoadScene(sceneName);
         }
+        else if (sceneName.Equals("Quit"))
+        {
+            Application.Quit();
+        }
         else
         {
-            StartCoroutine(LoadSceneDelayed(sceneName, delay));
+            menuMusic = MenuMusic.GetMusic();
+            StartCoroutine(LoadSceneDelayed(sceneName));
         }
     }
 
 
     /* Delays scene transition to allow for menu music to fade.
      */ 
-    private IEnumerator LoadSceneDelayed(string sceneName, float delay)
+    private IEnumerator LoadSceneDelayed(string sceneName)
     {
         float elapsedTime = 0.0f;
         float currentVolume = menuMusic.volume;
