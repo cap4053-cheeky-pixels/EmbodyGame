@@ -10,10 +10,6 @@ public class MenuMusic : MonoBehaviour
     private static MenuMusic instance = null;
     public static MenuMusic Instance { get { return instance; } }
 
-    // Override via the editor as needed if build settings change
-    public int menuIndex = 0;
-    public int controlsIndex = 1;
-
 
     /* Set up the menu music manager.
      */  
@@ -42,7 +38,7 @@ public class MenuMusic : MonoBehaviour
     void NewSceneLoaded(Scene current, Scene next)
     {
         // That is, the music will span the menu and controls scenes
-        if(next.buildIndex != menuIndex && next.buildIndex != controlsIndex)
+        if(next.name != "Menu" && next.name != "Controls")
         {
             Destroy(gameObject);
         }
