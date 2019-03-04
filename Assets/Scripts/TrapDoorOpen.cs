@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class TrapDoorOpen : MonoBehaviour
 {
-    public GameObject TrapDoor;
+    [SerializeField]
+    private GameObject TrapDoor;
     
     void OnTriggerEnter(Collider other){
         if(other.gameObject.tag == "Player"){
-        TrapDoor.transform.GetChild(0).GetComponent<Animation>().Play("LeftAnim");
-        TrapDoor.transform.GetChild(1).GetComponent<Animation>().Play("HingeRight");
+            //Play animations
+            TrapDoor.transform.GetChild(0).GetComponent<Animation>().Play("LeftAnim");
+            TrapDoor.transform.GetChild(1).GetComponent<Animation>().Play("HingeRight");
+            //Start script that allows player to fall
+            TrapDoor.GetComponent<PlayerFall>().trapOpened = true;
         }
         else
-        Debug.Log("Entity detected" +other.gameObject.tag);
+        Debug.Log("Entity detected" + other.gameObject.tag);
     }
 }
