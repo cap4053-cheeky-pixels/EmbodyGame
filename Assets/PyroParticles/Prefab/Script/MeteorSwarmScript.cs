@@ -68,8 +68,6 @@ namespace DigitalRuby.PyroParticles
 
         private IEnumerator SpawnMeteor()
         {
-            //Source = GameObject.FindGameObjectWithTag("Player").transform.position + new Vector3(0, 100, 0);
-
             {
                 float delay = UnityEngine.Random.Range(0.0f, 1.0f);
                 yield return new WaitForSeconds(delay);
