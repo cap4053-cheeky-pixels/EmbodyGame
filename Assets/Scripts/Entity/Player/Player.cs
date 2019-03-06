@@ -79,7 +79,12 @@ public class Player : Entity
     public void ChangeGoldenHealthBy(int amount)
     {
         GoldenHealth += amount;
-        if (GoldenHealth < 0) GoldenHealth = 0;
+        if (GoldenHealth < 0)
+        {
+            Health += GoldenHealth;
+            healthChangedEvent?.Invoke();
+            GoldenHealth = 0;
+        }
         goldenHealthEvent?.Invoke();
     }
 
