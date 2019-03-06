@@ -34,8 +34,8 @@ namespace DigitalRuby.PyroParticles
         [Tooltip("The destination radius")]
         public float DestinationRadius;
 
-        [Tooltip("The source of the meteor swarm (in the sky somewhere usually)")]
-        public Vector3 Source;
+        [Tooltip("The height from which the meteor swarm will spawn")]
+        public float SpawnHeight;
 
         [Tooltip("The source radius")]
         public float SourceRadius;
@@ -74,7 +74,7 @@ namespace DigitalRuby.PyroParticles
             }
 
             // find a random source and destination point within the specified radius
-            Vector3 src = Source + (UnityEngine.Random.insideUnitSphere * SourceRadius);
+            Vector3 src = transform.position + new Vector3(0, SpawnHeight, 0) + (UnityEngine.Random.insideUnitSphere * SourceRadius);
             GameObject meteor = GameObject.Instantiate(MeteorPrefab);
             float scale = UnityEngine.Random.Range(ScaleRange.Minimum, ScaleRange.Maximum);
             meteor.transform.localScale = new Vector3(scale, scale, scale);
