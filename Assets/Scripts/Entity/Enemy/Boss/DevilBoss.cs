@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -38,8 +38,9 @@ public class DevilBoss : MonoBehaviour
     // Phase two stuff
     private bool inPhaseTwo;
     [SerializeField] AudioSource phaseTwoAudio;
+    
+    [SerializeField] AudioSource DeathAudio;
     private PhaseTwo phaseTwo;
-
 
     /* Initialize all members.
      */ 
@@ -51,6 +52,7 @@ public class DevilBoss : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         animator = self.model.GetComponent<Animator>();
         phaseTwo = gameObject.GetComponent<PhaseTwo>();
+        DeathAudio = GetComponents<AudioSource>()[1];
 
         // When moving towards the player, the boss will always stop within its ranged attack radius
         agent.stoppingDistance = rangedDistance - 1; 
@@ -95,7 +97,9 @@ public class DevilBoss : MonoBehaviour
         animator.ResetTrigger("AttackMelee");
         animator.ResetTrigger("AttackRanged");
         animator.SetTrigger("DeathPose");
-
+        
+        DeathAudio.Play();
+        
         // Prevent this script and the navmesh agent from doing anything else
         this.enabled = false;
         agent.isStopped = true;
