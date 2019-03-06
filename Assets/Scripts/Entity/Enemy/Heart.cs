@@ -16,11 +16,13 @@ public class Heart : MonoBehaviour
             {
                 if((player.GoldenHealth + Health) <= player.MaxGoldenHealth)
                 {
+                    player.ChangeHealthBy(player.MaxHealth - player.Health);
                     player.ChangeGoldenHealthBy(Health);
                     Destroy(transform.gameObject);
                 }
                 else if (player.GoldenHealth != player.MaxGoldenHealth)
                 {
+                    player.ChangeHealthBy(player.MaxHealth - player.Health);
                     player.ChangeGoldenHealthBy(player.MaxGoldenHealth - player.Health);
                     Destroy(transform.gameObject);
                 }
