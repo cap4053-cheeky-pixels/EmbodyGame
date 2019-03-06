@@ -15,40 +15,46 @@ public class PlayerFall : MonoBehaviour
     private float desiredCameraHeight = 5.0f;
     private Vector3 direction;
     private float timer = 0.0f;
-    private float delayuntilFastFall = 1.0f;
-    //falling audio
+    private float delayuntilFastFall = .5f;
+    
+    //falling audio at this time overriden in BeginFall method
     [SerializeField]
     private AudioSource fallingAudio;
-    //flags
-    private bool AudioPlayed = false;
-    public bool trapOpened {get; set;}
-    private bool CameraChanged = false;
     
-    void Awake(){
+    //flag
+    public bool trapOpened {get; set;}
+    
+    void Start(){
+        
+        GameObject.Find("TrapDoor").transform.GetChild(0).transform.GetChild(0).GetComponent<TrapDoorOpen>().TrapOpened += BeginFall;
+        GameObject.Find("TrapDoor").transform.GetChild(1).transform.GetChild(0).GetComponent<TrapDoorOpen>().TrapOpened += BeginFall;
+    }
+    
+    void BeginFall(){
         direction = new Vector3(0, desiredCameraHeight, 0);
         Player = GameObject.Find("MainPlayer");
         PlayerBod = Player.GetComponent<Rigidbody>();
-        fallingAudio = GetComponent<AudioSource>();
-        //we must remove the freeze y position constraint
-        PlayerBod.constraints = RigidbodyConstraints.FreezeRotation;
-        
+        fallingAudio = GameObject.FindWithTag("Boss").GetComponents<AudioSource>()[1];
+        trapOpened = true;
+        ChangeCamera();
+
     }
     
     void Update(){
         
         if(trapOpened){
-            if(!CameraChanged)
-            ChangeCamera();
             timer += Time.deltaTime;
             Camera.GetComponent<CameraController>().MoveTo(Player.transform.position + direction);
             fallingAudio.volume += .003f;
-            AudioPlayed = true;
             if(timer < delayuntilFastFall){
                 PlayerBod.AddForce(Vector3.down*thrust,ForceMode.Acceleration);
             }
-            else
+            else {
             //initiate Fast Fall
             PlayerBod.AddForce(Vector3.down*thrust,ForceMode.Impulse);
+            //we must remove the freeze y position constraint and freeze rotation and x,z movement
+            PlayerBod.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
+            }
             if(timer > 5.0f)
             SceneManager.LoadScene("LevelTrans");
         }
@@ -59,6 +65,5 @@ public class PlayerFall : MonoBehaviour
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().enabled = false;
         Camera = GameObject.Find("ProgressionCamera");
         Camera.GetComponent<Camera>().enabled = true;
-        CameraChanged = true;
     }
 }
