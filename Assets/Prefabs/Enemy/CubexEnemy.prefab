@@ -645,6 +645,13 @@ MonoBehaviour:
   heartPrefabs:
   - {fileID: 3676220467416633035, guid: c0e19f4f0d1f2ea458756409aa801246, type: 3}
   - {fileID: 6058534631205044202, guid: cfdc812ad6d2939458ab1a2e2b5e3f34, type: 3}
+  - {fileID: 3286927343409276462, guid: 3fcdadf5b7b72f14fbbb5fac7e28ec66, type: 3}
+  - {fileID: 4586676567768156163, guid: d9113df18782b4f41924d72e42c5efcf, type: 3}
+  weights:
+  - 0.5
+  - 0.25
+  - 0.15
+  - 0.1
   healthDropProbability: 0.5
   xzRange: 600
   yForce: 800

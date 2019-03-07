@@ -51,7 +51,7 @@ public class PhaseTwo : MonoBehaviour
         // Meteor attack
         if (phaseTwoAttackTimer > timeToPhaseTwoAttack)
         {
-            Instantiate(phaseTwoAttack, gameObject.transform);
+            Instantiate(phaseTwoAttack, GameObject.FindGameObjectWithTag("Player").transform);
             phaseTwoAttackTimer = 0.0f;
         }
     }

@@ -2461,16 +2461,26 @@ PrefabInstance:
       propertyPath: audioTheme
       value: 
       objectReference: {fileID: 952968809}
-    - target: {fileID: 2383204964577108538, guid: bd6d38f092a20524cbb893325e78777b,
+    - target: {fileID: 8316170259260908322, guid: bd6d38f092a20524cbb893325e78777b,
         type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 643e1c2e566306f49ba21da92de51f65, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316170259938772301, guid: bd6d38f092a20524cbb893325e78777b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8316170259938772296, guid: bd6d38f092a20524cbb893325e78777b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 152f22e8a403f284f858c7684adabd4a, type: 2}
+    - target: {fileID: 2383204964577108538, guid: bd6d38f092a20524cbb893325e78777b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 643e1c2e566306f49ba21da92de51f65, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6d38f092a20524cbb893325e78777b, type: 3}
 --- !u!4 &952968808 stripped
@@ -4455,26 +4465,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: cea37150ce1ff434685a939f497269f2, type: 2}
-    - target: {fileID: 2113135755872856882, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7819676206378044322, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 988571505447708698, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6720208160597379086, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6f35e75e8526ed45bcdd61f2531e14d, type: 3}
 --- !u!4 &2035691865 stripped
