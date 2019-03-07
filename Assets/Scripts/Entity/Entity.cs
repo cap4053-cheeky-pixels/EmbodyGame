@@ -19,4 +19,14 @@ public abstract class Entity : MonoBehaviour
 
     // Changes this entity's current health by the given amount
     public abstract void ChangeHealthBy(int amount);
+
+    // Method should be called on entity death to propegate to components
+    public void OnDeath()
+    {
+        // Call the death method on any appropriate controllers
+        foreach (IOnDeathController odc in GetComponents<IOnDeathController>())
+        {
+            odc.OnDeath();
+        }
+    }
 }

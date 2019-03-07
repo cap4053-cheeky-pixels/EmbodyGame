@@ -91,11 +91,6 @@ public class Enemy : Entity
 
         // Signal the death of this enemy
         deathEvent?.Invoke(gameObject);
-
-        // Call the death method on any appropriate controllers
-        foreach (IOnDeathController odc in GetComponents<IOnDeathController>())
-        {
-            odc.OnDeath();
-        }
+        OnDeath(); // Call Entity.OnDeath()
     }
 }
