@@ -10,6 +10,7 @@ public class PlayerFall : MonoBehaviour
     //speed at which the player is dragged down
     public float thrust = 10.0f;
     private GameObject Camera;
+    private GameObject TrapDoor;
     private GameObject Player;
     //height from Player we want Camera to be
     private float desiredCameraHeight = 5.0f;
@@ -17,7 +18,6 @@ public class PlayerFall : MonoBehaviour
     private float timer = 0.0f;
     private float delayuntilFastFall = .5f;
     
-    //falling audio at this time overriden in BeginFall method
     [SerializeField]
     private AudioSource fallingAudio;
     
@@ -25,45 +25,43 @@ public class PlayerFall : MonoBehaviour
     public bool trapOpened {get; set;}
     
     void Start(){
-        
-        GameObject.Find("TrapDoor").transform.GetChild(0).transform.GetChild(0).GetComponent<TrapDoorOpen>().TrapOpened += BeginFall;
-        GameObject.Find("TrapDoor").transform.GetChild(1).transform.GetChild(0).GetComponent<TrapDoorOpen>().TrapOpened += BeginFall;
+        Camera = GameObject.FindWithTag("MainCamera");
+        TrapDoorOpen[] hinges = GetComponentsInChildren<TrapDoorOpen>();
+        foreach(TrapDoorOpen script in hinges)
+        script.TrapOpened += BeginFall;
     }
     
-    void BeginFall(){
+    void BeginFall(GameObject fallingEntity, GameObject tp){
         direction = new Vector3(0, desiredCameraHeight, 0);
-        Player = GameObject.Find("MainPlayer");
-        PlayerBod = Player.GetComponent<Rigidbody>();
-        fallingAudio = GameObject.FindWithTag("Boss").GetComponents<AudioSource>()[1];
-        trapOpened = true;
-        ChangeCamera();
-
+        PlayerBod = fallingEntity.GetComponent<Rigidbody>();
+        Player = fallingEntity;
+        TrapDoor = tp;
+        AudioSource[] audios = GameObject.FindWithTag("Boss").GetComponentsInChildren<AudioSource>();
+        foreach(AudioSource asource in audios)
+        if(asource.clip.name == "Jes£s Lastra - Cries From Hell")
+        fallingAudio = asource;
+ 
+        StartCoroutine("Verga");
     }
     
-    void Update(){
-        
-        if(trapOpened){
+    void Verga(){
+        while(true){
             timer += Time.deltaTime;
-            Camera.GetComponent<CameraController>().MoveTo(Player.transform.position + direction);
+            Camera.GetComponent<CameraController>().MoveTo(Player.transform.position + TrapDoor.transform.position + direction);
             fallingAudio.volume += .003f;
             if(timer < delayuntilFastFall){
                 PlayerBod.AddForce(Vector3.down*thrust,ForceMode.Acceleration);
             }
             else {
+                
             //initiate Fast Fall
             PlayerBod.AddForce(Vector3.down*thrust,ForceMode.Impulse);
             //we must remove the freeze y position constraint and freeze rotation and x,z movement
             PlayerBod.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
+            
             }
             if(timer > 5.0f)
             SceneManager.LoadScene("LevelTrans");
         }
-        
-    }
-    
-    void ChangeCamera(){
-        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().enabled = false;
-        Camera = GameObject.Find("ProgressionCamera");
-        Camera.GetComponent<Camera>().enabled = true;
     }
 }

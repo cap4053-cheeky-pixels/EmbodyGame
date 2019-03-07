@@ -52,7 +52,6 @@ public class DevilBoss : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         animator = self.model.GetComponent<Animator>();
         phaseTwo = gameObject.GetComponent<PhaseTwo>();
-        DeathAudio = GetComponents<AudioSource>()[1];
 
         // When moving towards the player, the boss will always stop within its ranged attack radius
         agent.stoppingDistance = rangedDistance - 1; 

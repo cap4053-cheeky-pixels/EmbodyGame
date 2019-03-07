@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class TrapDoorOpen : MonoBehaviour
 {
+    //used to reference particular TrapDoor
     [SerializeField]
     private GameObject TrapDoor;
     
-    public delegate void TrapOpenedHandler();
+    //send reference of the offending entity, send reference to TrapDoor
+    public delegate void TrapOpenedHandler(GameObject fallingEntity, GameObject tp);
     public event TrapOpenedHandler TrapOpened;
     
     void OnTriggerEnter(Collider other){
+        
         if(other.gameObject.tag == "Player"){
             //Play animations
-            TrapDoor.transform.GetChild(0).GetComponent<Animation>().Play("LeftAnim");
-            TrapDoor.transform.GetChild(1).GetComponent<Animation>().Play("HingeRight");
-            
+            Animation[] animations = TrapDoor.GetComponentsInChildren<Animation>();
+            foreach(Animation ani in animations)
+            ani.Play();
             //signal event
-            TrapOpened?.Invoke();
+            TrapOpened?.Invoke(other.gameObject, gameObject);
         }
         else
         Debug.Log("Entity detected" + other.gameObject.tag);
