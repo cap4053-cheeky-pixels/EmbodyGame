@@ -24,7 +24,7 @@ public class LevelIntro : MonoBehaviour
 
     /* Set up all the text and start the timer.
      */ 
-    private void Start()
+    private void Awake()
     {
         int index = Random.Range(0, intros.Length - 1);
         text.text = intros[index];
