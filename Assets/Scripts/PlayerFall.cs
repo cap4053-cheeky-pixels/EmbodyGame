@@ -22,44 +22,43 @@ public class PlayerFall : MonoBehaviour
     private AudioSource fallingAudio;
     
     //flag
-    public bool trapOpened {get; set;}
+    private bool trapOpened = false;
     
     void Start(){
+        
         Camera = GameObject.FindWithTag("MainCamera");
+        TrapDoor = gameObject;
         TrapDoorOpen[] hinges = GetComponentsInChildren<TrapDoorOpen>();
         foreach(TrapDoorOpen script in hinges)
         script.TrapOpened += BeginFall;
+        
     }
     
-    void BeginFall(GameObject fallingEntity, GameObject tp){
+    void BeginFall(GameObject fallingEntity){
+        
         direction = new Vector3(0, desiredCameraHeight, 0);
         PlayerBod = fallingEntity.GetComponent<Rigidbody>();
         Player = fallingEntity;
-        TrapDoor = tp;
         AudioSource[] audios = GameObject.FindWithTag("Boss").GetComponentsInChildren<AudioSource>();
         foreach(AudioSource asource in audios)
         if(asource.clip.name == "Jes£s Lastra - Cries From Hell")
         fallingAudio = asource;
- 
-        StartCoroutine("Verga");
+        trapOpened = true;
+        
+        //these lines are irrelevant once the boss dies but doesnt hurt to have them
+        if(!fallingAudio.isPlaying)
+        fallingAudio.Play();
     }
     
-    void Verga(){
-        while(true){
+    void Update(){
+        
+        if(trapOpened){
             timer += Time.deltaTime;
             Camera.GetComponent<CameraController>().MoveTo(Player.transform.position + TrapDoor.transform.position + direction);
             fallingAudio.volume += .003f;
-            if(timer < delayuntilFastFall){
-                PlayerBod.AddForce(Vector3.down*thrust,ForceMode.Acceleration);
-            }
-            else {
-                
+            if(timer > delayuntilFastFall)
             //initiate Fast Fall
-            PlayerBod.AddForce(Vector3.down*thrust,ForceMode.Impulse);
-            //we must remove the freeze y position constraint and freeze rotation and x,z movement
-            PlayerBod.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
-            
-            }
+            Player.transform.position += Vector3.down*.75f;
             if(timer > 5.0f)
             SceneManager.LoadScene("LevelTrans");
         }

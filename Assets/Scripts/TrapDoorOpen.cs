@@ -9,7 +9,7 @@ public class TrapDoorOpen : MonoBehaviour
     private GameObject TrapDoor;
     
     //send reference of the offending entity, send reference to TrapDoor
-    public delegate void TrapOpenedHandler(GameObject fallingEntity, GameObject tp);
+    public delegate void TrapOpenedHandler(GameObject fallingEntity);
     public event TrapOpenedHandler TrapOpened;
     
     void OnTriggerEnter(Collider other){
@@ -20,7 +20,7 @@ public class TrapDoorOpen : MonoBehaviour
             foreach(Animation ani in animations)
             ani.Play();
             //signal event
-            TrapOpened?.Invoke(other.gameObject, gameObject);
+            TrapOpened?.Invoke(other.gameObject);
         }
         else
         Debug.Log("Entity detected" + other.gameObject.tag);
