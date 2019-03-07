@@ -56,11 +56,29 @@ public class Possession : MonoBehaviour
         player.SetModel(newModel);
         player.GetComponent<IWeaponController>().SetWeaponInstance(newWeapon);
         
+        // Notify any OnPossession controllers of the possesssion before cleanup
+        NotifyOnPossessionControllers(enemy);
+
         //Cleanup
         Destroy(currentPlayerModel);
         Destroy(playerWeapon);
         Destroy(enemy);
         
+    }
+
+    private void NotifyOnPossessionControllers(GameObject enemy)
+    {
+        // Notify player controllers
+        foreach(IOnPossessionController iopc in GetComponents<IOnPossessionController>())
+        {
+            iopc.OnPossession();
+        }
+
+        // Notify enemy controllers
+        foreach(IOnPossessionController iopc in enemy.GetComponents<IOnPossessionController>())
+        {
+            iopc.OnPossession();
+        }
     }
     
     //checks for nearby enemies
