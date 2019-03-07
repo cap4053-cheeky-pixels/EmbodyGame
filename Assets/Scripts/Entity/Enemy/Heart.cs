@@ -5,21 +5,40 @@ using UnityEngine;
 public class Heart : MonoBehaviour
 {
     public int Health;
+    public bool Golden;
 
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             Player player = other.gameObject.GetComponent<Player>();
-            if((player.Health + Health) <= player.MaxHealth)
+            if (Golden)
             {
-                player.ChangeHealthBy(Health);
-                Destroy(transform.gameObject);
+                if((player.GoldenHealth + Health) <= player.MaxGoldenHealth)
+                {
+                    player.ChangeHealthBy(player.MaxHealth - player.Health);
+                    player.ChangeGoldenHealthBy(Health);
+                    Destroy(transform.gameObject);
+                }
+                else if (player.GoldenHealth != player.MaxGoldenHealth)
+                {
+                    player.ChangeHealthBy(player.MaxHealth - player.Health);
+                    player.ChangeGoldenHealthBy(player.MaxGoldenHealth - player.Health);
+                    Destroy(transform.gameObject);
+                }
             }
-            else if (player.Health != player.MaxHealth)
+            else
             {
-                player.Health = player.MaxHealth;
-                Destroy(transform.gameObject);
+                if ((player.Health + Health) <= player.MaxHealth)
+                {
+                    player.ChangeHealthBy(Health);
+                    Destroy(transform.gameObject);
+                }
+                else if (player.Health != player.MaxHealth)
+                {
+                    player.ChangeHealthBy(player.MaxHealth - player.Health);
+                    Destroy(transform.gameObject);
+                }
             }
         }
     }
