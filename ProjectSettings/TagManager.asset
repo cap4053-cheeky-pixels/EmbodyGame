@@ -15,6 +15,7 @@ TagManager:
   - Boss
   - Fire
   - Heart
+  - LevelEndCam
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - PostProcessing
   - Enemy
   - FireLayer
-  - 
+  - BackGround Image
   - 
   - 
   - 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 377701195433518446}
   - component: {fileID: 377701195433518433}
   - component: {fileID: 377701195433518432}
+  - component: {fileID: 7332321950537347203}
   m_Layer: 0
   m_Name: RoomCam
   m_TagString: MainCamera
@@ -109,3 +110,12 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 377701195433518435}
   m_Enabled: 1
+--- !u!45 &7332321950537347203
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377701195433518435}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 6a7a669bf0f2c4ba09e67f39de0fc138, type: 2}

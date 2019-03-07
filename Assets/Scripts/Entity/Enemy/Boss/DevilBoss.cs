@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -24,8 +24,9 @@ public class DevilBoss : Boss
     // Phase two stuff
     private bool inPhaseTwo;
     [SerializeField] AudioSource phaseTwoAudio;
+    
+    [SerializeField] AudioSource DeathAudio;
     private PhaseTwo phaseTwo;
-
 
     /* Initialize all members.
      */
@@ -78,7 +79,9 @@ public class DevilBoss : Boss
         animator.ResetTrigger("AttackMelee");
         animator.ResetTrigger("AttackRanged");
         animator.SetTrigger("DeathPose");
-
+        
+        DeathAudio.Play();
+        
         // Prevent this script and the navmesh agent from doing anything else
         this.enabled = false;
         agent.isStopped = true;
