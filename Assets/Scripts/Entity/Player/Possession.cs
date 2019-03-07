@@ -6,17 +6,17 @@ public class Possession : MonoBehaviour
 {
     private Player player;
     private bool canPossess = true;
-    
+
     //what is the radius we will check for enemies to possess
     [SerializeField]
     private float possessionRadius = 1.0f;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         player = gameObject.GetComponent<Player>();
     }
-    
+
     // Update is called once per frame
     void Update()
     {
@@ -31,20 +31,20 @@ public class Possession : MonoBehaviour
         else if(Input.GetAxis("Possess") == 0)
         canPossess = true;
     }
-    
+
     //Actual possession takes place
     void TakePossessionAction(GameObject enemy){
-        
+
         if(enemy == null)
         return;
-        
+
         player.MaxHealth = enemy.GetComponent<Enemy>().MaxHealth;
         player.Health = enemy.GetComponent<Enemy>().MaxHealth;
-        
+
         //update HUD
         player.ChangeMaxHealthBy(0);
         player.ChangeHealthBy(0);
-        
+
         //Clone the enemy model within the player
         GameObject newModel = GameObject.Instantiate(enemy.GetComponent<Entity>().model,transform);
         GameObject currentPlayerModel = player.model;
@@ -55,7 +55,7 @@ public class Possession : MonoBehaviour
         GameObject newWeapon = GameObject.Instantiate(enemyWeapon, transform);
         player.SetModel(newModel);
         player.GetComponent<IWeaponController>().SetWeaponInstance(newWeapon);
-        
+
         // Notify any OnPossession controllers of the possesssion before cleanup
         NotifyOnPossessionControllers(enemy);
 
@@ -63,7 +63,7 @@ public class Possession : MonoBehaviour
         Destroy(currentPlayerModel);
         Destroy(playerWeapon);
         Destroy(enemy);
-        
+
     }
 
     private void NotifyOnPossessionControllers(GameObject enemy)
@@ -80,17 +80,17 @@ public class Possession : MonoBehaviour
             iopc.OnPossession();
         }
     }
-    
+
     //checks for nearby enemies
     GameObject FindEnemytoPossess(float radiuscheck){
-        
+
         Collider[] checkWhoNearby = Physics.OverlapSphere(transform.position,1);
         //tracks shortest distance to colliders in the vicinity of player
         float distance = 0;
         GameObject nearestEnemy = null;
         //for the foreach method
         float currentdistance;
-        
+
         foreach(Collider other in checkWhoNearby)
         {
             currentdistance = 0;
@@ -98,7 +98,7 @@ public class Possession : MonoBehaviour
             continue;
             if(!other.gameObject.GetComponent<Enemy>().isPossessable)
             continue;
-            
+
             currentdistance = Vector3.Distance(other.gameObject.transform.position,transform.position);
             if(distance == 0)
             {
@@ -112,7 +112,7 @@ public class Possession : MonoBehaviour
             }
         }
         return nearestEnemy;
-        
+
     }
-    
+
 }
