@@ -4,23 +4,19 @@ using UnityEngine;
 using UnityEngine.AI;
 
 /**
-    This script simply sets the valocity in any children
+    This script simply sets the velocity in any children
     animators to that of the navmeshagent.
  */
 [RequireComponent(typeof(NavMeshAgent))]
-[RequireComponent(typeof(Enemy))]
-public class SimpleNMAAnimatorController : MonoBehaviour
+public class SimpleNMAAnimatorController : MonoBehaviour, IOnDeathController
 {
     Animator ani;
     NavMeshAgent nma;
-    Enemy e;
 
     void Awake()
     {
         nma = GetComponent<NavMeshAgent>();
         ani = GetComponentInChildren<Animator>();
-        e = GetComponent<Enemy>();
-        e.deathEvent += enemyDead;
     }
 
     void Update()
@@ -30,7 +26,7 @@ public class SimpleNMAAnimatorController : MonoBehaviour
         ani.SetFloat("velocity", nma.velocity.magnitude);
     }
 
-    void enemyDead(GameObject enemy)
+    public void OnDeath()
     {
         ani?.SetTrigger("dead");
     }
