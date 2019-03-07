@@ -29,7 +29,7 @@ public class Player : Entity
 
 
     /* Called before the game starts. Sets up all necessary info.
-     */ 
+     */
     void Awake()
     {
         SetEnabled(true);
@@ -38,7 +38,7 @@ public class Player : Entity
 
 
     /* Changes this Player's max health by the given amount.
-     */ 
+     */
     public override void ChangeMaxHealthBy(int amount)
     {
         MaxHealth += amount;
@@ -47,7 +47,7 @@ public class Player : Entity
 
 
     /* Changes this Player's health by the given amount.
-     */ 
+     */
     public override void ChangeHealthBy(int amount)
     {
         if (invincible) return;
@@ -97,8 +97,7 @@ public class Player : Entity
         if (invincible) return;
 
         // Collision with enemies and traps will deal a constant half a heart of damage
-        if (other.gameObject.CompareTag("Enemy") || 
-            other.gameObject.CompareTag("Boss") ||
+        if (other.gameObject.CompareTag("Boss") ||
             other.gameObject.CompareTag("Trap"))
         {
             ChangeHealthBy(-1);
