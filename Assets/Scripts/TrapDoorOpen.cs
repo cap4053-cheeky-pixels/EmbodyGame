@@ -14,7 +14,8 @@ public class TrapDoorOpen : MonoBehaviour
     
     void OnTriggerEnter(Collider other){
         
-        if(other.gameObject.tag == "Player"){
+        if(other.gameObject.tag == "Player")
+        {
             //Play animations
             Animation[] animations = TrapDoor.GetComponentsInChildren<Animation>();
             foreach(Animation ani in animations)
