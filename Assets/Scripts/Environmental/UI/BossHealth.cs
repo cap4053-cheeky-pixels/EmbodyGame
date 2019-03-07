@@ -9,17 +9,36 @@ public class BossHealth : MonoBehaviour
     private Enemy boss;
 
     // The slider that reflects the boss's health in the UI
-    private Slider slider;    
+    private Slider slider;
+
+    // The default scale of the boss's health UI object
+    private Vector3 defaultScale;
 
 
     /* Perform all necessary setup for the health management.
      */ 
     private void Awake()
     {
-        AssociateWithLevelBoss();
+        Boss.bossBattleStarted += AssociateWithLevelBoss;
+        defaultScale = gameObject.transform.localScale;
 
-        // Will be re-activated externally when the boss fight begins
-        // TODO uncomment gameObject.SetActive(false);
+        Hide();
+    }
+
+
+    /* Hides the boss's health from the UI.
+     */ 
+    public void Hide()
+    {
+        gameObject.transform.localScale = Vector3.zero;
+    }
+
+
+    /* Re-displays the boss's health when appropriate.
+     */ 
+    public void Show()
+    {
+        gameObject.transform.localScale = defaultScale;
     }
 
 
@@ -32,11 +51,15 @@ public class BossHealth : MonoBehaviour
         if (theBoss != null)
         {
             boss = theBoss.GetComponent<Enemy>();
+            boss.healthChangedEvent += OnBossHealthChanged;
+            boss.deathEvent += OnBossDied;
+
             slider = gameObject.GetComponent<Slider>();
             slider.maxValue = boss.MaxHealth;
             slider.minValue = 0;
             slider.value = slider.maxValue;
-            boss.healthChangedEvent += OnBossHealthChanged;
+
+            Show();
         }
     }
 
@@ -46,12 +69,15 @@ public class BossHealth : MonoBehaviour
     private void OnBossHealthChanged()
     {
         slider.value = boss.Health;
+    }
 
-        // Unsubscribe if the boss died
-        if(boss.Health == 0)
-        {
-            boss.healthChangedEvent -= OnBossHealthChanged;
-            boss = null;
-        }
+
+    /* Called when the boss dies.
+     */ 
+    private void OnBossDied(GameObject theBoss)
+    {
+        boss.healthChangedEvent -= OnBossHealthChanged;
+        boss = null;
+        Hide();
     }
 }

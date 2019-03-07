@@ -24,8 +24,19 @@ public class PhaseTwo : MonoBehaviour
     {
         // Set this to zero initially
         phaseTwoAttackTimer = 0.0f;
-        
+
+        // To be used for disabling the script when boss dies
+        gameObject.GetComponent<Enemy>().deathEvent += OnBossDied;
+
         // Disable the script until it's re-enabled
+        this.enabled = false;
+    }
+
+
+    /* Called when the boss dies. Disables the phase two script.
+     */ 
+    private void OnBossDied(GameObject boss)
+    {
         this.enabled = false;
     }
 
@@ -40,7 +51,7 @@ public class PhaseTwo : MonoBehaviour
         // Meteor attack
         if (phaseTwoAttackTimer > timeToPhaseTwoAttack)
         {
-            Instantiate(phaseTwoAttack, gameObject.transform);
+            Instantiate(phaseTwoAttack, GameObject.FindGameObjectWithTag("Player").transform);
             phaseTwoAttackTimer = 0.0f;
         }
     }

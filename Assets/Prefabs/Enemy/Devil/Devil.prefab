@@ -1953,7 +1953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rangedDistance: 18
   rangedWeapon: {fileID: 4383480593671820873}
-  meleeDistance: 5
+  meleeDistance: 4
   meleeWeapon: {fileID: 5543977890848250396}
   phaseTwoAudio: {fileID: 5794415566753781701}
   DeathAudio: {fileID: 7783363371084699567}
@@ -2516,11 +2516,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3623955585191402957}
     m_Modifications:
-    - target: {fileID: 7150264405949130727, guid: 530536aed588fe44385234ec6e1c483a,
-        type: 3}
-      propertyPath: m_Name
-      value: FireboltLauncher
-      objectReference: {fileID: 0}
     - target: {fileID: 7150264405949130725, guid: 530536aed588fe44385234ec6e1c483a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2575,6 +2570,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7150264405949130727, guid: 530536aed588fe44385234ec6e1c483a,
+        type: 3}
+      propertyPath: m_Name
+      value: FireboltLauncher
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 530536aed588fe44385234ec6e1c483a, type: 3}

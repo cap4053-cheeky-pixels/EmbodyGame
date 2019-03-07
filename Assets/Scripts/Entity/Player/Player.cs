@@ -7,6 +7,8 @@ public class Player : Entity
     // Used to signal health change events to the heart container system
     public delegate void HealthChanged();
     public event HealthChanged healthChangedEvent;
+    public delegate void GoldenHeathChanged();
+    public event GoldenHeathChanged goldenHealthEvent;
 
     // Used to signal player's death
     public delegate void Died();
@@ -21,6 +23,9 @@ public class Player : Entity
     public float invincibilityDurationSeconds;
     public float delayBetweenInvincibilityFlashes;
     private bool invincible = false;
+
+    public int GoldenHealth;
+    public int MaxGoldenHealth = 10;
 
 
     /* Called before the game starts. Sets up all necessary info.
@@ -47,9 +52,16 @@ public class Player : Entity
     {
         if (invincible) return;
 
-        Health += amount;
-        if (Health < 0) Health = 0;
-        healthChangedEvent?.Invoke();
+        if(amount < 0 && GoldenHealth != 0)
+        {
+            ChangeGoldenHealthBy(amount);
+        }
+        else
+        {
+            Health += amount;
+            if (Health < 0) Health = 0;
+            healthChangedEvent?.Invoke();
+        }
 
         // Start the invincibility coroutine if we take damage
         if (amount < 0)
@@ -62,6 +74,18 @@ public class Player : Entity
         {
             deathEvent?.Invoke();
         }
+    }
+
+    public void ChangeGoldenHealthBy(int amount)
+    {
+        GoldenHealth += amount;
+        if (GoldenHealth < 0)
+        {
+            Health += GoldenHealth;
+            healthChangedEvent?.Invoke();
+            GoldenHealth = 0;
+        }
+        goldenHealthEvent?.Invoke();
     }
 
 

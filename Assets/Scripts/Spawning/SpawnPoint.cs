@@ -10,6 +10,5 @@ public class SpawnPoint : MonoBehaviour
     public int maxHealth;
     public float speed;
     public float scale = 1.0f;
-    public float fireRate;
     public float yRotation = 0;
 }
