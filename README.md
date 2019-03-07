@@ -22,5 +22,5 @@ Embody is a dungeon crawler where you play as a ghost that can possess any enemy
 - [Menu Selection Click by NenadSimic](https://opengameart.org/content/menu-selection-click)
 - [Melee sounds by remaxim](https://opengameart.org/content/3-melee-sounds)
 - [Devil phase two audio by daf024](https://freesound.org/people/daf024/sounds/84615/)
-- [Devil boss death audio titled Jesus Lastra - Cries From Hell (https://opengameart.org/content/dark-ambiance-cries-from-hell)
+- [Devil boss death audio titled Jesus Lastra - Cries From Hell](https://opengameart.org/content/dark-ambiance-cries-from-hell)
 
