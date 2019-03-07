@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.AI;
 
 /**
+    DEPRECATED USE SimpleRBAnimatorController instead since most enemies have RBs
     This script simply sets the velocity in any children
     animators to that of the navmeshagent.
  */
+[System.Obsolete("If gameobject has RB, use SimpleRBAnimatorController instead.")]
 [RequireComponent(typeof(NavMeshAgent))]
 public class SimpleNMAAnimatorController : MonoBehaviour, IOnDeathController
 {
