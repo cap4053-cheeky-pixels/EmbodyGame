@@ -23,4 +23,5 @@ Embody is a dungeon crawler where you play as a ghost that can possess any enemy
 - [Melee sounds by remaxim](https://opengameart.org/content/3-melee-sounds)
 - [Devil phase two audio by daf024](https://freesound.org/people/daf024/sounds/84615/)
 - [Door closing sound by qubodup](https://freesound.org/people/qubodup/sounds/159552/)
+- [Spawning sound by pepingrillin](https://freesound.org/people/pepingrillin/sounds/252083/)
 - [Dramatic Hit sound by qubodup](https://freesound.org/people/qubodup/sounds/222517/)

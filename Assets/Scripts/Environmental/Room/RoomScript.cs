@@ -7,7 +7,6 @@ using UnityEngine;
 public class RoomScript : MonoBehaviour
 {
     public List<GameObject> doors = new List<GameObject>();
-    [SerializeField] private AudioSource audioTheme;
     [SerializeField] private AudioSource doorAudio;
 
     private CameraController cameraController;
@@ -26,10 +25,22 @@ public class RoomScript : MonoBehaviour
     private void Awake()
     {
         spawner = spawnerObject.GetComponent<Spawner>();
+        spawner.spawningComplete += OnEnemiesSpawned;
         playerWasHereBefore = false;        
 
         cameraController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
         desiredCameraHeight = 19.7f;
+    }
+
+    
+    /* Called when the associated spawner object has completed spawning enemies
+     * and has emitted its spawningComplete event.
+     */ 
+    private void OnEnemiesSpawned(HashSet<GameObject> enemies)
+    {
+        spawnedEnemies = enemies;
+        numEnemies = spawnedEnemies.Count;
+        SubscribeToEnemyDeath();
     }
 
 
@@ -62,8 +73,7 @@ public class RoomScript : MonoBehaviour
         if (numEnemies == 0)
         {
             doorAudio.Play();
-            OpenAllDoors();
-            StopThemeMusic();            
+            OpenAllDoors();            
         }
     }
 
@@ -114,29 +124,6 @@ public class RoomScript : MonoBehaviour
     }
 
 
-    /* Plays the associated audio theme attached to the room object.
-     */  
-    private void PlayThemeMusic()
-    {
-        if (audioTheme != null && audioTheme.clip != null && !audioTheme.isPlaying)
-        {
-            audioTheme.Play();
-        }
-    }
-
-
-    /* Stops the associated audio theme attached to the room object.
-     */ 
-    private void StopThemeMusic()
-    {
-        // Stop the theme music for the current room, if there is one
-        if (audioTheme != null && audioTheme.clip != null)
-        {
-            audioTheme.Stop();
-        }
-    }
-
-
     /* Called when any other collision object enters this Room. Used to detect when the player
      * enters the room. If the player is entering the room for the first time and there are
      * enemies to spawn, then the room spawns them. Also regulates door locking/unlocking.
@@ -157,12 +144,7 @@ public class RoomScript : MonoBehaviour
                 {
                     doorAudio.Play();
                     CloseAllDoors();
-
-                    spawnedEnemies = spawner.SpawnEnemies();
-                    numEnemies = spawnedEnemies.Count;
-                    SubscribeToEnemyDeath();
-
-                    PlayThemeMusic();
+                    spawner.SpawnEnemies();
                 }
                 // This will only be the case for rooms that have no enemies
                 else
