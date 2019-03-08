@@ -7,7 +7,6 @@ public class Heart : MonoBehaviour
     public int Health;
     public bool Golden;
     [SerializeField] private AudioSource heartPickupAudio;
-    private float timeUntilHeartDestroyed = 0.5f;
 
 
     private void OnCollisionEnter(Collision other)
