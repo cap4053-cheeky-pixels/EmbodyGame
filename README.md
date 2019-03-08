@@ -13,6 +13,7 @@ Embody is a dungeon crawler where you play as a ghost that can possess any enemy
 - [Lava background/tiles by rh0](https://opengameart.org/content/lava-background-6-screen-resolutions)
 - [Blood stone by mafon2](https://opengameart.org/content/seamless-space-rocks-textures-pack-512px-blood-stone-ch16png)
 - [Mine rocks by mafon2](https://opengameart.org/content/seamless-space-rocks-textures-pack-512px-mine-rocks-ch16png)
+- [Cubex enemy model by DimasAlclade](https://www.cgtrader.com/free-3d-models/various/various-models/cubex)
 
 ### Audio
 
