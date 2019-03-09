@@ -54,10 +54,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be9dc56fee26c4742ba88aff04595f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
-  MaxHealth: 3
+  Health: 6
+  MaxHealth: 6
   model: {fileID: 2506059094072163832}
   isPossessable: 0
+  collideDamage: 1
 --- !u!114 &2506059092821221655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +135,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 4.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -194,7 +195,7 @@ MonoBehaviour:
   - 0.25
   - 0.15
   - 0.1
-  healthDropProbability: 0.65
+  healthDropProbability: 0.75
   xzRange: 600
   yForce: 800
   spawnHeight: 2.5
@@ -264,6 +265,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3189315024068623013, guid: 1e1b05635e420cc45a51baa02a80b5c7,
+        type: 3}
+      propertyPath: damage
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e1b05635e420cc45a51baa02a80b5c7, type: 3}

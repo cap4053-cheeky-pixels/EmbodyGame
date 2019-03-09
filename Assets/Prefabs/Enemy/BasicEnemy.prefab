@@ -207,10 +207,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be9dc56fee26c4742ba88aff04595f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 2
-  MaxHealth: 2
+  Health: 6
+  MaxHealth: 6
   model: {fileID: 2969138911120223783}
   isPossessable: 0
+  collideDamage: 1
 --- !u!114 &5840654222195740049
 MonoBehaviour:
   m_ObjectHideFlags: 0

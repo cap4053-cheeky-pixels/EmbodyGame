@@ -88,6 +88,8 @@ MonoBehaviour:
   model: {fileID: 1224860693315704524}
   invincibilityDurationSeconds: 2
   delayBetweenInvincibilityFlashes: 0.15
+  GoldenHealth: 0
+  MaxGoldenHealth: 10
 --- !u!114 &3672507080587500165
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -85,8 +85,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be9dc56fee26c4742ba88aff04595f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 4
-  MaxHealth: 4
+  Health: 8
+  MaxHealth: 8
   model: {fileID: 1016939505023120831}
   isPossessable: 0
   collideDamage: 1
@@ -105,6 +105,13 @@ MonoBehaviour:
   heartPrefabs:
   - {fileID: 3676220467416633035, guid: c0e19f4f0d1f2ea458756409aa801246, type: 3}
   - {fileID: 6058534631205044202, guid: cfdc812ad6d2939458ab1a2e2b5e3f34, type: 3}
+  - {fileID: 3286927343409276462, guid: 3fcdadf5b7b72f14fbbb5fac7e28ec66, type: 3}
+  - {fileID: 4586676567768156163, guid: d9113df18782b4f41924d72e42c5efcf, type: 3}
+  weights:
+  - 0.5
+  - 0.25
+  - 0.15
+  - 0.1
   healthDropProbability: 1
   xzRange: 600
   yForce: 800
@@ -539,6 +546,11 @@ PrefabInstance:
         type: 3}
       propertyPath: upwardOffset
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263799561533925869, guid: c6ae13810cb4779489b28e4911abdf7b,
+        type: 3}
+      propertyPath: damage
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6ae13810cb4779489b28e4911abdf7b, type: 3}

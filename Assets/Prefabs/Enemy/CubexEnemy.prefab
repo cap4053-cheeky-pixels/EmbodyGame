@@ -512,10 +512,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be9dc56fee26c4742ba88aff04595f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
-  MaxHealth: 3
+  Health: 6
+  MaxHealth: 6
   model: {fileID: 8278483085797384672}
   isPossessable: 0
+  collideDamage: 1
 --- !u!114 &4007304483517652794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -652,7 +653,7 @@ MonoBehaviour:
   - 0.25
   - 0.15
   - 0.1
-  healthDropProbability: 0.5
+  healthDropProbability: 0.3
   xzRange: 600
   yForce: 800
   spawnHeight: 2.5
@@ -782,7 +783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f16da5fc272886b4fb4b4de3f8361a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 2
   timeBetweenAttacks: 0.8
   projectile: {fileID: 2452410868603154768, guid: a28506f24a9cd7544bb1c828f16ebdfc,
     type: 3}
