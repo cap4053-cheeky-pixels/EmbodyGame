@@ -1900,6 +1900,7 @@ GameObject:
   - component: {fileID: 4189417250660119705}
   - component: {fileID: 5794415566753781701}
   - component: {fileID: 1620434211917280839}
+  - component: {fileID: 8775824933603385614}
   m_Layer: 0
   m_Name: Devil
   m_TagString: Boss
@@ -1939,6 +1940,7 @@ MonoBehaviour:
   MaxHealth: 100
   model: {fileID: 3623955584563446959}
   isPossessable: 0
+  collideDamage: 1
 --- !u!114 &1341685312921882385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1951,6 +1953,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cdba1d4eefb7694aabeedc9c0aa9a24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioTheme: {fileID: 1620434211917280839}
+  deathAudio: {fileID: 8775824933603385614}
   rangedDistance: 18
   rangedWeapon: {fileID: 4383480593671820873}
   meleeDistance: 4
@@ -2146,6 +2150,102 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 643e1c2e566306f49ba21da92de51f65, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &8775824933603385614
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3623955585191402956}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 73c45c2e3a103440db0c8e1190d00feb, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2515,6 +2615,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3623955585191402957}
     m_Modifications:
+    - target: {fileID: 7150264405949130727, guid: 530536aed588fe44385234ec6e1c483a,
+        type: 3}
+      propertyPath: m_Name
+      value: FireboltLauncher
+      objectReference: {fileID: 0}
     - target: {fileID: 7150264405949130725, guid: 530536aed588fe44385234ec6e1c483a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2569,11 +2674,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7150264405949130727, guid: 530536aed588fe44385234ec6e1c483a,
-        type: 3}
-      propertyPath: m_Name
-      value: FireboltLauncher
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 530536aed588fe44385234ec6e1c483a, type: 3}
