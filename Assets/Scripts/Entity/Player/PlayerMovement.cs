@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     private Rigidbody rb;
+    private Vector3 bufferedForce; // Store force to apply on next fixedupdate
 
     void Awake()
     {
@@ -16,6 +17,12 @@ public class PlayerMovement : MonoBehaviour
     public void Move(Vector3 direction)
     {
         transform.forward = direction;
-        rb.AddForce(direction * speed);
+        bufferedForce = direction * speed;
+    }
+
+    void FixedUpdate()
+    {
+        rb.AddForce(bufferedForce);
+        bufferedForce = Vector3.zero;
     }
 }
