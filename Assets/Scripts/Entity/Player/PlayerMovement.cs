@@ -23,5 +23,6 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rb.AddForce(bufferedForce);
+        bufferedForce = Vector3.zero;
     }
 }
