@@ -19,6 +19,12 @@ public abstract class Boss : MonoBehaviour
     // The animator for this boss
     protected Animator animator;
 
+    // The boss's fighting audio theme
+    [SerializeField] protected AudioSource audioTheme;
+
+    // The audio that should play when the boss is slain
+    [SerializeField] protected AudioSource deathAudio;
+
     // Used to signal the start of the boss battle to any relevant listeners
     public delegate void BossBattleStarted();
     public static event BossBattleStarted bossBattleStarted;

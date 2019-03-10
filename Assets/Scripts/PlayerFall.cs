@@ -52,6 +52,7 @@ public class PlayerFall : MonoBehaviour
         }
         trapOpened = true;
         Player.GetComponent<InputController>().enabled = false;
+        Camera.GetComponent<CameraController>().MoveTo(Player.transform.position + direction);
     }
     
     void Update()
@@ -59,7 +60,6 @@ public class PlayerFall : MonoBehaviour
         if(trapOpened)
         {
             timer += Time.deltaTime;
-            Camera.GetComponent<CameraController>().MoveTo(Player.transform.position + TrapDoor.transform.position + direction);
             fallingAudio.volume += .003f;
             if(timer > delayuntilFastFall)
             {

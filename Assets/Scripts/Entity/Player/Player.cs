@@ -50,7 +50,8 @@ public class Player : Entity
      */
     public override void ChangeHealthBy(int amount)
     {
-        if (invincible) return;
+        // If we're gonna take damage but we're invincible, just short-circuit/fail fast
+        if (invincible && amount < 0) return;
 
         if(amount < 0 && GoldenHealth != 0)
         {

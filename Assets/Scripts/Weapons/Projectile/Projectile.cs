@@ -19,20 +19,29 @@ public class Projectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        // Damage enemy
-        if(otherObject.CompareTag("Enemy") && gameObject.CompareTag("PlayerProjectile"))
+        else if(otherObject.CompareTag("Enemy"))
         {
-            otherObject.GetComponent<Enemy>().ChangeHealthBy(-damage);
-            Destroy(gameObject);
+            // Damage enemy
+            HitWithEnemy(otherObject);
         }
-        
-        // Damage player
         else if (otherObject.CompareTag("Player") && gameObject.CompareTag("EnemyProjectile"))
         {
+            // Damage player
             otherObject.GetComponent<Player>().ChangeHealthBy(-damage);
             Destroy(gameObject);
         }
+    }
+
+    void HitWithEnemy(GameObject enemy)
+    {
+        // If this gameobject is not a player projectile, return
+        if (!gameObject.CompareTag("PlayerProjectile")) return;
+
+        Enemy enemyController = enemy.GetComponent<Enemy>();
+        if (enemyController.IsDead()) return;
+
+        enemyController.ChangeHealthBy(-damage);
+        Destroy(gameObject);
     }
 
 

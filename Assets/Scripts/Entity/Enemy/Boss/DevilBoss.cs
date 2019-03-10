@@ -25,8 +25,9 @@ public class DevilBoss : Boss
     private bool inPhaseTwo;
     [SerializeField] AudioSource phaseTwoAudio;
     
-    [SerializeField] AudioSource DeathAudio;
+    // A reference to the boss's phase two script
     private PhaseTwo phaseTwo;
+
 
     /* Initialize all members.
      */
@@ -79,8 +80,9 @@ public class DevilBoss : Boss
         animator.ResetTrigger("AttackMelee");
         animator.ResetTrigger("AttackRanged");
         animator.SetTrigger("DeathPose");
-        
-        DeathAudio.Play();
+
+        audioTheme.Stop();
+        deathAudio.Play();
         
         // Prevent this script and the navmesh agent from doing anything else
         this.enabled = false;
@@ -96,6 +98,8 @@ public class DevilBoss : Boss
         animator.ResetTrigger("AttackMelee");
         animator.ResetTrigger("AttackRanged");
         animator.SetTrigger("VictoryPose");
+
+        audioTheme.Stop();
 
         // Prevent this script from doing anything else
         this.enabled = false;

@@ -86,8 +86,10 @@ MonoBehaviour:
   Health: 6
   MaxHealth: 6
   model: {fileID: 1224860693315704524}
-  invincibilityDurationSeconds: 2
+  invincibilityDurationSeconds: 1.5
   delayBetweenInvincibilityFlashes: 0.15
+  GoldenHealth: 0
+  MaxGoldenHealth: 10
 --- !u!114 &3672507080587500165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd3bb92f5602da0499d8f8ffe6901288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  speed: 125
 --- !u!114 &7253883188572331683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,7 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa0321dc211064344bcf3e35ed6f3f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  possessionRadius: 1
+  possessionRadius: 1.5
+  TheHaloPrefab: {fileID: 166266, guid: 75d6b7ca6c2ca4d1da254784578cec0e, type: 3}
 --- !u!114 &2724235511072022217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +255,7 @@ PrefabInstance:
     - target: {fileID: 5455074748802241686, guid: 81daa4c07a3b70c498f863d39a24b47e,
         type: 3}
       propertyPath: upwardOffset
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81daa4c07a3b70c498f863d39a24b47e, type: 3}
