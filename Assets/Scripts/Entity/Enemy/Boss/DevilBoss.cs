@@ -99,6 +99,8 @@ public class DevilBoss : Boss
         animator.ResetTrigger("AttackRanged");
         animator.SetTrigger("VictoryPose");
 
+        audioTheme.Stop();
+
         // Prevent this script from doing anything else
         this.enabled = false;
     }

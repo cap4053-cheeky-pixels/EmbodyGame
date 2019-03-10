@@ -6,10 +6,13 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 
-public class PauseMenu : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     // Internal flag to keep track of whether the user has paused
     public static bool gameIsPaused = false;
+
+    // Reference to the player
+    [SerializeField] private Player player;
 
     // UI canvas for the pause menu
     [SerializeField] private GameObject pauseMenuUI;
@@ -18,7 +21,24 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private EventSystem eventSystem;
 
     // The first button that should be highlighted in the pause menu
-    [SerializeField] private Button firstButtonToSelect;
+    [SerializeField] private Button firstButtonForPause;
+
+    // The first button that should be highlighted when the game is over
+    [SerializeField] private Button firstButtonForGameOver;
+
+    // Reference to the game over text, invisible by default
+    [SerializeField] private GameObject gameOverCanvas;
+
+    // The audio to play when the game is over
+    [SerializeField] private AudioSource gameOverAudio;
+
+
+    /* Set up any subscription/initialization.
+     */ 
+    private void Awake()
+    {
+        player.deathEvent += GameOver;
+    }
 
 
     /* Runs every frame and polls for pausing input.
@@ -26,18 +46,8 @@ public class PauseMenu : MonoBehaviour
     private void Update()
     {
         bool playerPaused = Input.GetButtonDown("Pause");
-        bool playerCanceled = Input.GetButtonDown("Cancel");
 
-        // Unpausing
-        if(gameIsPaused)
-        {
-            if(playerCanceled)
-            {
-                Resume();
-            }
-        }
-        // Pausing
-        else if(playerPaused)
+        if(!gameIsPaused && playerPaused)
         {
             Pause();
         }
@@ -60,7 +70,12 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
-        firstButtonToSelect.Select();
+
+        if(firstButtonForGameOver.enabled)
+        {
+            firstButtonForPause.Select();
+        }
+
         gameIsPaused = true;
         Time.timeScale = 0f;
     }
@@ -70,7 +85,7 @@ public class PauseMenu : MonoBehaviour
      */ 
     public void Restart()
     {
-        // Necessary because it's static and persists
+        // Necessary because it's  and persists
         gameIsPaused = false;
 
         Time.timeScale = 1f;
@@ -83,11 +98,23 @@ public class PauseMenu : MonoBehaviour
      */ 
     public void LoadMenu()
     {
-        // Necessary because it's static and persists
+        // Necessary because it's  and persists
         gameIsPaused = false;
 
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
+    }
+
+
+    /* Game-over transition.
+     */ 
+    public void GameOver()
+    {
+        Pause();
+        firstButtonForPause.interactable = false;
+        firstButtonForGameOver.Select();
+        gameOverCanvas.SetActive(true);
+        gameOverAudio.Play();
     }
 
 

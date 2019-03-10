@@ -29,3 +29,4 @@ Embody is a dungeon crawler where you play as a ghost that can possess any enemy
 - [Dramatic Hit sound by qubodup](https://freesound.org/people/qubodup/sounds/222517/)
 - Red heart consumption: [Water_Gulp by Q.K.](https://freesound.org/people/Q.K./sounds/56271/)
 - Golden heart consumption: [Powerup/success by Gabriel Araujo](https://freesound.org/people/GabrielAraujo/sounds/242501/)
+- [Game over audio by DRFX](https://freesound.org/people/DRFX/sounds/341807/)
