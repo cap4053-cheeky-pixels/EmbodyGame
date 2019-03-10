@@ -169,7 +169,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3c36cdcc7b6888f42840f74308f38e3c, type: 2}
+  - {fileID: 2100000, guid: 2ac24fdadcbb7ec47a5ea92de94ab342, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -213,7 +213,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0000001, y: 1, z: 1}
+  m_Size: {x: 1.0000001, y: 1.5, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5381350257218438129
 MonoBehaviour:
@@ -228,7 +228,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TrapDoor: {fileID: 5381350258763008393}
-  thrust: 10
 --- !u!1 &5381350257674973596
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,7 +288,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3c36cdcc7b6888f42840f74308f38e3c, type: 2}
+  - {fileID: 2100000, guid: 2ac24fdadcbb7ec47a5ea92de94ab342, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -333,7 +332,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1.5, z: 1}
   m_Center: {x: -0.00000023841858, y: 0, z: 0}
 --- !u!114 &5381350257674973590
 MonoBehaviour:
@@ -348,7 +347,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TrapDoor: {fileID: 5381350258763008393}
-  thrust: 10
 --- !u!1 &5381350257723035614
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,6 +466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5381350258763008392}
   - component: {fileID: 3975800194136987255}
+  - component: {fileID: 3415883727593977897}
   m_Layer: 0
   m_Name: TrapDoor
   m_TagString: Untagged
@@ -501,8 +500,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 48d73da26868d4fd4a1dd8725dff4a56, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 73c45c2e3a103440db0c8e1190d00feb, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -587,3 +586,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3415883727593977897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5381350258763008393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c36c09dab87b34c6399836a3646ab2e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 10
+  fallingAudio: {fileID: 3975800194136987255}
