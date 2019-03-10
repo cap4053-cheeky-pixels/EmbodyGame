@@ -19,11 +19,12 @@ public class Projectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        else if(otherObject.CompareTag("Enemy"))
+        // Damage enemy
+        else if(otherObject.CompareTag("Enemy") && gameObject.CompareTag("PlayerProjectile"))
         {
-            // Damage enemy
-            HitWithEnemy(otherObject);
+            DamageEnemy(otherObject);
         }
+        // Damage player
         else if (otherObject.CompareTag("Player") && gameObject.CompareTag("EnemyProjectile"))
         {
             // Damage player
@@ -32,11 +33,9 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    void HitWithEnemy(GameObject enemy)
-    {
-        // If this gameobject is not a player projectile, return
-        if (!gameObject.CompareTag("PlayerProjectile")) return;
 
+    void DamageEnemy(GameObject enemy)
+    {
         Enemy enemyController = enemy.GetComponent<Enemy>();
         if (enemyController.IsDead()) return;
 

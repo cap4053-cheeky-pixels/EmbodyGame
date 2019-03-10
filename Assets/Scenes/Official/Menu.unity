@@ -456,7 +456,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -532,9 +532,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 1
+    x: 0
     y: 0
-    width: 0.5
+    width: 0
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -1121,6 +1121,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SceneFader
+      objectReference: {fileID: 0}
+    - target: {fileID: 5838292180412522532, guid: 805150343ce70b84a88491c66b9b3f6a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5838292180412522584, guid: 805150343ce70b84a88491c66b9b3f6a,
         type: 3}
