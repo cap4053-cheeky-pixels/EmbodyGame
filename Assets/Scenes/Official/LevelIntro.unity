@@ -572,7 +572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd13f90ea3922d24f957e0c4c2f32729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToWaitBeforeSceneChange: 5
+  timeToWaitBeforeSceneChange: 3
   text: {fileID: 73878953}
 --- !u!1 &1420570756
 GameObject:

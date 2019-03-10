@@ -74,12 +74,10 @@ public class Spawner : MonoBehaviour
             {
                 GameObject spawnedEnemy = Instantiate(enemyToSpawn, spawnPoint.transform.position, 
                                                       Quaternion.Euler(0, spawnPoint.yRotation, 0));
-                Enemy script = spawnedEnemy.GetComponent<Enemy>();
 
-                script.MaxHealth = spawnPoint.maxHealth;
-                script.Health = spawnPoint.maxHealth;
-                script.gameObject.GetComponent<NavMeshAgent>().speed = spawnPoint.speed;
+                Enemy script = spawnedEnemy.GetComponent<Enemy>();
                 script.gameObject.transform.localScale *= spawnPoint.scale;
+
                 spawned.Add(spawnedEnemy);
             }
         }

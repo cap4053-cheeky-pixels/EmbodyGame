@@ -83,10 +83,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be9dc56fee26c4742ba88aff04595f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
-  MaxHealth: 3
+  Health: 8
+  MaxHealth: 8
   model: {fileID: 6004890343367689404}
-  isPossessable: 0
+  isPossessable: 1
   collideDamage: 1
 --- !u!114 &6004890344381659934
 MonoBehaviour:
@@ -139,7 +139,14 @@ MonoBehaviour:
   heartPrefabs:
   - {fileID: 3676220467416633035, guid: c0e19f4f0d1f2ea458756409aa801246, type: 3}
   - {fileID: 6058534631205044202, guid: cfdc812ad6d2939458ab1a2e2b5e3f34, type: 3}
-  healthDropProbability: 0
+  - {fileID: 3286927343409276462, guid: 3fcdadf5b7b72f14fbbb5fac7e28ec66, type: 3}
+  - {fileID: 4586676567768156163, guid: d9113df18782b4f41924d72e42c5efcf, type: 3}
+  weights:
+  - 0.5
+  - 0.25
+  - 0.15
+  - 0.1
+  healthDropProbability: 0.5
   xzRange: 600
   yForce: 800
   spawnHeight: 3.5
