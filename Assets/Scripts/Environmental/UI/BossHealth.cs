@@ -19,6 +19,7 @@ public class BossHealth : MonoBehaviour
      */ 
     private void Awake()
     {
+        slider = gameObject.GetComponent<Slider>();
         Boss.bossBattleStarted += AssociateWithLevelBoss;
         defaultScale = gameObject.transform.localScale;
 
@@ -54,7 +55,6 @@ public class BossHealth : MonoBehaviour
             boss.healthChangedEvent += OnBossHealthChanged;
             boss.deathEvent += OnBossDied;
 
-            slider = gameObject.GetComponent<Slider>();
             slider.maxValue = boss.MaxHealth;
             slider.minValue = 0;
             slider.value = slider.maxValue;
