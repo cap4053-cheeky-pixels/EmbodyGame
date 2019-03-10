@@ -2245,7 +2245,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 73c45c2e3a103440db0c8e1190d00feb, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2615,11 +2615,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3623955585191402957}
     m_Modifications:
-    - target: {fileID: 7150264405949130727, guid: 530536aed588fe44385234ec6e1c483a,
-        type: 3}
-      propertyPath: m_Name
-      value: FireboltLauncher
-      objectReference: {fileID: 0}
     - target: {fileID: 7150264405949130725, guid: 530536aed588fe44385234ec6e1c483a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2674,6 +2669,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7150264405949130727, guid: 530536aed588fe44385234ec6e1c483a,
+        type: 3}
+      propertyPath: m_Name
+      value: FireboltLauncher
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 530536aed588fe44385234ec6e1c483a, type: 3}
