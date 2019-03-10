@@ -20,7 +20,8 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
         // Damage enemy
-        else if(otherObject.CompareTag("Enemy") && gameObject.CompareTag("PlayerProjectile"))
+        else if( (otherObject.CompareTag("Enemy") || otherObject.CompareTag("Boss")) && 
+                  gameObject.CompareTag("PlayerProjectile"))
         {
             DamageEnemy(otherObject);
         }
