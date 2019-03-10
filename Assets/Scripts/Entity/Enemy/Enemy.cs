@@ -87,7 +87,6 @@ public class Enemy : Entity
     private void OnEnemyDied()
     {
         isDead = true;
-        isPossessable = true;
 
         // Signal the death of this enemy
         deathEvent?.Invoke(gameObject);
