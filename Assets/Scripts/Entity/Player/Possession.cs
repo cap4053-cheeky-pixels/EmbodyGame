@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class Possession : MonoBehaviour
 {
     private Player player;
@@ -58,7 +57,7 @@ public class Possession : MonoBehaviour
         }
         
     }
-    
+
     void HighLightEnemy()
     {
         targetedEnemy = NewEnemytoTarget;
@@ -77,7 +76,7 @@ public class Possession : MonoBehaviour
         HaloActive = false;
         targetedEnemy = null;
     }
-    
+
     //Actual possession takes place
     void TakePossessionAction(GameObject enemy){
         
@@ -111,7 +110,7 @@ public class Possession : MonoBehaviour
         Destroy(enemy);
         
     }
-    
+
     private void NotifyOnPossessionControllers(GameObject enemy)
     {
         // Notify player controllers
@@ -126,11 +125,11 @@ public class Possession : MonoBehaviour
             iopc.OnPossession();
         }
     }
-    
+
     //checks for nearby enemies
     GameObject FindEnemytoPossess(float radiuscheck){
-        
-        Collider[] checkWhoNearby = Physics.OverlapSphere(transform.position,1);
+
+        Collider[] checkWhoNearby = Physics.OverlapSphere(transform.position,radiuscheck);
         //tracks shortest distance to colliders in the vicinity of player
         float distance = 0;
         GameObject nearestEnemy = null;
@@ -160,7 +159,5 @@ public class Possession : MonoBehaviour
             }
         }
         return nearestEnemy;
-        
     }
-    
 }
