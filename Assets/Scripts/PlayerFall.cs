@@ -16,6 +16,8 @@ public class PlayerFall : MonoBehaviour
     private Vector3 direction;
     private float timer = 0.0f;
     private float delayuntilFastFall = .5f;
+    private float rateofFall = .75f;
+    private float timetoNextScene = 5.0f;
     
     [SerializeField]
     private AudioSource fallingAudio;
@@ -25,6 +27,7 @@ public class PlayerFall : MonoBehaviour
     
     void Start()
     {
+        direction = new Vector3(0, desiredCameraHeight, 0);
         Camera = GameObject.FindWithTag("MainCamera");
         TrapDoor = gameObject;
         TrapDoorOpen[] hinges = GetComponentsInChildren<TrapDoorOpen>();
@@ -37,8 +40,6 @@ public class PlayerFall : MonoBehaviour
     
     void BeginFall(GameObject fallingEntity)
     {
-        
-        direction = new Vector3(0, desiredCameraHeight, 0);
         PlayerBod = fallingEntity.GetComponent<Rigidbody>();
         Player = fallingEntity;
         AudioSource[] audios = GameObject.FindWithTag("Boss").GetComponentsInChildren<AudioSource>();
@@ -50,6 +51,7 @@ public class PlayerFall : MonoBehaviour
             }
         }
         trapOpened = true;
+        Player.GetComponent<InputController>().enabled = false;
     }
     
     void Update()
@@ -62,9 +64,9 @@ public class PlayerFall : MonoBehaviour
             if(timer > delayuntilFastFall)
             {
                 //initiate Fast Fall
-                Player.transform.position += Vector3.down*.75f;
+                Player.transform.position += Vector3.down*rateofFall;
             }
-            if(timer > 5.0f)
+            if(timer > timetoNextScene)
             {
                 SceneManager.LoadScene("LevelTrans");
             }
