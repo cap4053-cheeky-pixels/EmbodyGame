@@ -14,6 +14,8 @@ Embody is a dungeon crawler where you play as a ghost that can possess any enemy
 - [Blood stone by mafon2](https://opengameart.org/content/seamless-space-rocks-textures-pack-512px-blood-stone-ch16png)
 - [Mine rocks by mafon2](https://opengameart.org/content/seamless-space-rocks-textures-pack-512px-mine-rocks-ch16png)
 - [Cubex enemy model by DimasAlclade](https://www.cgtrader.com/free-3d-models/various/various-models/cubex)
+- [Rock model by GRUMPNTUG](https://assetstore.unity.com/packages/3d/free-demo-rock-53146)
+- [Halo Shader and Prefab](https://hyunkell.com/blog/rts-style-unit-selection-in-unity-5/)
 
 ### Audio
 
@@ -30,4 +32,3 @@ Embody is a dungeon crawler where you play as a ghost that can possess any enemy
 - Red heart consumption: [Water_Gulp by Q.K.](https://freesound.org/people/Q.K./sounds/56271/)
 - Golden heart consumption: [Powerup/success by Gabriel Araujo](https://freesound.org/people/GabrielAraujo/sounds/242501/)
 - [Game over audio by DRFX](https://freesound.org/people/DRFX/sounds/341807/)
-- [Halo Shader and Prefab](https://hyunkell.com/blog/rts-style-unit-selection-in-unity-5/)
