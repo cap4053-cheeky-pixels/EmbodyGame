@@ -86,7 +86,7 @@ MonoBehaviour:
   Health: 8
   MaxHealth: 8
   model: {fileID: 124331788005006007}
-  isPossessable: 0
+  isPossessable: 1
   collideDamage: 1
 --- !u!114 &124331789069296917
 MonoBehaviour:
