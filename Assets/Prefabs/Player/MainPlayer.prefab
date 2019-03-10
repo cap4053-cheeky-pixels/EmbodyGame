@@ -86,7 +86,7 @@ MonoBehaviour:
   Health: 6
   MaxHealth: 6
   model: {fileID: 1224860693315704524}
-  invincibilityDurationSeconds: 1
+  invincibilityDurationSeconds: 1.5
   delayBetweenInvincibilityFlashes: 0.15
   GoldenHealth: 0
   MaxGoldenHealth: 10
