@@ -16,7 +16,7 @@ public class PlayerFall : MonoBehaviour
     private Vector3 direction;
     private float timer = 0.0f;
     private float delayuntilFastFall = .5f;
-    private float rateofFall = .75f;
+    private float rateofFall = 30.0f;
     private float timetoNextScene = 5.0f;
     
     [SerializeField]
@@ -64,7 +64,7 @@ public class PlayerFall : MonoBehaviour
             if(timer > delayuntilFastFall)
             {
                 //initiate Fast Fall
-                Player.transform.position += Vector3.down*rateofFall;
+                Player.transform.position += Vector3.down*rateofFall*Time.deltaTime;
             }
             if(timer > timetoNextScene)
             {
