@@ -11,7 +11,6 @@ public class Heart : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("Heart Collision Enter: " + other.collider.tag);
         if (other.gameObject.CompareTag("Player"))
         {
             Player player = other.gameObject.GetComponent<Player>();
