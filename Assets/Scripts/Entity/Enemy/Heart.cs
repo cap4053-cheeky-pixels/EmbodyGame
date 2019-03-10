@@ -11,6 +11,7 @@ public class Heart : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        Debug.Log("Heart Collision Enter: " + other.collider.tag);
         if (other.gameObject.CompareTag("Player"))
         {
             Player player = other.gameObject.GetComponent<Player>();
@@ -21,13 +22,13 @@ public class Heart : MonoBehaviour
                 {
                     player.ChangeHealthBy(player.MaxHealth - player.Health);
                     player.ChangeGoldenHealthBy(Health);
-                    StartCoroutine(DestroyWithDelay());
+                    DestroyHeartButPlayAudio();
                 }
                 else if (player.GoldenHealth != player.MaxGoldenHealth)
                 {
                     player.ChangeHealthBy(player.MaxHealth - player.Health);
                     player.ChangeGoldenHealthBy(player.MaxGoldenHealth - player.Health);
-                    StartCoroutine(DestroyWithDelay());
+                    DestroyHeartButPlayAudio();
                 }
             }
             else if(player.Health != player.MaxHealth)
@@ -35,17 +36,27 @@ public class Heart : MonoBehaviour
                 if ((player.Health + Health) <= player.MaxHealth)
                 {
                     player.ChangeHealthBy(Health);
-                    StartCoroutine(DestroyWithDelay());
+                    DestroyHeartButPlayAudio();
                 }
                 else if (player.Health != player.MaxHealth)
                 {
                     player.ChangeHealthBy(player.MaxHealth - player.Health);
-                    StartCoroutine(DestroyWithDelay());
+                    DestroyHeartButPlayAudio();
                 }
             }
         }
     }
 
+    private void DestroyHeartButPlayAudio()
+    {
+        /**
+            Due to some logical/design oversight, we have to hide the heart
+            and disable the collider immediately, but not destroy it
+            because we want the audio to play (Which is a child of this object).
+        */
+        HideHeart();
+        StartCoroutine(PlayAudioAndDestroyWithDelay());
+    }
 
     private void HideHeart()
     {
@@ -59,9 +70,8 @@ public class Heart : MonoBehaviour
     }
 
 
-    private IEnumerator DestroyWithDelay()
+    private IEnumerator PlayAudioAndDestroyWithDelay()
     {
-        HideHeart();
         heartPickupAudio.Play();
         yield return new WaitForSeconds(heartPickupAudio.clip.length);
         Destroy(gameObject);
