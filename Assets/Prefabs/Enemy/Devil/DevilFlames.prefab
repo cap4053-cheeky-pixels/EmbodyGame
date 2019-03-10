@@ -49,10 +49,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197921236134390014}
     m_Modifications:
-    - target: {fileID: 118616, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
-      propertyPath: m_Name
-      value: WallOfFire (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 494314, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -101,6 +97,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 4.5
       objectReference: {fileID: 0}
+    - target: {fileID: 118616, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
+      propertyPath: m_Name
+      value: WallOfFire (2)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
 --- !u!4 &197921234875431500 stripped
@@ -116,10 +116,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197921236134390014}
     m_Modifications:
-    - target: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
-      propertyPath: m_Name
-      value: SmallFires (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 458676, guid: 18faec2a14493684d905501076799765, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.15
@@ -164,6 +160,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
+      propertyPath: m_Name
+      value: SmallFires (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 11437672, guid: 18faec2a14493684d905501076799765, type: 3}
       propertyPath: IntensityModifier
       value: 1.2
@@ -183,10 +183,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197921236134390014}
     m_Modifications:
-    - target: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
-      propertyPath: m_Name
-      value: SmallFires (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 458676, guid: 18faec2a14493684d905501076799765, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.15
@@ -231,6 +227,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
+      propertyPath: m_Name
+      value: SmallFires (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 11437672, guid: 18faec2a14493684d905501076799765, type: 3}
       propertyPath: IntensityModifier
       value: 1.2
@@ -250,10 +250,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197921236134390014}
     m_Modifications:
-    - target: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
-      propertyPath: m_Name
-      value: SmallFires (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 458676, guid: 18faec2a14493684d905501076799765, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.72
@@ -298,6 +294,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
+      propertyPath: m_Name
+      value: SmallFires (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 11437672, guid: 18faec2a14493684d905501076799765, type: 3}
       propertyPath: IntensityModifier
       value: 1.2
@@ -317,10 +317,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197921236134390014}
     m_Modifications:
-    - target: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
-      propertyPath: m_Name
-      value: SmallFires (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 458676, guid: 18faec2a14493684d905501076799765, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.76
@@ -365,6 +361,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
+      propertyPath: m_Name
+      value: SmallFires (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 11437672, guid: 18faec2a14493684d905501076799765, type: 3}
       propertyPath: IntensityModifier
       value: 1.2
@@ -384,10 +384,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197921236134390014}
     m_Modifications:
-    - target: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
-      propertyPath: m_Name
-      value: SmallFires (8)
-      objectReference: {fileID: 0}
     - target: {fileID: 458676, guid: 18faec2a14493684d905501076799765, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.52
@@ -432,6 +428,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
+      propertyPath: m_Name
+      value: SmallFires (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 11437672, guid: 18faec2a14493684d905501076799765, type: 3}
       propertyPath: IntensityModifier
       value: 1.2
@@ -451,10 +451,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197921236134390014}
     m_Modifications:
-    - target: {fileID: 118616, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
-      propertyPath: m_Name
-      value: WallOfFire (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 494314, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.68
@@ -503,6 +499,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 118616, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
+      propertyPath: m_Name
+      value: WallOfFire (4)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
 --- !u!4 &197921235794263570 stripped
@@ -518,10 +518,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197921236134390014}
     m_Modifications:
-    - target: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
-      propertyPath: m_Name
-      value: SmallFires
-      objectReference: {fileID: 0}
     - target: {fileID: 458676, guid: 18faec2a14493684d905501076799765, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -566,6 +562,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
+      propertyPath: m_Name
+      value: SmallFires
+      objectReference: {fileID: 0}
     - target: {fileID: 11437672, guid: 18faec2a14493684d905501076799765, type: 3}
       propertyPath: IntensityModifier
       value: 1.2
@@ -585,10 +585,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197921236134390014}
     m_Modifications:
-    - target: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
-      propertyPath: m_Name
-      value: SmallFires (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 458676, guid: 18faec2a14493684d905501076799765, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.52
@@ -633,6 +629,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
+      propertyPath: m_Name
+      value: SmallFires (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 11437672, guid: 18faec2a14493684d905501076799765, type: 3}
       propertyPath: IntensityModifier
       value: 1.2
@@ -652,10 +652,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197921236134390014}
     m_Modifications:
-    - target: {fileID: 118616, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
-      propertyPath: m_Name
-      value: WallOfFire (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 494314, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -704,6 +700,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 4.5
       objectReference: {fileID: 0}
+    - target: {fileID: 118616, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
+      propertyPath: m_Name
+      value: WallOfFire (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 3}
 --- !u!4 &197921236034726054 stripped
@@ -719,10 +719,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197921236134390014}
     m_Modifications:
-    - target: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
-      propertyPath: m_Name
-      value: SmallFires (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 458676, guid: 18faec2a14493684d905501076799765, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.72
@@ -767,6 +763,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
+      propertyPath: m_Name
+      value: SmallFires (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 11437672, guid: 18faec2a14493684d905501076799765, type: 3}
       propertyPath: IntensityModifier
       value: 1.2
@@ -786,10 +786,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197921236134390014}
     m_Modifications:
-    - target: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
-      propertyPath: m_Name
-      value: SmallFires (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 458676, guid: 18faec2a14493684d905501076799765, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.76
@@ -833,6 +829,10 @@ PrefabInstance:
     - target: {fileID: 458676, guid: 18faec2a14493684d905501076799765, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
+      propertyPath: m_Name
+      value: SmallFires (1)
       objectReference: {fileID: 0}
     - target: {fileID: 11437672, guid: 18faec2a14493684d905501076799765, type: 3}
       propertyPath: IntensityModifier

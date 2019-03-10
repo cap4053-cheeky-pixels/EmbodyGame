@@ -135,7 +135,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 4.5
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -270,6 +270,16 @@ PrefabInstance:
         type: 3}
       propertyPath: damage
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3189315024068623013, guid: 1e1b05635e420cc45a51baa02a80b5c7,
+        type: 3}
+      propertyPath: speed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3189315024068623013, guid: 1e1b05635e420cc45a51baa02a80b5c7,
+        type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 0.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e1b05635e420cc45a51baa02a80b5c7, type: 3}
