@@ -29,6 +29,9 @@ public class HeartSystem : MonoBehaviour
     // The delay in seconds between each flash of a critical heart
     public float delayBetweenCriticalHealthFlashes;
 
+    // For critical health blinking
+    private Vector3 defaultHeartScale;
+
 
     /* Called before the game starts. Sets up all necessary fields.
      */
@@ -37,6 +40,8 @@ public class HeartSystem : MonoBehaviour
         healthPerHeart = heartSprites.Length - 1;
         maxAttainableHearts = heartImages.Length;
         AssociateWith(GameObject.FindWithTag("Player").GetComponent<Player>());
+
+        defaultHeartScale = heartImages[0].transform.localScale;
     }
 
 
@@ -78,7 +83,6 @@ public class HeartSystem : MonoBehaviour
     private IEnumerator BlinkCriticalHealth()
     {
         Image firstHeart = heartImages[0];
-        Vector3 defaultHeartScale = heartImages[0].transform.localScale;
 
         while (playerAtCriticalHealth)
         {
