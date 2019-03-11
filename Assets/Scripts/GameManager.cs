@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     // Internal flag to keep track of whether the user has paused
-    public static bool gameIsPaused = false;
+    public bool gameIsPaused = false;
 
     // Reference to the player
     [SerializeField] private Player player;
@@ -85,9 +85,6 @@ public class GameManager : MonoBehaviour
      */ 
     public void Restart()
     {
-        // Necessary because it's  and persists
-        gameIsPaused = false;
-
         Time.timeScale = 1f;
         LevelIntro.nameOfSceneToLoad = "Level1";
         SceneManager.LoadScene("LevelIntro");
@@ -98,9 +95,6 @@ public class GameManager : MonoBehaviour
      */ 
     public void LoadMenu()
     {
-        // Necessary because it's  and persists
-        gameIsPaused = false;
-
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }
