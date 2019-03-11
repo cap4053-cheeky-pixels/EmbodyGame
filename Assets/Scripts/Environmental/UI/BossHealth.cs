@@ -28,10 +28,6 @@ public class BossHealth : MonoBehaviour
         defaultScale = gameObject.transform.localScale;
 
         Hide();
-
-        Debug.Log("Started!");
-        Debug.Log("Game object transform: " + (gameObject.transform) == null);
-        Debug.Log("Scale: " + defaultScale);
     }
 
 
