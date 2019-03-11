@@ -59,20 +59,6 @@ public class Enemy : Entity
         }
     }
 
-
-    /* Called when this Enemy encounters another object.
-     */
-    private void OnTriggerEnter(Collider other)
-    {
-        // Detecting projectiles
-        if(other.gameObject.CompareTag("PlayerProjectile") && Health != 0)
-        {
-            Projectile projectile = other.gameObject.GetComponent<Projectile>();
-            ChangeHealthBy(-projectile.damage);
-            Destroy(other.gameObject);
-        }
-    }
-
     private void OnCollisionEnter(Collision c)
     {
         CheckPlayerCollision(c.collider);

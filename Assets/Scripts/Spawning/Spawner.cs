@@ -77,7 +77,6 @@ public class Spawner : MonoBehaviour
 
                 Enemy script = spawnedEnemy.GetComponent<Enemy>();
                 script.gameObject.transform.localScale *= spawnPoint.scale;
-
                 spawned.Add(spawnedEnemy);
             }
         }

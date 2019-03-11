@@ -29,7 +29,7 @@ public class RoomScript : MonoBehaviour
         playerWasHereBefore = false;        
 
         cameraController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
-        desiredCameraHeight = 19.7f;
+        desiredCameraHeight = 22f;
     }
 
     

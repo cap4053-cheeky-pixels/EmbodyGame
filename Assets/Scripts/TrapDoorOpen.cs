@@ -23,8 +23,6 @@ public class TrapDoorOpen : MonoBehaviour
             //signal event
             TrapOpened?.Invoke(other.gameObject);
         }
-        else
-        Debug.Log("Entity detected" + other.gameObject.tag);
     }
     
 }
