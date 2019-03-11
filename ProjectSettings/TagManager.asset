@@ -3,7 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Collider
+  - Projectile
+  - Enemy
+  - PlayerProjectile
+  - EnemyProjectile
+  - Trap
+  - Wall
+  - EnemyMeleeWeapon
+  - Boss
+  - Fire
+  - Heart
+  - LevelEndCam
   layers:
   - Default
   - TransparentFX
@@ -14,9 +26,9 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
+  - Enemy
+  - FireLayer
+  - BackGround Image
   - 
   - 
   - 
