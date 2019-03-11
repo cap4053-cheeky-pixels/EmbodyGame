@@ -5,13 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class GotoMenu : MonoBehaviour
 {
-    public float timer = 0.0f;
+    [SerializeField] private float timer = 0.0f;
+    [SerializeField] private float timeUntilMenuLoad;
 
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
-        if(timer > 5)
-        SceneManager.LoadScene("Menu");
+
+        if (timer > timeUntilMenuLoad)
+        {
+            SceneManager.LoadScene("Menu");
+        }
     }
 }
