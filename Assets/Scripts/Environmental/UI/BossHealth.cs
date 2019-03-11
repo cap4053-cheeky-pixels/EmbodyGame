@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class BossHealth : MonoBehaviour
 {
@@ -17,8 +19,10 @@ public class BossHealth : MonoBehaviour
 
     /* Perform all necessary setup for the health management.
      */ 
-    private void Awake()
+    private void Start()
     {
+        SceneManager.activeSceneChanged += OnSceneChanged;
+
         slider = gameObject.GetComponent<Slider>();
         Boss.bossBattleStarted += AssociateWithLevelBoss;
         defaultScale = gameObject.transform.localScale;
@@ -79,5 +83,16 @@ public class BossHealth : MonoBehaviour
         boss.healthChangedEvent -= OnBossHealthChanged;
         boss = null;
         Hide();
+    }
+
+
+    /* Called when the scene changes. Required for unsubscribing from the
+     * previous static boss signal before the scene is loaded, since it
+     * would persist and attempt to call AssociateWithLevelBoss in a
+     * version of the game object that was destroyed upon scene change.
+     */ 
+    private void OnSceneChanged(Scene prev, Scene next)
+    {
+        Boss.bossBattleStarted -= AssociateWithLevelBoss;
     }
 }
