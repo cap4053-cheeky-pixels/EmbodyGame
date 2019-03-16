@@ -257,6 +257,11 @@ PrefabInstance:
       propertyPath: upwardOffset
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 5455074748802241686, guid: 81daa4c07a3b70c498f863d39a24b47e,
+        type: 3}
+      propertyPath: projectileLifetime
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81daa4c07a3b70c498f863d39a24b47e, type: 3}
 --- !u!1 &8985372404558189384 stripped

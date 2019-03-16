@@ -14,6 +14,7 @@ public class AIAttackController : MonoBehaviour, IOnDeathController
 
     void Awake()
     {
+        enabled = false;
         sc = GetComponent<ShootController>(); // Should be an AttackController interface
     }
 

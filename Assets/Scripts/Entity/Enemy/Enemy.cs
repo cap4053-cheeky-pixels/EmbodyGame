@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : Entity
 {
@@ -16,11 +17,17 @@ public class Enemy : Entity
     public delegate void HealthChanged();
     public event HealthChanged healthChangedEvent;
 
+    // Navmesh stuff
+    private NavMeshAgent agent;
+    private NavMeshObstacle navObstacle;
+
 
     /* Called before the game starts. Sets up all necessary info.
      */
     void Awake()
     {
+        agent = GetComponent<NavMeshAgent>();
+        navObstacle = GetComponent<NavMeshObstacle>();
     }
 
 
@@ -76,6 +83,15 @@ public class Enemy : Entity
 
         // Signal the death of this enemy
         deathEvent?.Invoke(gameObject);
-        OnDeath(); // Call Entity.OnDeath()
+
+        // Call Entity.OnDeath()
+        OnDeath();
+
+        if (agent != null)
+        {
+            agent.enabled = false;
+        }
+
+        navObstacle.enabled = true;
     }
 }
