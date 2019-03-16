@@ -45,7 +45,6 @@ public class DetectPlayer : MonoBehaviour
         {
             if (hit.transform.gameObject.CompareTag("Player"))
             {
-                Debug.Log("No obstacles between player and enemy. Fire!");
                 attackController.enabled = true;
             }
         }
