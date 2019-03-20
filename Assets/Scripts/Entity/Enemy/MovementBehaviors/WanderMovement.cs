@@ -45,13 +45,17 @@ public class WanderMovement : MonoBehaviour, IOnDeathController
             {
                 // TODO: there's a random edge case where the position is still invalid: "CalculatePolygonPath: invalid target position { Infinity, Infinity, Infinity }"
                 movement.MoveTo(destination);
+
+                // Some loss of time due to these computations, but negligible
+                float distanceToDestination = Vector3.Distance(transform.position, destination);
+                float timeToWaitBeforeRecalculation = distanceToDestination / movement.agent.speed;
+
+                yield return new WaitForSeconds(timeToWaitBeforeRecalculation);
             }
-
-            // Some loss of time due to these computations, but negligible
-            float distanceToDestination = Vector3.Distance(transform.position, destination);
-            float timeToWaitBeforeRecalculation = distanceToDestination / movement.agent.speed; 
-
-            yield return new WaitForSeconds(timeToWaitBeforeRecalculation);
+            else
+            {
+                yield return null;
+            }
         }
         while (enabled);
     }
