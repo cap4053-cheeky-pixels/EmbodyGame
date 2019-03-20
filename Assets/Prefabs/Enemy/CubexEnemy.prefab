@@ -471,9 +471,10 @@ GameObject:
   - component: {fileID: 4007304483517652794}
   - component: {fileID: 4007304483517652797}
   - component: {fileID: 4007304483517652796}
-  - component: {fileID: 4007304483517652799}
   - component: {fileID: 4007304483517652798}
+  - component: {fileID: 4007304483517652799}
   - component: {fileID: 4007304483517652785}
+  - component: {fileID: 6302299170493161422}
   - component: {fileID: 4007304483517652784}
   - component: {fileID: 4007304483517652787}
   - component: {fileID: 2156721400152459280}
@@ -555,18 +556,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88427a4a9977e174c8cdfe0f10a26123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4007304483517652799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4007304483517652786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54d381b06e79c8e4b9db790733c67e49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!195 &4007304483517652798
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -589,6 +578,18 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4007304483517652799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4007304483517652786}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d381b06e79c8e4b9db790733c67e49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4007304483517652785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,6 +602,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d00ba51780b15c7429c990601074afe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 0}
+--- !u!114 &6302299170493161422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4007304483517652786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 708d41ef0d02b3e468e0a4ee0065e743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wanderRadius: 10
+  delayBetweenPathCalculations: 4
 --- !u!54 &4007304483517652784
 Rigidbody:
   m_ObjectHideFlags: 0

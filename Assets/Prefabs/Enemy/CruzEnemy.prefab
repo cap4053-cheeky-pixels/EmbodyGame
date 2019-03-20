@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 1016939505879649357}
   - component: {fileID: 1016939505879649358}
   - component: {fileID: 688633171}
+  - component: {fileID: 1960394212523285990}
   m_Layer: 0
   m_Name: CruzEnemy
   m_TagString: Enemy
@@ -188,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d00ba51780b15c7429c990601074afe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 0}
 --- !u!114 &1016939505879649357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +197,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016939505879649359}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54d381b06e79c8e4b9db790733c67e49, type: 3}
   m_Name: 
@@ -229,6 +231,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1960394212523285990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016939505879649359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 708d41ef0d02b3e468e0a4ee0065e743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wanderRadius: 10
+  delayBetweenPathCalculations: 4
 --- !u!1001 &1016939506656112075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -236,6 +252,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1016939505023120830}
     m_Modifications:
+    - target: {fileID: 100044, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
+      propertyPath: m_Name
+      value: CruzModel
+      objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -279,10 +299,6 @@ PrefabInstance:
     - target: {fileID: 400044, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100044, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
-      propertyPath: m_Name
-      value: CruzModel
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
       propertyPath: m_Controller
