@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 2506059092821221657}
   - component: {fileID: 2506059092821221655}
   - component: {fileID: 7759856674197219178}
+  - component: {fileID: 3608206669854391640}
   m_Layer: 0
   m_Name: KatEnemy
   m_TagString: Enemy
@@ -67,7 +68,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2506059092821221663}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 564cd627e9bdc0c478feb3a68d7972d9, type: 3}
   m_Name: 
@@ -201,6 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d381b06e79c8e4b9db790733c67e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
 --- !u!114 &7759856674197219178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,7 +216,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wanderRadius: 10
-  delayBetweenPathCalculations: 4
+--- !u!114 &3608206669854391640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2506059092821221663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86d30d92020a9af4ea55d5caf890734f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRadius: 15
+  viewAngle: 80
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 8192
+  player: {fileID: 0}
+  behaviorsToDisableUponDetection:
+  - {fileID: 7759856674197219178}
+  behaviorsToEnableUponDetection:
+  - {fileID: 2506059092821221655}
+  - {fileID: 2506059092821221652}
 --- !u!1001 &2506059093331976648
 PrefabInstance:
   m_ObjectHideFlags: 0

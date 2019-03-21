@@ -475,6 +475,7 @@ GameObject:
   - component: {fileID: 4007304483517652799}
   - component: {fileID: 4007304483517652785}
   - component: {fileID: 6302299170493161422}
+  - component: {fileID: 3844234466850371861}
   - component: {fileID: 4007304483517652784}
   - component: {fileID: 4007304483517652787}
   - component: {fileID: 2156721400152459280}
@@ -539,7 +540,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4007304483517652786}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 564cd627e9bdc0c478feb3a68d7972d9, type: 3}
   m_Name: 
@@ -590,6 +591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d381b06e79c8e4b9db790733c67e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
 --- !u!114 &4007304483517652785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -616,7 +618,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wanderRadius: 10
-  delayBetweenPathCalculations: 4
+--- !u!114 &3844234466850371861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4007304483517652786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86d30d92020a9af4ea55d5caf890734f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRadius: 10
+  viewAngle: 65
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 8192
+  player: {fileID: 0}
+  behaviorsToDisableUponDetection:
+  - {fileID: 6302299170493161422}
+  behaviorsToEnableUponDetection:
+  - {fileID: 4007304483517652799}
+  - {fileID: 4007304483517652797}
 --- !u!54 &4007304483517652784
 Rigidbody:
   m_ObjectHideFlags: 0
