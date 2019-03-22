@@ -467,18 +467,19 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4007304483517652792}
+  - component: {fileID: 4007304483517652798}
+  - component: {fileID: 4007304483517652784}
+  - component: {fileID: 4007304483517652787}
   - component: {fileID: 4007304483517652795}
+  - component: {fileID: 2156721400152459280}
   - component: {fileID: 4007304483517652794}
   - component: {fileID: 4007304483517652797}
   - component: {fileID: 4007304483517652796}
-  - component: {fileID: 4007304483517652798}
   - component: {fileID: 4007304483517652799}
   - component: {fileID: 4007304483517652785}
   - component: {fileID: 6302299170493161422}
   - component: {fileID: 3844234466850371861}
-  - component: {fileID: 4007304483517652784}
-  - component: {fileID: 4007304483517652787}
-  - component: {fileID: 2156721400152459280}
+  - component: {fileID: 100403819984926875}
   m_Layer: 0
   m_Name: CubexEnemy
   m_TagString: Enemy
@@ -502,6 +503,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!195 &4007304483517652798
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4007304483517652786}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 2
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 300
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!54 &4007304483517652784
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4007304483517652786}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 1
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
+--- !u!136 &4007304483517652787
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4007304483517652786}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4007304483517652795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,6 +572,32 @@ MonoBehaviour:
   model: {fileID: 8278483085797384672}
   isPossessable: 1
   collideDamage: 1
+--- !u!114 &2156721400152459280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4007304483517652786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7b283cff05ce34f944d10e06d8a98e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartPrefabs:
+  - {fileID: 3676220467416633035, guid: c0e19f4f0d1f2ea458756409aa801246, type: 3}
+  - {fileID: 6058534631205044202, guid: cfdc812ad6d2939458ab1a2e2b5e3f34, type: 3}
+  - {fileID: 3286927343409276462, guid: 3fcdadf5b7b72f14fbbb5fac7e28ec66, type: 3}
+  - {fileID: 4586676567768156163, guid: d9113df18782b4f41924d72e42c5efcf, type: 3}
+  weights:
+  - 0.5
+  - 0.25
+  - 0.15
+  - 0.1
+  healthDropProbability: 0.3
+  xzRange: 600
+  yForce: 800
+  spawnHeight: 2.5
 --- !u!114 &4007304483517652794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -557,28 +636,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88427a4a9977e174c8cdfe0f10a26123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &4007304483517652798
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4007304483517652786}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 2
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 200
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!114 &4007304483517652799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,43 +695,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 8192
-  player: {fileID: 0}
-  behaviorsToDisableUponDetection:
-  - {fileID: 6302299170493161422}
-  behaviorsToEnableUponDetection:
-  - {fileID: 4007304483517652799}
-  - {fileID: 4007304483517652797}
---- !u!54 &4007304483517652784
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4007304483517652786}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 1
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 116
-  m_CollisionDetection: 0
---- !u!136 &4007304483517652787
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4007304483517652786}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2156721400152459280
+--- !u!114 &100403819984926875
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -683,23 +704,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4007304483517652786}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de7b283cff05ce34f944d10e06d8a98e, type: 3}
+  m_Script: {fileID: 11500000, guid: b453d836d3397de41ba53dc5d59346c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heartPrefabs:
-  - {fileID: 3676220467416633035, guid: c0e19f4f0d1f2ea458756409aa801246, type: 3}
-  - {fileID: 6058534631205044202, guid: cfdc812ad6d2939458ab1a2e2b5e3f34, type: 3}
-  - {fileID: 3286927343409276462, guid: 3fcdadf5b7b72f14fbbb5fac7e28ec66, type: 3}
-  - {fileID: 4586676567768156163, guid: d9113df18782b4f41924d72e42c5efcf, type: 3}
-  weights:
-  - 0.5
-  - 0.25
-  - 0.15
-  - 0.1
-  healthDropProbability: 0.3
-  xzRange: 600
-  yForce: 800
-  spawnHeight: 2.5
+  behaviorsToDisableUponDetection:
+  - {fileID: 6302299170493161422}
+  behaviorsToEnableUponDetection:
+  - {fileID: 4007304483517652799}
+  - {fileID: 4007304483517652797}
 --- !u!1 &8278483084363579293
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,58 +17,16 @@ public class FieldOfView : MonoBehaviour, IOnDeathController
     [Tooltip("The layer on which the obstacles reside")]
     public LayerMask obstacleMask;
 
-    [HideInInspector] public Transform player;
 
-    [Tooltip("Behavior scripts, if any, that should be disabled when the player is detected")]
-    [SerializeField] private MonoBehaviour[] behaviorsToDisableUponDetection;
-
-    [Tooltip("Behavior scripts, if any, that should be enabled when the player is detected")]
-    [SerializeField] private MonoBehaviour[] behaviorsToEnableUponDetection;
-
-
-    /* Called before the first frame update.
+    /* Returns true if the player is within the field of view cone, and false otherwise.
      */
-    private void Start()
-    {
-        player = null;
-        gameObject.GetComponent<Enemy>().healthChangedEvent += OnEnemyHurt;
-        StartCoroutine(FindPlayerWithDelay(0.2f));
-    }
-
-    
-    /* Called when the enemy is hit by a player projectile. This is treated
-     * as a detection.
-     */ 
-    private void OnEnemyHurt()
-    {
-        DisableBehaviors();
-        EnableBehaviors();
-        enabled = false;
-    }
-
-
-    /* Finds all visible targets within the player's field of view,
-     * with the given delay between each operation.
-     */
-    private IEnumerator FindPlayerWithDelay(float delay)
-    {
-        while (enabled)
-        {
-            yield return new WaitForSeconds(delay);
-            FindPlayer();
-        }
-    }
-
-
-    /* Locates all visible targets within the player's field of view.
-     */
-    private void FindPlayer()
+    public bool PlayerWithinView()
     {
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, playerMask);
 
         foreach (Collider targetCollider in targetsInViewRadius)
         {
-            player = targetCollider.gameObject.transform;
+            Transform player = targetCollider.gameObject.transform;
 
             Vector3 playerDirection = (player.position - transform.position).normalized;
             float angleToPlayer = Vector3.Angle(transform.forward, playerDirection);
@@ -81,36 +39,12 @@ public class FieldOfView : MonoBehaviour, IOnDeathController
                 // If there is no obstacle in between us and the player, then we've found the player
                 if (!Physics.Raycast(transform.position, playerDirection, distanceToTarget, obstacleMask))
                 {
-                    DisableBehaviors();
-                    EnableBehaviors();
-
-                    // Once the player is found, the enemy will pursue them and has no need for detection
-                    enabled = false;
+                    return true;
                 }
             }
         }
-    }
 
-
-    /* Disables all pre-player-detection behaviors.
-     */ 
-    private void DisableBehaviors()
-    {
-        foreach (MonoBehaviour script in behaviorsToDisableUponDetection)
-        {
-            script.enabled = false;
-        }
-    }
-
-
-    /* Enables all post-player-detection behaviors.
-     */ 
-    private void EnableBehaviors()
-    {
-        foreach (MonoBehaviour script in behaviorsToEnableUponDetection)
-        {
-            script.enabled = true;
-        }
+        return false;
     }
 
 

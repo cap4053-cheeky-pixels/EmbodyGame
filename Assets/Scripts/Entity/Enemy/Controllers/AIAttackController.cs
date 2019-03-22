@@ -2,23 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [RequireComponent(typeof(ShootController))]
 public class AIAttackController : MonoBehaviour, IOnDeathController
 {
-    ShootController sc;
+    private ShootController shootController;
+    private FieldOfView fov;
+
+
+    void Awake()
+    {
+        shootController = GetComponent<ShootController>();
+        fov = GetComponent<FieldOfView>();
+    }
+
 
     public void OnDeath()
     {
         enabled = false;
     }
 
-    void Awake()
-    {
-        sc = GetComponent<ShootController>(); // Should be an AttackController interface
-    }
 
     void Update()
     {
-        sc.FireWeapon();
+        if(fov.PlayerWithinView())
+        {
+            shootController.FireWeapon();
+        }
     }
 }

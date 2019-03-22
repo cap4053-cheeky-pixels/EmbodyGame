@@ -27,12 +27,5 @@ public class FieldOfViewEditor : Editor
 
         // Draw the right line delineating the right edge of the FOV cone
         Handles.DrawLine(fov.transform.position, fov.transform.position + viewAngleB * fov.viewRadius);
-
-        // Draw a red line to the visible targets
-        if(fov.player != null)
-        {
-            Handles.color = Color.red;
-            Handles.DrawLine(fov.transform.position, fov.player.position);
-        }
     }
 }
