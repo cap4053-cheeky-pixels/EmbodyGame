@@ -16,6 +16,8 @@ public class Possession : MonoBehaviour
     [SerializeField]
     private GameObject TheHaloPrefab;
     private bool HaloActive = false;
+    [SerializeField]
+    private AudioSource PossAudio;
     
     
     // Start is called before the first frame update
@@ -83,12 +85,13 @@ public class Possession : MonoBehaviour
         if(enemy == null)
         return;
         
+        //get enemy max health only
         player.MaxHealth = enemy.GetComponent<Enemy>().MaxHealth;
-        player.Health = enemy.GetComponent<Enemy>().MaxHealth;
         
         //update HUD
         player.ChangeMaxHealthBy(0);
-        player.ChangeHealthBy(0);
+        
+        PossAudio.Play();
         
         //Clone the enemy model within the player
         GameObject newModel = GameObject.Instantiate(enemy.GetComponent<Entity>().model,transform);
