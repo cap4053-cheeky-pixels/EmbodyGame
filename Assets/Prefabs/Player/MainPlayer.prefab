@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 934261218680569615}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 1869208889312884171}
   - component: {fileID: 2731797612632256719}
   - component: {fileID: 7626922195323549297}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: MainPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -197,6 +197,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicWeapon
       objectReference: {fileID: 0}
+    - target: {fileID: 5455074748802241685, guid: 81daa4c07a3b70c498f863d39a24b47e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 5455074748802241687, guid: 81daa4c07a3b70c498f863d39a24b47e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -281,6 +286,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d51ee410913f93d4b868c18b832d3764, type: 3}
       propertyPath: m_Name
       value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d51ee410913f93d4b868c18b832d3764, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d51ee410913f93d4b868c18b832d3764, type: 3}
       propertyPath: m_LocalPosition.x

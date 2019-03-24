@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2850494099741027293}
   - component: {fileID: 6728772714929971869}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Rock
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ CapsuleCollider:
   m_Radius: 200
   m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 50, z: 0}
 --- !u!1 &7279928986277566266
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 8183148948326160560}
   - component: {fileID: 1751822727118139465}
   - component: {fileID: 7864188462609261233}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: rock1_LOWuvd:Group11424_rock1_LOWuvd:polySurface1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
