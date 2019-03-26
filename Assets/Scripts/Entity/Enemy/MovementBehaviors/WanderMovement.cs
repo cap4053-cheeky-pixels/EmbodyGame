@@ -21,6 +21,27 @@ public class WanderMovement : MonoBehaviour, IOnDeathController
     }
 
 
+    /* Generates a random direction in which the agent should head.
+     */  
+    Vector3 GenerateDestination()
+    {
+        // Pick a random direction for the agent to head in
+        Vector3 randomDirection = Random.insideUnitSphere * wanderRadius;
+        randomDirection += transform.position;
+
+        // Sample points on the navmesh until we get a hit (this usually terminates in one iteration except for an edge case)
+        NavMeshHit navMeshHit;
+        do
+        {
+            int areaMask = 1 << NavMesh.GetAreaFromName("Walkable");
+            NavMesh.SamplePosition(randomDirection, out navMeshHit, wanderRadius, areaMask);
+        }
+        while (!navMeshHit.hit);
+
+        return navMeshHit.position;
+    }
+    
+
     /* Allows the enemy to wander within the navmesh.
      */ 
     IEnumerator Wander()
@@ -32,21 +53,8 @@ public class WanderMovement : MonoBehaviour, IOnDeathController
         {
             path = new NavMeshPath();
 
-            // Pick a random direction for the agent to head in
-            Vector3 randomDirection = Random.insideUnitSphere * wanderRadius;
-            randomDirection += transform.position;
-
-            // Sample points on the navmesh until we get a hit (this usually terminates in one iteration except for an edge case)
-            NavMeshHit navMeshHit;
-            do
-            {
-                int areaMask = 1 << NavMesh.GetAreaFromName("Walkable");
-                NavMesh.SamplePosition(randomDirection, out navMeshHit, wanderRadius, areaMask);
-            }
-            while (!navMeshHit.hit);
-
-            // Calculate a path to the destination we generated above
-            Vector3 destination = navMeshHit.position;
+            // Calculate a path to the destination 
+            Vector3 destination = GenerateDestination();
             movement.agent.CalculatePath(destination, path);
 
             // Ensure that the agent only visits valid locations
