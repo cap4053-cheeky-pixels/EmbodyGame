@@ -42,8 +42,6 @@ public class WanderMovement : MonoBehaviour, IOnDeathController
             {
                 int areaMask = 1 << NavMesh.GetAreaFromName("Walkable");
                 NavMesh.SamplePosition(randomDirection, out navMeshHit, wanderRadius, areaMask);
-
-                if(!navMeshHit.hit) Debug.Log(navMeshHit.hit);
             }
             while (!navMeshHit.hit);
 
