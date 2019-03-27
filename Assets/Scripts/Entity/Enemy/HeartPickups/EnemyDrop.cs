@@ -13,8 +13,8 @@ public class EnemyDrop : MonoBehaviour
     public List<GameObject> heartPrefabs = new List<GameObject>();
     public List<float> weights = new List<float>();
     public float healthDropProbability;
-    public int xzRange = 600;
-    public int yForce = 800;
+    public int xzSpawnVelocityMax = 5;
+    public int ySpawnVelocity = 0;
     public float spawnHeight = 2.5f;
 
     private List<Drop> drops = new List<Drop>();
@@ -67,13 +67,13 @@ public class EnemyDrop : MonoBehaviour
         var chance = Random.value;
         if (chance <= healthDropProbability)
         {
-            var randX = Random.Range(-xzRange, xzRange);
-            var randZ = Random.Range(-xzRange, xzRange);
+            var randX = Random.Range(-xzSpawnVelocityMax, xzSpawnVelocityMax);
+            var randZ = Random.Range(-xzSpawnVelocityMax, xzSpawnVelocityMax);
             var heart = Instantiate(heartType, transform.position + new Vector3(0, spawnHeight, 0), heartType.transform.rotation);
 
             var heartRb = heart.GetComponent<Rigidbody>();
 
-            heartRb.AddForce(new Vector3(randX, yForce, randZ));
+            heartRb.AddForce(new Vector3(randX, ySpawnVelocity, randZ), ForceMode.VelocityChange);
         }
     }
 }
