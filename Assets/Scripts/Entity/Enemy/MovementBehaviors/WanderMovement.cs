@@ -29,15 +29,15 @@ public class WanderMovement : MonoBehaviour, IOnDeathController
         Vector3 randomDirection = Random.insideUnitSphere * wanderRadius;
         randomDirection += transform.position;
 
-        // Sample points on the navmesh until we get a hit (this usually terminates in one iteration except for an edge case)
+        // Sample a point on the navmesh
         NavMeshHit navMeshHit;
-        do
-        {
-            int areaMask = 1 << NavMesh.GetAreaFromName("Walkable");
-            NavMesh.SamplePosition(randomDirection, out navMeshHit, wanderRadius, areaMask);
-        }
-        while (!navMeshHit.hit);
+        int areaMask = 1 << NavMesh.GetAreaFromName("Walkable");
+        NavMesh.SamplePosition(randomDirection, out navMeshHit, wanderRadius, areaMask);
 
+        // Handles an edge case when a NavMeshHit is generated for an illegal position
+        if (!navMeshHit.hit) return transform.position;
+
+        // Otherwise, if the hit was valid, return that as the new destination
         return navMeshHit.position;
     }
     
