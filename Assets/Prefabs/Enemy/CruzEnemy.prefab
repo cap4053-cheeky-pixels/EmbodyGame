@@ -162,11 +162,11 @@ MonoBehaviour:
   - {fileID: 3286927343409276462, guid: 3fcdadf5b7b72f14fbbb5fac7e28ec66, type: 3}
   - {fileID: 4586676567768156163, guid: d9113df18782b4f41924d72e42c5efcf, type: 3}
   weights:
-  - 0.5
-  - 0.25
-  - 0.15
+  - 0.55
+  - 0.3
   - 0.1
-  healthDropProbability: 1
+  - 0.05
+  healthDropProbability: 0.55
   xzRange: 600
   yForce: 800
   spawnHeight: 2.5
@@ -291,10 +291,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1016939505023120830}
     m_Modifications:
-    - target: {fileID: 100044, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
-      propertyPath: m_Name
-      value: CruzModel
-      objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -338,6 +334,10 @@ PrefabInstance:
     - target: {fileID: 400044, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100044, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
+      propertyPath: m_Name
+      value: CruzModel
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
       propertyPath: m_Controller
