@@ -468,6 +468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4007304483517652792}
   - component: {fileID: 4007304483517652798}
+  - component: {fileID: 5551401116462389285}
   - component: {fileID: 4007304483517652784}
   - component: {fileID: 4007304483517652787}
   - component: {fileID: 4007304483517652795}
@@ -525,6 +526,22 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!208 &5551401116462389285
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4007304483517652786}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!54 &4007304483517652784
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -591,8 +608,8 @@ MonoBehaviour:
   - 0.6
   - 0.4
   healthDropProbability: 0.2
-  xzRange: 600
-  yForce: 800
+  xzSpawnVelocityMax: 5
+  ySpawnVelocity: 0
   spawnHeight: 2.5
 --- !u!114 &4007304483517652794
 MonoBehaviour:
