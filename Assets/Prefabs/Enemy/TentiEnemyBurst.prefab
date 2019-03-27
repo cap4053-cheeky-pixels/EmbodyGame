@@ -147,7 +147,7 @@ MonoBehaviour:
   - 0.25
   - 0.15
   - 0.1
-  healthDropProbability: 0.5
+  healthDropProbability: 0.4
   xzRange: 600
   yForce: 800
   spawnHeight: 3.5

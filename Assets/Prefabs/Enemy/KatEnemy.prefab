@@ -132,11 +132,11 @@ MonoBehaviour:
   - {fileID: 3286927343409276462, guid: 3fcdadf5b7b72f14fbbb5fac7e28ec66, type: 3}
   - {fileID: 4586676567768156163, guid: d9113df18782b4f41924d72e42c5efcf, type: 3}
   weights:
-  - 0.5
-  - 0.25
-  - 0.15
-  - 0.1
-  healthDropProbability: 0.5
+  - 0.6
+  - 0.35
+  - 0.025
+  - 0.025
+  healthDropProbability: 0.35
   xzRange: 600
   yForce: 800
   spawnHeight: 2.5
@@ -357,14 +357,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2506059092821221662}
     m_Modifications:
-    - target: {fileID: 100014, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
-      propertyPath: m_Name
-      value: KatEnemyModel
-      objectReference: {fileID: 0}
-    - target: {fileID: 100010, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
-      propertyPath: m_Name
-      value: SimpleEnemyModel
-      objectReference: {fileID: 0}
     - target: {fileID: 400014, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -408,6 +400,14 @@ PrefabInstance:
     - target: {fileID: 400014, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
+      propertyPath: m_Name
+      value: KatEnemyModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
+      propertyPath: m_Name
+      value: SimpleEnemyModel
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
       propertyPath: m_LocalRotation.y
