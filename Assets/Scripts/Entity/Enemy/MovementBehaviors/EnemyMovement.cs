@@ -32,7 +32,11 @@ public class EnemyMovement : MonoBehaviour
 
     public void Stop()
     {
-        agent.isStopped = true;
+        if(agent.enabled)
+        {
+            agent.isStopped = true;
+            agent.enabled = false;
+        }
     }
 
     // Avoid calling this if possible
