@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1016939505879649366}
   - component: {fileID: 1016939505879649355}
+  - component: {fileID: 2186020227919349803}
   - component: {fileID: 688633171}
   - component: {fileID: 1016939505879649358}
   - component: {fileID: 1016939505879649367}
@@ -98,6 +99,22 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!208 &2186020227919349803
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016939505879649359}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!54 &688633171
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -167,8 +184,8 @@ MonoBehaviour:
   - 0.1
   - 0.05
   healthDropProbability: 0.55
-  xzRange: 600
-  yForce: 800
+  xzSpawnVelocityMax: 5
+  ySpawnVelocity: 0
   spawnHeight: 2.5
 --- !u!114 &1016939505879649353
 MonoBehaviour:
@@ -291,6 +308,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1016939505023120830}
     m_Modifications:
+    - target: {fileID: 100044, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
+      propertyPath: m_Name
+      value: CruzModel
+      objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -334,10 +355,6 @@ PrefabInstance:
     - target: {fileID: 400044, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100044, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
-      propertyPath: m_Name
-      value: CruzModel
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
       propertyPath: m_Controller
