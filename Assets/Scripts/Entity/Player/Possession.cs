@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Possession : MonoBehaviour
 {
@@ -18,7 +19,6 @@ public class Possession : MonoBehaviour
     private bool HaloActive = false;
     [SerializeField]
     private AudioSource PossAudio;
-    
     
     // Start is called before the first frame update
     void Start()
@@ -59,7 +59,7 @@ public class Possession : MonoBehaviour
         }
         
     }
-
+    
     void HighLightEnemy()
     {
         targetedEnemy = NewEnemytoTarget;
@@ -78,18 +78,43 @@ public class Possession : MonoBehaviour
         HaloActive = false;
         targetedEnemy = null;
     }
-
+    
     //Actual possession takes place
     void TakePossessionAction(GameObject enemy){
         
         if(enemy == null)
         return;
         
-        //get enemy max health only
+        double heartdiff = (player.Health - enemy.GetComponent<Enemy>().MaxHealth) / 2;
+        int fullhearts = (int) heartdiff;
+        int halfhearts = Convert.ToInt32((heartdiff % 2) * 2);
+        
+        //always assume the enemies max health
         player.MaxHealth = enemy.GetComponent<Enemy>().MaxHealth;
+        
+        /*if i possess an enemy, i should have no more than maxhealth
+         yet i should not heal if the enemy has more health than I do currently
+         */
+        if(heartdiff > 0)
+        {
+            player.Health = enemy.GetComponent<Enemy>().MaxHealth;
+        }
         
         //update HUD
         player.ChangeMaxHealthBy(0);
+        
+        //Unload Excess Hearts
+        if(heartdiff > 0)
+        {
+            for(int i = fullhearts; i > 0; i--)
+            {
+                GetComponent<SimpleHeartDrop>().DropHeart("Full");
+            }
+            if(halfhearts != 0)
+            {
+                GetComponent<SimpleHeartDrop>().DropHeart("Half");
+            }
+        }
         
         PossAudio.Play();
         
@@ -116,7 +141,7 @@ public class Possession : MonoBehaviour
         // Notify any OnPossession controllers of the possesssion
         NotifyOnPossessionControllers();
     }
-
+    
     private void NotifyOnPossessionControllers()
     {
         // Notify player controllers
@@ -125,10 +150,10 @@ public class Possession : MonoBehaviour
             iopc.OnPossession();
         }
     }
-
+    
     //checks for nearby enemies
     GameObject FindEnemytoPossess(float radiuscheck){
-
+        
         Collider[] checkWhoNearby = Physics.OverlapSphere(transform.position,radiuscheck);
         //tracks shortest distance to colliders in the vicinity of player
         float distance = 0;
