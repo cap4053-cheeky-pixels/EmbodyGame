@@ -299,7 +299,9 @@ MonoBehaviour:
   spawnHeight: 2.5
   xzRange: 600
   yForce: 800
-  Heartprefab: {fileID: 6058534631205044202, guid: cfdc812ad6d2939458ab1a2e2b5e3f34,
+  FullHeartprefab: {fileID: 6058534631205044202, guid: cfdc812ad6d2939458ab1a2e2b5e3f34,
+    type: 3}
+  HalfHeartprefab: {fileID: 3676220467416633035, guid: c0e19f4f0d1f2ea458756409aa801246,
     type: 3}
 --- !u!1001 &3964897258063153117
 PrefabInstance:
