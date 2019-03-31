@@ -85,9 +85,9 @@ public class Possession : MonoBehaviour
         if(enemy == null)
         return;
         
-        double heartdiff = (player.Health - enemy.GetComponent<Enemy>().MaxHealth) / 2;
-        int fullhearts = (int) heartdiff;
-        int halfhearts = Convert.ToInt32((heartdiff % 2) * 2);
+        int heartdiff = player.Health - enemy.GetComponent<Enemy>().MaxHealth;
+        int fullhearts = (int) (heartdiff / 2);
+        int halfhearts = heartdiff % 2;
         
         //always assume the enemies max health
         player.MaxHealth = enemy.GetComponent<Enemy>().MaxHealth;
