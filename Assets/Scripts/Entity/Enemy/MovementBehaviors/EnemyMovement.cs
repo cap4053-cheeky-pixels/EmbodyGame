@@ -11,33 +11,37 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyMovement : MonoBehaviour
 {
-    private NavMeshAgent nma;
+    [HideInInspector] public NavMeshAgent agent;
     private Vector3 cachedDirection;
 
     void Awake()
     {
-        nma = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     // Method should only be called once per frame
     public void Move(Vector3 direction)
     {
-        nma.SetDestination(transform.position + direction);
+        agent.SetDestination(transform.position + direction);
     }
 
     public void MoveTo(Vector3 destination)
     {
-        nma.SetDestination(destination);
+        agent.SetDestination(destination);
     }
 
     public void Stop()
     {
-        nma.isStopped = true;
+        if(agent.enabled)
+        {
+            agent.isStopped = true;
+            agent.enabled = false;
+        }
     }
 
     // Avoid calling this if possible
     public void Disable()
     {
-        nma.enabled = false;
+        agent.enabled = false;
     }
 }

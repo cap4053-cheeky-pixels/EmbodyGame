@@ -1,35 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+
 
 public class Enemy : Entity
 {
     // Used to signal an enemy's death to the rooms that spawned them
     public delegate void Died(GameObject who);
     public event Died deathEvent;
+
     private bool isDead;
     public bool IsDead() { return isDead; }
     public bool isPossessable = false;
+
     public int collideDamage = 1;
 
     // Signals an enemy's health change; mainly used for the boss
     public delegate void HealthChanged();
     public event HealthChanged healthChangedEvent;
 
+    // For treating enemies as obstacles once they die
+    private NavMeshObstacle navMeshObstacle;
 
-    /* Called before the game starts. Sets up all necessary info.
-     */
-    void Awake()
+
+    /* Set up any non-serialized private fields.
+     */ 
+    private void Awake()
     {
+        navMeshObstacle = GetComponent<NavMeshObstacle>();
     }
 
-
-    /* Called every frame.
-     */
-    void Update()
-    {
-
-    }
 
 
     /* Changes this Enemy's max health by the given amount.
@@ -49,33 +50,49 @@ public class Enemy : Entity
         Health += amount;
         if (Health < 0) Health = 0;
 
-        if(Health == 0)
+        healthChangedEvent?.Invoke();
+
+        if (Health == 0)
         {
             OnEnemyDied();
         }
-        else
+    }
+
+
+    /* Handles collision with other objects of interest, specifically the player.
+     */ 
+    private void OnCollisionEnter(Collision other)
+    {
+        if (isDead || !other.gameObject.CompareTag("Player")) return;
+
+        other.gameObject.GetComponent<Player>().ChangeHealthBy(-collideDamage);
+    }
+
+    
+    /* Ensures that this enemy is treated as a NavMeshObstacle by live enemies.
+     */
+    private void BecomeEnvironmentalObstacle()
+    {
+        if (navMeshObstacle != null)
         {
-            healthChangedEvent?.Invoke();
+            navMeshObstacle.enabled = true;
         }
     }
 
-    private void OnCollisionEnter(Collision c)
-    {
-        CheckPlayerCollision(c.collider);
-    }
 
-    private void CheckPlayerCollision(Collider c)
-    {
-        if (isDead || !c.gameObject.CompareTag("Player")) return;
-        c.gameObject.GetComponent<Player>().ChangeHealthBy(-collideDamage);
-    }
-
+    /* Called when this enemy dies.
+     */ 
     private void OnEnemyDied()
     {
+        // Mark it as dead for any code that checks the status
         isDead = true;
+
+        BecomeEnvironmentalObstacle();
 
         // Signal the death of this enemy
         deathEvent?.Invoke(gameObject);
-        OnDeath(); // Call Entity.OnDeath()
+
+        // Call Entity.OnDeath()
+        OnDeath();
     }
 }
