@@ -17,7 +17,9 @@ public class SimpleHeartDrop : MonoBehaviour
     {
         HeartType = FullHeartprefab;
         if(whichprefab != "Full")
-        HeartType = HalfHeartprefab;
+        {
+            HeartType = HalfHeartprefab;
+        }
         GameObject heart = Instantiate(HeartType, transform.position + new Vector3(0, spawnHeight, 0), FullHeartprefab.transform.rotation);
         Rigidbody heartRb = heart.GetComponent<Rigidbody>();
         heartRb.AddForce(new Vector3(Random.Range(-xzRange, xzRange), yForce, Random.Range(-xzRange, xzRange)));
