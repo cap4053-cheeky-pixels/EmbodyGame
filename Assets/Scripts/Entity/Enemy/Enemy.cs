@@ -50,13 +50,11 @@ public class Enemy : Entity
         Health += amount;
         if (Health < 0) Health = 0;
 
-        if(Health == 0)
+        healthChangedEvent?.Invoke();
+
+        if (Health == 0)
         {
             OnEnemyDied();
-        }
-        else
-        {
-            healthChangedEvent?.Invoke();
         }
     }
 
