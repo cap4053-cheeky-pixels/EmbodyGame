@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
      */ 
     public void Resume()
     {
+        CursorManager.HideCursor();
         eventSystem.SetSelectedGameObject(null);
         pauseMenuUI.SetActive(false);
         gameIsPaused = false;
@@ -69,6 +70,7 @@ public class GameManager : MonoBehaviour
      */ 
     public void Pause()
     {
+        CursorManager.ShowCursor();
         pauseMenuUI.SetActive(true);
 
         if(firstButtonForGameOver.enabled)
@@ -85,6 +87,7 @@ public class GameManager : MonoBehaviour
      */ 
     public void Restart()
     {
+        CursorManager.HideCursor();
         Time.timeScale = 1f;
         LevelIntro.nameOfSceneToLoad = "Level1";
         SceneManager.LoadScene("LevelIntro");
@@ -95,6 +98,7 @@ public class GameManager : MonoBehaviour
      */ 
     public void LoadMenu()
     {
+        CursorManager.ShowCursor();
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }

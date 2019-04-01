@@ -26,6 +26,7 @@ public class LevelIntro : MonoBehaviour
      */ 
     private void Awake()
     {
+        CursorManager.HideCursor();
         int index = Random.Range(0, intros.Length - 1);
         text.text = intros[index];
         StartCoroutine(SceneTimer());
