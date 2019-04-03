@@ -11,9 +11,15 @@ public class WanderMovement : MonoBehaviour, IOnDeathController
     [Tooltip("The radius within which the enemy should be able to wander")]
     public float wanderRadius;
 
+    [Tooltip("The minimum number of seconds for which an enemy should stop once they've reached their destination")]
+    [SerializeField] private float minSecondsToWaitAtDestination = 0f;
+
+    [Tooltip("The maximum number of seconds for which an enemy should stop once they've reached their destination")]
+    [SerializeField] private float maxSecondsToWaitAtDestination = 2f;
+
 
     /* Set up script.
-     */ 
+     */
     private void Awake()
     {
         movement = GetComponent<EnemyMovement>();
@@ -72,8 +78,12 @@ public class WanderMovement : MonoBehaviour, IOnDeathController
                     timeToWaitBeforeRecalculation = distanceToDestination / movement.agent.speed;
                 }
 
-                // Wait for roughly however many seconds it would've taken to get to the destination
+                // Don't proceed until the enemy has arrived at its destination
                 yield return new WaitForSeconds(timeToWaitBeforeRecalculation);
+
+                // Then wait for a randomized number of seconds between min and max
+                float idleTime = Random.Range(minSecondsToWaitAtDestination, maxSecondsToWaitAtDestination);
+                yield return new WaitForSeconds(idleTime);
             }
 
             // If a valid path was not generated, just resume on the next frame update
