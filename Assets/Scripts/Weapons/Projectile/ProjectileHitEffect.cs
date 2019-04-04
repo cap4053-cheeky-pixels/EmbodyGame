@@ -20,12 +20,10 @@ public class ProjectileHitEffect : MonoBehaviour
         Instantiate(hitParticleSystem, position + direction, Quaternion.LookRotation(direction));
     }
 
-    void OnTriggerEnter(Collider c)
+    void OnDestroy()
     {
-        if (c.tag != "Wall") return;
-
-        Vector3 position = c.ClosestPointOnBounds(transform.position);
         Vector3 direction = Vector3.Normalize(-pro.velocity);
+        Vector3 position = transform.position;
         Emit(position, direction);
     }
 }

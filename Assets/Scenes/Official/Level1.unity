@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -354,11 +354,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8316170259938772301, guid: bd6d38f092a20524cbb893325e78777b,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 8316170259252831862, guid: bd6d38f092a20524cbb893325e78777b,
         type: 3}
       propertyPath: doors.Array.size
@@ -374,11 +369,11 @@ PrefabInstance:
       propertyPath: doors.Array.data[1]
       value: 
       objectReference: {fileID: 2035691866}
-    - target: {fileID: 8316170259938772296, guid: bd6d38f092a20524cbb893325e78777b,
+    - target: {fileID: 5494846556147016781, guid: bd6d38f092a20524cbb893325e78777b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 51c87bb1aefa11149ba2cbb2aa88ce93, type: 2}
+      objectReference: {fileID: 2100000, guid: af0e17855291721469da72db1c2956ee, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6d38f092a20524cbb893325e78777b, type: 3}
 --- !u!4 &50336762 stripped
@@ -398,11 +393,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VertWallWithoutDoor
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722125027973036240, guid: 71033eb02772272468523abc2a334db0,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8722125027973036247, guid: 71033eb02772272468523abc2a334db0,
         type: 3}
@@ -459,11 +449,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8722125026744651412, guid: 71033eb02772272468523abc2a334db0,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71033eb02772272468523abc2a334db0, type: 3}
 --- !u!4 &59589651 stripped
@@ -483,11 +468,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VertWallWithoutDoor (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722125027973036240, guid: 71033eb02772272468523abc2a334db0,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8722125027973036247, guid: 71033eb02772272468523abc2a334db0,
         type: 3}
@@ -543,11 +523,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722125026744651412, guid: 71033eb02772272468523abc2a334db0,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71033eb02772272468523abc2a334db0, type: 3}
@@ -644,11 +619,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HoriWallWithDoor (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 2725825404948333772, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 2725825404948333775, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -704,41 +674,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 99554821774459756, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8122241134917182460, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3505589651553452224, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725825405116926313, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725825405720271771, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725825406757333755, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6943633678232658132, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9, type: 3}
 --- !u!4 &111386373 stripped
@@ -764,11 +699,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VertWallWithDoor
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201852470759377922, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5201852470759377921, guid: b6f35e75e8526ed45bcdd61f2531e14d,
         type: 3}
@@ -824,41 +754,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201852468815127093, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201852469919257429, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201852470926328231, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2113135755872856882, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7819676206378044322, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 988571505447708698, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6720208160597379086, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6f35e75e8526ed45bcdd61f2531e14d, type: 3}
@@ -1231,11 +1126,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HoriWallWithoutDoor (9)
       objectReference: {fileID: 0}
-    - target: {fileID: 389151889606449707, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 389151889606449708, guid: 587e9341cf930bc468dfe8b3c926228e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1290,16 +1180,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 389151888351865938, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: cea37150ce1ff434685a939f497269f2, type: 2}
-    - target: {fileID: 389151888351865967, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 587e9341cf930bc468dfe8b3c926228e, type: 3}
@@ -1518,7 +1398,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1988644701}
-  - {fileID: 1646809703}
   - {fileID: 280194329}
   - {fileID: 1690022737}
   m_Father: {fileID: 0}
@@ -1632,11 +1511,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HoriWallWithoutDoor (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 389151889606449707, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 389151889606449708, guid: 587e9341cf930bc468dfe8b3c926228e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1691,11 +1565,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 389151888351865967, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 587e9341cf930bc468dfe8b3c926228e, type: 3}
@@ -2181,11 +2050,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HoriWallWithoutDoor (10)
       objectReference: {fileID: 0}
-    - target: {fileID: 389151889606449707, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 389151889606449708, guid: 587e9341cf930bc468dfe8b3c926228e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2240,11 +2104,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 389151888351865967, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 587e9341cf930bc468dfe8b3c926228e, type: 3}
@@ -2337,11 +2196,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HoriWallWithoutDoor
       objectReference: {fileID: 0}
-    - target: {fileID: 389151889606449707, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 389151889606449708, guid: 587e9341cf930bc468dfe8b3c926228e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2396,11 +2250,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 389151888351865967, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 587e9341cf930bc468dfe8b3c926228e, type: 3}
@@ -2497,11 +2346,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HoriWallWithDoor (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 2725825404948333772, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 2725825404948333775, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2556,41 +2400,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 99554821774459756, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8122241134917182460, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3505589651553452224, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725825405116926313, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725825405720271771, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725825406757333755, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6943633678232658132, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9, type: 3}
@@ -2722,7 +2531,7 @@ PrefabInstance:
     - target: {fileID: 377701195433518447, guid: 737b686874e36f046b07a823c0ad31dc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.69182
+      value: 21.5
       objectReference: {fileID: 0}
     - target: {fileID: 377701195433518447, guid: 737b686874e36f046b07a823c0ad31dc,
         type: 3}
@@ -2752,7 +2561,7 @@ PrefabInstance:
     - target: {fileID: 377701195433518447, guid: 737b686874e36f046b07a823c0ad31dc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 377701195433518447, guid: 737b686874e36f046b07a823c0ad31dc,
         type: 3}
@@ -2768,21 +2577,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 377701195433518447, guid: 737b686874e36f046b07a823c0ad31dc,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 377701195433518447, guid: 737b686874e36f046b07a823c0ad31dc,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 377701195433518444, guid: 737b686874e36f046b07a823c0ad31dc,
-        type: 3}
-      propertyPath: defaultSpeed
-      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 737b686874e36f046b07a823c0ad31dc, type: 3}
@@ -2944,11 +2738,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8316170259938772301, guid: bd6d38f092a20524cbb893325e78777b,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 8316170259252831862, guid: bd6d38f092a20524cbb893325e78777b,
         type: 3}
       propertyPath: doors.Array.size
@@ -2969,11 +2758,6 @@ PrefabInstance:
       propertyPath: doors.Array.data[2]
       value: 
       objectReference: {fileID: 2013180890}
-    - target: {fileID: 8316170259938772296, guid: bd6d38f092a20524cbb893325e78777b,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 51c87bb1aefa11149ba2cbb2aa88ce93, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6d38f092a20524cbb893325e78777b, type: 3}
 --- !u!4 &626565165 stripped
@@ -2993,11 +2777,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VertWallWithoutDoor (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722125027973036240, guid: 71033eb02772272468523abc2a334db0,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8722125027973036247, guid: 71033eb02772272468523abc2a334db0,
         type: 3}
@@ -3053,11 +2832,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722125026744651412, guid: 71033eb02772272468523abc2a334db0,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71033eb02772272468523abc2a334db0, type: 3}
@@ -3139,16 +2913,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8316170259260908322, guid: bd6d38f092a20524cbb893325e78777b,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8316170259938772301, guid: bd6d38f092a20524cbb893325e78777b,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 8316170259252831862, guid: bd6d38f092a20524cbb893325e78777b,
         type: 3}
       propertyPath: doors.Array.size
@@ -3164,11 +2928,6 @@ PrefabInstance:
       propertyPath: doors.Array.data[1]
       value: 
       objectReference: {fileID: 1583164621}
-    - target: {fileID: 8316170259938772296, guid: bd6d38f092a20524cbb893325e78777b,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 51c87bb1aefa11149ba2cbb2aa88ce93, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6d38f092a20524cbb893325e78777b, type: 3}
 --- !u!4 &673386595 stripped
@@ -3264,11 +3023,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HoriWallWithoutDoor (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 389151889606449707, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 389151889606449708, guid: 587e9341cf930bc468dfe8b3c926228e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3323,11 +3077,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 389151888351865967, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 587e9341cf930bc468dfe8b3c926228e, type: 3}
@@ -3439,11 +3188,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HoriWallWithoutDoor (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 389151889606449707, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 389151889606449708, guid: 587e9341cf930bc468dfe8b3c926228e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3498,11 +3242,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 389151888351865967, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 587e9341cf930bc468dfe8b3c926228e, type: 3}
@@ -3589,11 +3328,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8316170259938772301, guid: bd6d38f092a20524cbb893325e78777b,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 8316170259252831862, guid: bd6d38f092a20524cbb893325e78777b,
         type: 3}
       propertyPath: doors.Array.size
@@ -3614,11 +3348,11 @@ PrefabInstance:
       propertyPath: doors.Array.data[2]
       value: 
       objectReference: {fileID: 2130939331}
-    - target: {fileID: 8316170259938772296, guid: bd6d38f092a20524cbb893325e78777b,
+    - target: {fileID: 5494846556147016781, guid: bd6d38f092a20524cbb893325e78777b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 51c87bb1aefa11149ba2cbb2aa88ce93, type: 2}
+      objectReference: {fileID: 2100000, guid: cdb713cbd1cacd64989f00fd52115ea7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6d38f092a20524cbb893325e78777b, type: 3}
 --- !u!4 &707886835 stripped
@@ -3638,11 +3372,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VertWallWithoutDoor (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722125027973036240, guid: 71033eb02772272468523abc2a334db0,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8722125027973036247, guid: 71033eb02772272468523abc2a334db0,
         type: 3}
@@ -3698,11 +3427,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722125026744651412, guid: 71033eb02772272468523abc2a334db0,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71033eb02772272468523abc2a334db0, type: 3}
@@ -3885,16 +3609,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainPlayer
       objectReference: {fileID: 0}
-    - target: {fileID: 4556327631231747906, guid: 224198badb8d31847a3ab6b59ec2d3ff,
-        type: 3}
-      propertyPath: Health
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4556327631231747906, guid: 224198badb8d31847a3ab6b59ec2d3ff,
-        type: 3}
-      propertyPath: MaxHealth
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 3157405220298563399, guid: 224198badb8d31847a3ab6b59ec2d3ff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3969,11 +3683,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HoriWallWithoutDoor (8)
       objectReference: {fileID: 0}
-    - target: {fileID: 389151889606449707, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 389151889606449708, guid: 587e9341cf930bc468dfe8b3c926228e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4028,16 +3737,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 389151888351865938, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: cea37150ce1ff434685a939f497269f2, type: 2}
-    - target: {fileID: 389151888351865967, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 587e9341cf930bc468dfe8b3c926228e, type: 3}
@@ -4124,11 +3823,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8316170259938772301, guid: bd6d38f092a20524cbb893325e78777b,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 8316170259252831862, guid: bd6d38f092a20524cbb893325e78777b,
         type: 3}
       propertyPath: doors.Array.size
@@ -4149,11 +3843,11 @@ PrefabInstance:
       propertyPath: doors.Array.data[2]
       value: 
       objectReference: {fileID: 2130939331}
-    - target: {fileID: 8316170259938772296, guid: bd6d38f092a20524cbb893325e78777b,
+    - target: {fileID: 5494846556147016781, guid: bd6d38f092a20524cbb893325e78777b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 51c87bb1aefa11149ba2cbb2aa88ce93, type: 2}
+      objectReference: {fileID: 2100000, guid: cdb713cbd1cacd64989f00fd52115ea7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6d38f092a20524cbb893325e78777b, type: 3}
 --- !u!4 &812398916 stripped
@@ -4393,11 +4087,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: VertWallWithoutDoor (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 8722125027973036240, guid: 71033eb02772272468523abc2a334db0,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 8722125027973036247, guid: 71033eb02772272468523abc2a334db0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4452,11 +4141,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722125026744651412, guid: 71033eb02772272468523abc2a334db0,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71033eb02772272468523abc2a334db0, type: 3}
@@ -4598,6 +4282,11 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 6acd97c2b8d1c904597468eb4d4397dc, type: 3}
+    - target: {fileID: 5494846556147016781, guid: bd6d38f092a20524cbb893325e78777b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 67fe8890168695e409e597c2ffae1b40, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6d38f092a20524cbb893325e78777b, type: 3}
 --- !u!4 &952968808 stripped
@@ -5108,11 +4797,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8316170259938772301, guid: bd6d38f092a20524cbb893325e78777b,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 8316170259252831862, guid: bd6d38f092a20524cbb893325e78777b,
         type: 3}
       propertyPath: doors.Array.size
@@ -5133,11 +4817,11 @@ PrefabInstance:
       propertyPath: doors.Array.data[1]
       value: 
       objectReference: {fileID: 516579821}
-    - target: {fileID: 8316170259938772296, guid: bd6d38f092a20524cbb893325e78777b,
+    - target: {fileID: 5494846556147016781, guid: bd6d38f092a20524cbb893325e78777b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 51c87bb1aefa11149ba2cbb2aa88ce93, type: 2}
+      objectReference: {fileID: 2100000, guid: af0e17855291721469da72db1c2956ee, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6d38f092a20524cbb893325e78777b, type: 3}
 --- !u!4 &1052092408 stripped
@@ -5520,46 +5204,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5381350258763008392, guid: ca54bcc921cac41529dcedcef8c32390,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5381350258763008392, guid: ca54bcc921cac41529dcedcef8c32390,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.90714
-      objectReference: {fileID: 0}
-    - target: {fileID: 5381350258763008392, guid: ca54bcc921cac41529dcedcef8c32390,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5381350256974751838, guid: ca54bcc921cac41529dcedcef8c32390,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.98
-      objectReference: {fileID: 0}
-    - target: {fileID: 5381350257218438142, guid: ca54bcc921cac41529dcedcef8c32390,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 5381350257218438142, guid: ca54bcc921cac41529dcedcef8c32390,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5381350257674973587, guid: ca54bcc921cac41529dcedcef8c32390,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -9.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 5381350257674973587, guid: ca54bcc921cac41529dcedcef8c32390,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca54bcc921cac41529dcedcef8c32390, type: 3}
 --- !u!4 &1096494503 stripped
@@ -5835,11 +5479,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HoriWallWithoutDoor (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 389151889606449707, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 389151889606449708, guid: 587e9341cf930bc468dfe8b3c926228e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5894,11 +5533,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 389151888351865967, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 587e9341cf930bc468dfe8b3c926228e, type: 3}
@@ -6191,11 +5825,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HoriWallWithoutDoor (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 389151889606449707, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 389151889606449708, guid: 587e9341cf930bc468dfe8b3c926228e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6250,11 +5879,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 389151888351865967, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 587e9341cf930bc468dfe8b3c926228e, type: 3}
@@ -6366,11 +5990,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HoriWallWithoutDoor (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 389151889606449707, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 389151889606449708, guid: 587e9341cf930bc468dfe8b3c926228e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6425,11 +6044,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 389151888351865967, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 587e9341cf930bc468dfe8b3c926228e, type: 3}
@@ -6912,11 +6526,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: VertWallWithDoor (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 5201852470759377922, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 5201852470759377921, guid: b6f35e75e8526ed45bcdd61f2531e14d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6971,41 +6580,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201852468815127093, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201852469919257429, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201852470926328231, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2113135755872856882, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7819676206378044322, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 988571505447708698, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6720208160597379086, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6f35e75e8526ed45bcdd61f2531e14d, type: 3}
@@ -7302,75 +6876,6 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cb40b2cf0e5a444bb3d122b576da6ac, type: 3}
---- !u!1 &1646809701
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1646809703}
-  - component: {fileID: 1646809702}
-  m_Layer: 0
-  m_Name: Directional Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!108 &1646809702
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1646809701}
-  m_Enabled: 1
-  serializedVersion: 8
-  m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.7
-  m_Range: 10
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 0.6
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!4 &1646809703
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1646809701}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 237250481}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1662524174
 GameObject:
   m_ObjectHideFlags: 0
@@ -7422,11 +6927,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HoriWallWithoutDoor (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 389151889606449707, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 389151889606449708, guid: 587e9341cf930bc468dfe8b3c926228e,
         type: 3}
@@ -7483,11 +6983,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 389151888351865967, guid: 587e9341cf930bc468dfe8b3c926228e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 587e9341cf930bc468dfe8b3c926228e, type: 3}
 --- !u!4 &1679017618 stripped
@@ -7526,7 +7021,7 @@ Transform:
   - {fileID: 1926602032}
   - {fileID: 1987691335}
   m_Father: {fileID: 237250481}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1707429054
 PrefabInstance:
@@ -7918,11 +7413,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HoriWallWithDoor (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 2725825404948333772, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 2725825404948333775, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7978,41 +7468,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 99554821774459756, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8122241134917182460, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3505589651553452224, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725825405116926313, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725825405720271771, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725825406757333755, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6943633678232658132, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2b4fa5d4c5b7934b898d1d6054f5bf9, type: 3}
 --- !u!4 &1828401043 stripped
@@ -8038,11 +7493,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VertWallWithoutDoor (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722125027973036240, guid: 71033eb02772272468523abc2a334db0,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8722125027973036247, guid: 71033eb02772272468523abc2a334db0,
         type: 3}
@@ -8098,11 +7548,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722125026744651412, guid: 71033eb02772272468523abc2a334db0,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71033eb02772272468523abc2a334db0, type: 3}
@@ -9507,11 +8952,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: VertWallWithDoor (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 5201852470759377922, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 5201852470759377921, guid: b6f35e75e8526ed45bcdd61f2531e14d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9567,41 +9007,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5201852468815127093, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201852469919257429, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201852470926328231, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2113135755872856882, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7819676206378044322, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 988571505447708698, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6720208160597379086, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6f35e75e8526ed45bcdd61f2531e14d, type: 3}
 --- !u!4 &2013180889 stripped
@@ -9627,11 +9032,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VertWallWithDoor (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201852470759377922, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5201852470759377921, guid: b6f35e75e8526ed45bcdd61f2531e14d,
         type: 3}
@@ -9688,36 +9088,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5201852468815127093, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201852469919257429, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201852470926328231, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201852468815127090, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: cea37150ce1ff434685a939f497269f2, type: 2}
-    - target: {fileID: 5201852469919257426, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: cea37150ce1ff434685a939f497269f2, type: 2}
-    - target: {fileID: 5201852470926328228, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: cea37150ce1ff434685a939f497269f2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6f35e75e8526ed45bcdd61f2531e14d, type: 3}
 --- !u!4 &2035691865 stripped
@@ -9743,11 +9113,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VertWallWithoutDoor (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722125027973036240, guid: 71033eb02772272468523abc2a334db0,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8722125027973036247, guid: 71033eb02772272468523abc2a334db0,
         type: 3}
@@ -9803,11 +9168,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722125026744651412, guid: 71033eb02772272468523abc2a334db0,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71033eb02772272468523abc2a334db0, type: 3}
@@ -9989,6 +9349,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8316170259938772301, guid: bd6d38f092a20524cbb893325e78777b,
+        type: 3}
+      propertyPath: m_Name
+      value: Floor5
+      objectReference: {fileID: 0}
     - target: {fileID: 8316170259252831862, guid: bd6d38f092a20524cbb893325e78777b,
         type: 3}
       propertyPath: doors.Array.size
@@ -10013,7 +9378,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 51c87bb1aefa11149ba2cbb2aa88ce93, type: 2}
+      objectReference: {fileID: 2100000, guid: af0e17855291721469da72db1c2956ee, type: 2}
+    - target: {fileID: 9183959542567187836, guid: bd6d38f092a20524cbb893325e78777b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494846556147016781, guid: bd6d38f092a20524cbb893325e78777b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: af0e17855291721469da72db1c2956ee, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6d38f092a20524cbb893325e78777b, type: 3}
 --- !u!4 &2086146803 stripped
@@ -10185,11 +9560,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8316170259938772301, guid: bd6d38f092a20524cbb893325e78777b,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 8316170259252831862, guid: bd6d38f092a20524cbb893325e78777b,
         type: 3}
       propertyPath: doors.Array.size
@@ -10200,11 +9570,11 @@ PrefabInstance:
       propertyPath: doors.Array.data[0]
       value: 
       objectReference: {fileID: 516579821}
-    - target: {fileID: 8316170259938772296, guid: bd6d38f092a20524cbb893325e78777b,
+    - target: {fileID: 5494846556147016781, guid: bd6d38f092a20524cbb893325e78777b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 51c87bb1aefa11149ba2cbb2aa88ce93, type: 2}
+      objectReference: {fileID: 2100000, guid: cdb713cbd1cacd64989f00fd52115ea7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6d38f092a20524cbb893325e78777b, type: 3}
 --- !u!4 &2106999429 stripped
@@ -10315,11 +9685,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: VertWallWithDoor (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 5201852470759377922, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 5201852470759377921, guid: b6f35e75e8526ed45bcdd61f2531e14d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10375,41 +9740,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5201852468815127093, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201852469919257429, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201852470926328231, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2113135755872856882, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7819676206378044322, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 988571505447708698, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6720208160597379086, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6f35e75e8526ed45bcdd61f2531e14d, type: 3}
 --- !u!4 &2130939330 stripped
@@ -10435,11 +9765,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VertWallWithDoor (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201852470759377922, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5201852470759377921, guid: b6f35e75e8526ed45bcdd61f2531e14d,
         type: 3}
@@ -10496,36 +9821,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5201852468815127093, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201852469919257429, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201852470926328231, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201852468815127090, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: cea37150ce1ff434685a939f497269f2, type: 2}
-    - target: {fileID: 5201852469919257426, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: cea37150ce1ff434685a939f497269f2, type: 2}
-    - target: {fileID: 5201852470926328228, guid: b6f35e75e8526ed45bcdd61f2531e14d,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: cea37150ce1ff434685a939f497269f2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6f35e75e8526ed45bcdd61f2531e14d, type: 3}
 --- !u!4 &2139479513 stripped
