@@ -4704,6 +4704,8 @@ MonoBehaviour:
   - {fileID: 19841648}
   - {fileID: 19873038}
   MeteorPrefab: {fileID: 164416, guid: 8aeb2c0224fe763499eed3ec0587162b, type: 3}
+  TargetPrefab: {fileID: 81926632738949473, guid: deda6e72f07244fdbb374b6b6857c26a,
+    type: 3}
   MeteorExplosionParticleSystem: {fileID: 19841648}
   MeteorShrapnelParticleSystem: {fileID: 19873038}
   MeteorMaterials:
