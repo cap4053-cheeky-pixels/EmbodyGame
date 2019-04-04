@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +9,7 @@ public abstract class Weapon : MonoBehaviour
 
     // The number of seconds between attacks
     public float timeBetweenAttacks;
+    public AudioSource fireAudio;
 
     // Used for spreading out attacks in timeBetweenAttacks intervals
     protected float timer;

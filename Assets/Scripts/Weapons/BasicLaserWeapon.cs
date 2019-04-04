@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,9 +12,11 @@ public class BasicLaserWeapon : ProjectileWeapon
         // Prevents continuous firing
         if (timer > timeBetweenAttacks)
         {
+            
             // Spawn a projectile into the scene
             Vector3 spawnPos = new Vector3(0, upwardOffset, 0) + transform.position + transform.forward * forwardOffset;
             GameObject projectileInstance = Instantiate(projectile, spawnPos, transform.rotation);
+            fireAudio.Play();
             projectileInstance.tag = tag;
             projectileInstance.layer = LayerMask.NameToLayer(tag);
 
