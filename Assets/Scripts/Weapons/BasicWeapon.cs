@@ -15,6 +15,7 @@ public class BasicWeapon : ProjectileWeapon
             // Spawn a projectile into the scene
             Vector3 spawnPos = new Vector3(0, upwardOffset, 0) + transform.position + transform.forward * forwardOffset;
             GameObject projectileInstance = Instantiate(projectile, spawnPos, transform.rotation);
+            fireAudio.Play();
             projectileInstance.tag = tag;
 
             // Set the projectile's velocity and damage properties via the associated script
