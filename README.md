@@ -5,15 +5,15 @@ Embody is an indie dungeon crawler inspired by the Binding of Isaac where you pl
 
 *Navigate rooms full of enemies, traps, and obstacles*
 
-![](Screenshots/EmbodyOverview.PNG)
+![](Screenshots/ExampleRoom.PNG)
 
 *Possess dead enemies*
 
-![](Screenshots/EmbodyPossession.PNG)
+![](Screenshots/Possession.PNG)
 
 *Meet your maker*
 
-![](Screenshots/EmbodyDevil.PNG)
+![](Screenshots/Satan.PNG)
 
 ## Credits
 
