@@ -1,10 +1,14 @@
 fileFormatVersion: 2
 guid: 69a6bf343df323040a372aa4198de5b9
-timeCreated: 1430599601
-licenseType: Store
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - AudioSource: {instanceID: 0}
+  - MeteorPrefab: {instanceID: 0}
+  - TargetPrefab: {instanceID: 0}
+  - MeteorExplosionParticleSystem: {instanceID: 0}
+  - MeteorShrapnelParticleSystem: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
