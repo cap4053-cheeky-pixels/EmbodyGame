@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public delegate void OnHitHandler(Vector3 position);
+    public event OnHitHandler OnHit;
     public Vector3 velocity;
     public int damage = 1;
 
 
     /* Projectiles self-destruct when colliding with walls.
-     */ 
+     */
     void OnTriggerEnter(Collider other)
     {
         GameObject otherObject = other.gameObject;
@@ -17,7 +19,7 @@ public class Projectile : MonoBehaviour
         // Disappear when hitting walls
         if (otherObject.CompareTag("Wall"))
         {
-            Destroy(gameObject);
+            hit();
         }
         // Damage enemy
         else if( (otherObject.CompareTag("Enemy") || otherObject.CompareTag("Boss")) && 
@@ -30,23 +32,35 @@ public class Projectile : MonoBehaviour
         {
             // Damage player
             otherObject.GetComponent<Player>().ChangeHealthBy(-damage);
-            Destroy(gameObject);
+            hit();
         }
+    }
+
+    /**
+        Method that is called when the projectile hits something and will be destroyed
+     */
+    void hit()
+    {
+        // Notify any event listeners
+        OnHit(transform.position);
+        // Destroy the object
+        Destroy(gameObject);
     }
 
 
     void DamageEnemy(GameObject enemy)
     {
         Enemy enemyController = enemy.GetComponent<Enemy>();
+        // Only damage and destroy the projectile if the enemy is alive
         if (enemyController.IsDead()) return;
 
         enemyController.ChangeHealthBy(-damage);
-        Destroy(gameObject);
+        hit();
     }
 
 
     /* Once spawned and given a speed, a projectile will travel at its velocity
-     */ 
+     */
     void Update()
     {
         transform.position += velocity * Time.deltaTime;
