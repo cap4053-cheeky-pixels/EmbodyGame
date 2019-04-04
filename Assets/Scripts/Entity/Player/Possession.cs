@@ -100,9 +100,6 @@ public class Possession : MonoBehaviour
             player.Health = enemy.GetComponent<Enemy>().MaxHealth;
         }
         
-        //update HUD
-        player.ChangeMaxHealthBy(0);
-        
         //Unload Excess Hearts
         if(heartdiff > 0)
         {
