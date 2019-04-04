@@ -47,7 +47,7 @@ namespace DigitalRuby.PyroParticles
         public float TimeToImpact = 1.0f;
         
         [Tooltip("The time it takes to remove the indicator from when the meteor spawns")]
-        public float delay = 1.0f;
+        public float targetDelay = 1.0f;
 
         [SingleLine("How many meteors should be emitted per second (min and max)")]
         public RangeOfIntegers MeteorsPerSecondRange = new RangeOfIntegers { Minimum = 5, Maximum = 10 };
