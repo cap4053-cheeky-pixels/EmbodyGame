@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -19,6 +19,9 @@ namespace DigitalRuby.PyroParticles
         [Tooltip("The game object prefab that represents the meteor.")]
         public GameObject MeteorPrefab;
 
+        [Tooltip("The game object prefab that indicates where the meteor will land.")]
+        public GameObject TargetPrefab;
+        
         [Tooltip("Explosion particle system that should be emitted for each initial collision.")]
         public ParticleSystem MeteorExplosionParticleSystem;
 
@@ -42,6 +45,9 @@ namespace DigitalRuby.PyroParticles
 
         [Tooltip("The time it should take the meteors to impact assuming a clear path to destination.")]
         public float TimeToImpact = 1.0f;
+        
+        [Tooltip("The time it takes to remove the indicator from when the meteor spawns")]
+        public float targetDelay = 1.0f;
 
         [SingleLine("How many meteors should be emitted per second (min and max)")]
         public RangeOfIntegers MeteorsPerSecondRange = new RangeOfIntegers { Minimum = 5, Maximum = 10 };
@@ -57,6 +63,7 @@ namespace DigitalRuby.PyroParticles
 
         [Tooltip("Array of explosion sounds. One will be chosen at random upon impact.")]
         public AudioClip[] ExplosionSounds;
+        
 
         /// <summary>
         /// A delegate that can be assigned to listen for collision. Use this to apply damage for meteor impacts or other effects.
@@ -81,7 +88,12 @@ namespace DigitalRuby.PyroParticles
             meteor.transform.position = src;
             Vector3 dest = gameObject.transform.position + (UnityEngine.Random.insideUnitSphere * DestinationRadius);
             dest.y = 0.0f;
-
+            
+            //Instantiate the meteor destination indicator
+            GameObject myTarget = GameObject.Instantiate(TargetPrefab);
+            myTarget.transform.position = dest;
+            StartCoroutine(DestroyTargetIndi(myTarget));
+            
             // get the direction and set speed based on how fast the meteor should arrive at the destination
             Vector3 dir = (dest - src);
             Vector3 vel = dir / TimeToImpact;
@@ -120,6 +132,13 @@ namespace DigitalRuby.PyroParticles
                     audio.PlayOneShot(clip, scale);
                 }
             }
+        }
+        
+        //Destroy the meteor target indicator
+        private IEnumerator DestroyTargetIndi(GameObject obj)
+        {
+            yield return new WaitForSeconds(targetDelay);
+            GameObject.Destroy(obj);
         }
 
         private void SpawnMeteors()
