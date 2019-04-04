@@ -16,6 +16,7 @@ Embody is a dungeon crawler where you play as a ghost that can possess any enemy
 - [Cubex enemy model by DimasAlclade](https://www.cgtrader.com/free-3d-models/various/various-models/cubex)
 - [Rock model by GRUMPNTUG](https://assetstore.unity.com/packages/3d/free-demo-rock-53146)
 - [Halo Shader and Prefab](https://hyunkell.com/blog/rts-style-unit-selection-in-unity-5/)
+- Floor and Wall Textures by Jacqueline (Buddy) Llerena
 
 ### Audio
 
