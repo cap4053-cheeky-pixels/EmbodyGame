@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -52,7 +52,6 @@ public class Player : Entity
     {
         // If we're gonna take damage but we're invincible, just short-circuit/fail fast
         if (invincible && amount < 0) return;
-
         if(amount < 0 && GoldenHealth != 0)
         {
             ChangeGoldenHealthBy(amount);
@@ -67,6 +66,7 @@ public class Player : Entity
         // Start the invincibility coroutine if we take damage
         if (amount < 0)
         {
+            DamageAudio.Play();
             StartCoroutine(BecomeTemporarilyInvincible());
         }
 
