@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +17,7 @@ public class BurstShooter : ProjectileWeapon
         if (burstRoutine != null) StopCoroutine(burstRoutine);
         burstRoutine = BurstCoroutine(tag, transform.forward);
         StartCoroutine(burstRoutine);
-
+        fireAudio.Play();
         // Reset the timer
         timer = 0;
     }
