@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +13,9 @@ public abstract class Entity : MonoBehaviour
     // The model that's expected to be a child of this game object
     public GameObject model;
     public void SetModel(GameObject model) { this.model = model; }
+    
+    public AudioSource DeathAudio;
+    public AudioSource DamageAudio;
 
     // Changes this entity's maximum health by the given amount
     public abstract void ChangeMaxHealthBy(int amount);
