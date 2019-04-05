@@ -1935,9 +1935,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be9dc56fee26c4742ba88aff04595f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
-  MaxHealth: 100
+  Health: 8
+  MaxHealth: 8
   model: {fileID: 3623955584563446959}
+  DeathAudio: {fileID: 8775824933603385614}
+  DamageAudio: {fileID: 0}
   isPossessable: 0
   collideDamage: 1
 --- !u!114 &1341685312921882385
@@ -2587,6 +2589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 2
   timeBetweenAttacks: 1
+  fireAudio: {fileID: 0}
   weapon: {fileID: 3623955585305986208}
   meleeSound: {fileID: 396658304540375954}
 --- !u!1001 &6912911044429427119
