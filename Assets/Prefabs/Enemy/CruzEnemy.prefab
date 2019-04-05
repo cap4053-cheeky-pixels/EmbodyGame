@@ -283,6 +283,9 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 4096
+  playerProjectileMask:
+    serializedVersion: 2
+    m_Bits: 16384
   obstacleMask:
     serializedVersion: 2
     m_Bits: 8192
@@ -310,10 +313,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1016939505023120830}
     m_Modifications:
-    - target: {fileID: 100044, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
-      propertyPath: m_Name
-      value: CruzModel
-      objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -357,6 +356,10 @@ PrefabInstance:
     - target: {fileID: 400044, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100044, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
+      propertyPath: m_Name
+      value: CruzModel
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
       propertyPath: m_Controller

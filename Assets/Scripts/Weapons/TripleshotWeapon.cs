@@ -30,6 +30,7 @@ public class TripleshotWeapon : ProjectileWeapon
             // Spawn the forward-facing projectile into the scene
             GameObject projectileInstance = Instantiate(projectile, spawnForwardPos, transform.rotation);
             projectileInstance.tag = tag;
+            projectileInstance.layer = LayerMask.NameToLayer(tag);
             Projectile pro = projectileInstance.GetComponent<Projectile>();
             pro.velocity = forward * speed;
             pro.damage = damage;

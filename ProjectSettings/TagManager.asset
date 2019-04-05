@@ -31,8 +31,8 @@ TagManager:
   - BackGround Image
   - Player
   - Obstacle
-  - 
-  - 
+  - PlayerProjectile
+  - EnemyProjectile
   - 
   - 
   - 

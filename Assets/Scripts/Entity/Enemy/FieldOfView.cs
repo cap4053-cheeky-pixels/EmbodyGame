@@ -14,15 +14,19 @@ public class FieldOfView : MonoBehaviour, IOnDeathController
     [Tooltip("The layer on which the player resides")]
     public LayerMask playerMask;
 
+    [Tooltip("The layer on which the player's projectiles reside")]
+    public LayerMask playerProjectileMask;
+
     [Tooltip("The layer on which the obstacles reside")]
     public LayerMask obstacleMask;
 
 
-    /* Returns true if the player is within the field of view cone, and false otherwise.
-     */
-    public bool PlayerWithinView()
+    /* Returns true if the enemy can see any objects belonging to the given layer,
+     * and false otherwise.
+     */ 
+    private bool CanSeeSomethingOn(LayerMask layer)
     {
-        Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, playerMask);
+        Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, layer);
 
         foreach (Collider targetCollider in targetsInViewRadius)
         {
@@ -45,6 +49,23 @@ public class FieldOfView : MonoBehaviour, IOnDeathController
         }
 
         return false;
+    }
+
+
+
+    /* Returns true if the player is within the field of view cone, and false otherwise.
+     */
+    public bool PlayerWithinView()
+    {
+        return CanSeeSomethingOn(playerMask);
+    }
+
+
+    /* Returns true if the player's projectiles have been spotted, and false otherwise.
+     */ 
+    public bool PlayerProjectileWithinView()
+    {
+        return CanSeeSomethingOn(playerProjectileMask);
     }
 
 
