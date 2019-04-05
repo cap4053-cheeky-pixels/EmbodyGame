@@ -12,6 +12,7 @@ public class ProjectileHitEffect : MonoBehaviour
     void Awake()
     {
         pro = GetComponent<Projectile>();
+        pro.OnHit += projectileOnHit;
     }
 
     void Emit(Vector3 position, Vector3 direction)
@@ -20,10 +21,9 @@ public class ProjectileHitEffect : MonoBehaviour
         Instantiate(hitParticleSystem, position + direction, Quaternion.LookRotation(direction));
     }
 
-    void OnDestroy()
+    void projectileOnHit(Vector3 position)
     {
         Vector3 direction = Vector3.Normalize(-pro.velocity);
-        Vector3 position = transform.position;
         Emit(position, direction);
     }
 }
