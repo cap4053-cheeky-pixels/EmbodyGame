@@ -32,16 +32,16 @@ public class FieldOfView : MonoBehaviour, IOnDeathController
         {
             Transform player = targetCollider.gameObject.transform;
 
-            Vector3 playerDirection = (player.position - transform.position).normalized;
-            float angleToPlayer = Vector3.Angle(transform.forward, playerDirection);
+            Vector3 targetDirection = (player.position - transform.position).normalized;
+            float angleToPlayer = Vector3.Angle(transform.forward, targetDirection);
 
-            // Player is within the FOV angle
+            // Target object is within the FOV angle
             if (angleToPlayer < viewAngle / 2.0f)
             {
                 float distanceToTarget = Vector3.Distance(transform.position, player.position);
 
-                // If there is no obstacle in between us and the player, then we've found the player
-                if (!Physics.Raycast(transform.position, playerDirection, distanceToTarget, obstacleMask))
+                // If there is no obstacle in between us and the target object, then we've found it
+                if (!Physics.Raycast(transform.position, targetDirection, distanceToTarget, obstacleMask))
                 {
                     return true;
                 }
