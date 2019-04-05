@@ -42,7 +42,7 @@ public class Projectile : MonoBehaviour
     void hit()
     {
         // Notify any event listeners
-        OnHit(transform.position);
+        OnHit?.Invoke(transform.position);
         // Destroy the object
         Destroy(gameObject);
     }
