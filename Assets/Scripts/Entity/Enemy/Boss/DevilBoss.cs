@@ -82,7 +82,6 @@ public class DevilBoss : Boss
         animator.SetTrigger("DeathPose");
 
         audioTheme.Stop();
-        deathAudio.Play();
         
         // Prevent this script and the navmesh agent from doing anything else
         this.enabled = false;
