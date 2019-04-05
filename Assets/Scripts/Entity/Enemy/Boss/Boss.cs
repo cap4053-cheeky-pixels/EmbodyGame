@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -21,9 +21,6 @@ public abstract class Boss : MonoBehaviour
 
     // The boss's fighting audio theme
     [SerializeField] protected AudioSource audioTheme;
-
-    // The audio that should play when the boss is slain
-    [SerializeField] protected AudioSource deathAudio;
 
     // Used to signal the start of the boss battle to any relevant listeners
     public delegate void BossBattleStarted();
