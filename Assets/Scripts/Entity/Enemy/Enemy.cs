@@ -86,7 +86,7 @@ public class Enemy : Entity
     {
         // Mark it as dead for any code that checks the status
         isDead = true;
-
+        DeathAudio.Play();
         BecomeEnvironmentalObstacle();
 
         // Signal the death of this enemy
