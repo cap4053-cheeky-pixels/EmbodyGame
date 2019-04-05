@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -46,6 +46,7 @@ public class TripleshotWeapon : ProjectileWeapon
 
             // Spawn the right projectile into the scene at its angle offset
             GameObject projectileRightInstance = Instantiate(projectile, spawnForwardPos, transform.rotation);
+            fireAudio.Play();
             projectileRightInstance.tag = tag;
             Projectile proRight = projectileRightInstance.GetComponent<Projectile>();
             proRight.velocity = forwardRightPos * speed;
