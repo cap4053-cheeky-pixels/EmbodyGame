@@ -148,8 +148,8 @@ MonoBehaviour:
   - 0.15
   - 0.1
   healthDropProbability: 0.4
-  xzRange: 600
-  yForce: 800
+  xzSpawnVelocityMax: 5
+  ySpawnVelocity: 0
   spawnHeight: 3.5
 --- !u!114 &124331789069296905
 MonoBehaviour:
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d30d92020a9af4ea55d5caf890734f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 30
+  viewRadius: 40
   viewAngle: 25
   playerMask:
     serializedVersion: 2
