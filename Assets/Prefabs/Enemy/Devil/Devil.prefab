@@ -1935,8 +1935,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be9dc56fee26c4742ba88aff04595f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 8
-  MaxHealth: 8
+  Health: 100
+  MaxHealth: 100
   model: {fileID: 3623955584563446959}
   DeathAudio: {fileID: 8775824933603385614}
   DamageAudio: {fileID: 0}
@@ -1955,7 +1955,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioTheme: {fileID: 1620434211917280839}
-  deathAudio: {fileID: 8775824933603385614}
   rangedDistance: 18
   rangedWeapon: {fileID: 4383480593671820873}
   meleeDistance: 4
