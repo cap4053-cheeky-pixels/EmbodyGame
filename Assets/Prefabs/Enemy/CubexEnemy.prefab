@@ -588,8 +588,9 @@ MonoBehaviour:
   Health: 6
   MaxHealth: 6
   model: {fileID: 8278483085797384672}
-  isPossessable: 1
   DeathAudio: {fileID: 6947092478943604020}
+  DamageAudio: {fileID: 0}
+  isPossessable: 1
   collideDamage: 1
 --- !u!114 &2156721400152459280
 MonoBehaviour:
@@ -739,7 +740,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 33f8da50ba2f0435494705deca6cee82, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 76c6b21597ca94211a5f87dd44a794af, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
