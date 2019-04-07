@@ -16,6 +16,7 @@ public class SpawnPoint : MonoBehaviour
     public GameObject GetRandomEnemyToSpawn()
     {
         Random.InitState(System.DateTime.Now.Millisecond);
+
         int index = Random.Range(0, enemyPrefabs.Count);
 
         return enemyPrefabs[index];
