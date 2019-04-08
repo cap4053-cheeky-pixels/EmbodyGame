@@ -77,14 +77,14 @@ public class DetectPlayer : MonoBehaviour
     }
 
 
-    /* Looks for the player character with the given delay in seconds
-     * between each search.
+    /* Looks for the player character (or the player's projectiles) with the
+     * given delay in seconds between each search.
      */ 
     private IEnumerator FindPlayerWithDelay(float delay)
     {
         while (enabled)
         {
-            if(fov.PlayerWithinView())
+            if(fov.PlayerWithinView() || fov.PlayerProjectileWithinView())
             {
                 TransitionToSecondaryState();
             }

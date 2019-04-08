@@ -218,6 +218,9 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 4096
+  playerProjectileMask:
+    serializedVersion: 2
+    m_Bits: 16384
   obstacleMask:
     serializedVersion: 2
     m_Bits: 8192

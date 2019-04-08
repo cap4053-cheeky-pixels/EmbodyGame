@@ -688,6 +688,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wanderRadius: 10
+  minSecondsToWaitAtDestination: 0
+  maxSecondsToWaitAtDestination: 2
 --- !u!114 &3844234466850371861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,6 +707,9 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 4096
+  playerProjectileMask:
+    serializedVersion: 2
+    m_Bits: 16384
   obstacleMask:
     serializedVersion: 2
     m_Bits: 8192
