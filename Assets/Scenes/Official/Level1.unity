@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3669,6 +3669,11 @@ PrefabInstance:
       propertyPath: damage
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8985372404558189387, guid: 224198badb8d31847a3ab6b59ec2d3ff,
+        type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 224198badb8d31847a3ab6b59ec2d3ff, type: 3}
 --- !u!1001 &806855374
@@ -4232,16 +4237,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8316170259938772301, guid: bd6d38f092a20524cbb893325e78777b,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8316170259938772301, guid: bd6d38f092a20524cbb893325e78777b,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 8316170259252831862, guid: bd6d38f092a20524cbb893325e78777b,
         type: 3}
       propertyPath: doors.Array.size
@@ -4262,6 +4257,21 @@ PrefabInstance:
       propertyPath: doors.Array.data[1]
       value: 
       objectReference: {fileID: 2139479514}
+    - target: {fileID: 5494846556147016781, guid: bd6d38f092a20524cbb893325e78777b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 67fe8890168695e409e597c2ffae1b40, type: 2}
+    - target: {fileID: 8316170259938772301, guid: bd6d38f092a20524cbb893325e78777b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316170259938772301, guid: bd6d38f092a20524cbb893325e78777b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8316170259938772296, guid: bd6d38f092a20524cbb893325e78777b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4282,11 +4292,6 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 6acd97c2b8d1c904597468eb4d4397dc, type: 3}
-    - target: {fileID: 5494846556147016781, guid: bd6d38f092a20524cbb893325e78777b,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 67fe8890168695e409e597c2ffae1b40, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6d38f092a20524cbb893325e78777b, type: 3}
 --- !u!4 &952968808 stripped
@@ -9344,16 +9349,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8316170259938772301, guid: bd6d38f092a20524cbb893325e78777b,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8316170259938772301, guid: bd6d38f092a20524cbb893325e78777b,
-        type: 3}
-      propertyPath: m_Name
-      value: Floor5
-      objectReference: {fileID: 0}
     - target: {fileID: 8316170259252831862, guid: bd6d38f092a20524cbb893325e78777b,
         type: 3}
       propertyPath: doors.Array.size
@@ -9374,6 +9369,21 @@ PrefabInstance:
       propertyPath: doors.Array.data[2]
       value: 
       objectReference: {fileID: 2130939331}
+    - target: {fileID: 5494846556147016781, guid: bd6d38f092a20524cbb893325e78777b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: af0e17855291721469da72db1c2956ee, type: 2}
+    - target: {fileID: 8316170259938772301, guid: bd6d38f092a20524cbb893325e78777b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316170259938772301, guid: bd6d38f092a20524cbb893325e78777b,
+        type: 3}
+      propertyPath: m_Name
+      value: Floor5
+      objectReference: {fileID: 0}
     - target: {fileID: 8316170259938772296, guid: bd6d38f092a20524cbb893325e78777b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -9384,11 +9394,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5494846556147016781, guid: bd6d38f092a20524cbb893325e78777b,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: af0e17855291721469da72db1c2956ee, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6d38f092a20524cbb893325e78777b, type: 3}
 --- !u!4 &2086146803 stripped

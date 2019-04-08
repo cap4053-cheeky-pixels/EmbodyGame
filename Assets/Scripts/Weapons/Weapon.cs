@@ -18,7 +18,8 @@ public abstract class Weapon : MonoBehaviour
      */  
     protected void Awake()
     {
-        timer = 0;
+        // Initially, you should be able to attack immediately
+        timer = timeBetweenAttacks + 1;
     }
 
 
