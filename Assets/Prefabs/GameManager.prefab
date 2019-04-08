@@ -1022,8 +1022,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
+    m_Mode: 4
+    m_SelectOnUp: {fileID: 506861223}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
@@ -1743,6 +1743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c946cb4df94b6f245b6e781186d022cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameIsPaused: 0
   player: {fileID: 0}
   pauseMenuUI: {fileID: 4474975296555284949}
   eventSystem: {fileID: 2782640155977967466}
