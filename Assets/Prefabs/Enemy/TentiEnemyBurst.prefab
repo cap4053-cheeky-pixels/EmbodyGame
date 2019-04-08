@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 124331789069296916}
   - component: {fileID: 124331789069296904}
   - component: {fileID: 7997112491405751229}
+  - component: {fileID: 7874639061206568469}
   m_Layer: 0
   m_Name: TentiEnemyBurst
   m_TagString: Enemy
@@ -224,6 +225,19 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 8192
+--- !u!114 &7874639061206568469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124331789069296907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44e77213f1e78ed4cb4dea1b4b13bc9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushMultiplier: 5
 --- !u!1001 &124331788309977612
 PrefabInstance:
   m_ObjectHideFlags: 0

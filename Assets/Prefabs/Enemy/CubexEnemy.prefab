@@ -481,6 +481,7 @@ GameObject:
   - component: {fileID: 6302299170493161422}
   - component: {fileID: 3844234466850371861}
   - component: {fileID: 100403819984926875}
+  - component: {fileID: 1933303371043361349}
   m_Layer: 0
   m_Name: CubexEnemy
   m_TagString: Enemy
@@ -730,6 +731,19 @@ MonoBehaviour:
   behaviorsToEnableUponDetection:
   - {fileID: 4007304483517652799}
   - {fileID: 4007304483517652797}
+--- !u!114 &1933303371043361349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4007304483517652786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44e77213f1e78ed4cb4dea1b4b13bc9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushMultiplier: 5
 --- !u!1 &8278483084363579293
 GameObject:
   m_ObjectHideFlags: 0
