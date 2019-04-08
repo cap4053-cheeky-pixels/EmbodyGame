@@ -35,6 +35,11 @@ public class GameManager : MonoBehaviour
     // The audio to play during gameplay
     [SerializeField] private AudioSource backgroundAudio;
 
+    // Used to hard stop the background audio (Boss battle)
+    public void StopBackgroundMusic()
+    {
+        backgroundAudio.Stop();
+    }
 
     /* Set up any subscription/initialization.
      */ 
@@ -43,7 +48,6 @@ public class GameManager : MonoBehaviour
         player.deathEvent += GameOver;
         backgroundAudio.Play();
     }
-
 
     /* Runs every frame and polls for pausing input.
      */
@@ -62,7 +66,6 @@ public class GameManager : MonoBehaviour
      */ 
     public void Resume()
     {
-        backgroundAudio.Play();
         CursorManager.HideCursor();
         eventSystem.SetSelectedGameObject(null);
         pauseMenuUI.SetActive(false);
@@ -75,7 +78,6 @@ public class GameManager : MonoBehaviour
      */ 
     public void Pause()
     {
-        backgroundAudio.Pause();
         CursorManager.ShowCursor();
         pauseMenuUI.SetActive(true);
 
