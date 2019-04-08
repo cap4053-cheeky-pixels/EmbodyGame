@@ -32,12 +32,16 @@ public class GameManager : MonoBehaviour
     // The audio to play when the game is over
     [SerializeField] private AudioSource gameOverAudio;
 
+    // The audio to play during gameplay
+    [SerializeField] private AudioSource backgroundAudio;
+
 
     /* Set up any subscription/initialization.
      */ 
     private void Awake()
     {
         player.deathEvent += GameOver;
+        backgroundAudio.Play();
     }
 
 
@@ -58,6 +62,7 @@ public class GameManager : MonoBehaviour
      */ 
     public void Resume()
     {
+        backgroundAudio.Play();
         CursorManager.HideCursor();
         eventSystem.SetSelectedGameObject(null);
         pauseMenuUI.SetActive(false);
@@ -70,6 +75,7 @@ public class GameManager : MonoBehaviour
      */ 
     public void Pause()
     {
+        backgroundAudio.Pause();
         CursorManager.ShowCursor();
         pauseMenuUI.SetActive(true);
 
@@ -87,6 +93,7 @@ public class GameManager : MonoBehaviour
      */ 
     public void Restart()
     {
+        backgroundAudio.Stop();
         CursorManager.HideCursor();
         Time.timeScale = 1f;
         LevelIntro.nameOfSceneToLoad = "Level1";
