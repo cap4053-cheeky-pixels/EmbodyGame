@@ -121,6 +121,7 @@ public class GameManager : MonoBehaviour
         firstButtonForPause.interactable = false;
         firstButtonForGameOver.Select();
         gameOverCanvas.SetActive(true);
+        backgroundAudio.Stop();
         gameOverAudio.Play();
     }
 
