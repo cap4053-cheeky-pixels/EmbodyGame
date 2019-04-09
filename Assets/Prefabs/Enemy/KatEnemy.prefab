@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2506059092821221662}
   - component: {fileID: 2506059092821221656}
   - component: {fileID: 1922632095163187916}
-  - component: {fileID: 2506059092821221653}
   - component: {fileID: 2506059092821221658}
   - component: {fileID: 2506059092821221654}
   - component: {fileID: 5960857235701816549}
@@ -23,6 +22,8 @@ GameObject:
   - component: {fileID: 7759856674197219178}
   - component: {fileID: 3608206669854391640}
   - component: {fileID: 8908914741879738924}
+  - component: {fileID: 7126470763262110404}
+  - component: {fileID: 7272473212957177956}
   m_Layer: 0
   m_Name: KatEnemy
   m_TagString: Enemy
@@ -84,20 +85,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!64 &2506059092821221653
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2506059092821221663}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
 --- !u!54 &2506059092821221658
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -276,6 +263,33 @@ MonoBehaviour:
   behaviorsToEnableUponDetection:
   - {fileID: 2506059092821221655}
   - {fileID: 2506059092821221652}
+--- !u!136 &7126470763262110404
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2506059092821221663}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7272473212957177956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2506059092821221663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44e77213f1e78ed4cb4dea1b4b13bc9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushMultiplier: 5
 --- !u!1001 &2506059093331976648
 PrefabInstance:
   m_ObjectHideFlags: 0
