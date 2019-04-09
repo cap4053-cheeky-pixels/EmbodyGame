@@ -297,8 +297,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnHeight: 2.5
-  xzRange: 600
-  yForce: 800
+  xzSpawnVelocityMax: 5
+  ySpawnVelocity: 0
   FullHeartprefab: {fileID: 6058534631205044202, guid: cfdc812ad6d2939458ab1a2e2b5e3f34,
     type: 3}
   HalfHeartprefab: {fileID: 3676220467416633035, guid: c0e19f4f0d1f2ea458756409aa801246,
@@ -314,11 +314,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BasicWeapon
-      objectReference: {fileID: 0}
-    - target: {fileID: 5455074748802241685, guid: 81daa4c07a3b70c498f863d39a24b47e,
-        type: 3}
-      propertyPath: m_Layer
-      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5455074748802241687, guid: 81daa4c07a3b70c498f863d39a24b47e,
         type: 3}
@@ -374,11 +369,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5455074748802241686, guid: 81daa4c07a3b70c498f863d39a24b47e,
-        type: 3}
-      propertyPath: upwardOffset
-      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81daa4c07a3b70c498f863d39a24b47e, type: 3}

@@ -120,8 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be9dc56fee26c4742ba88aff04595f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 8
-  MaxHealth: 8
+  Health: 10
+  MaxHealth: 14
   model: {fileID: 6004890343367689404}
   isPossessable: 1
   collideDamage: 1

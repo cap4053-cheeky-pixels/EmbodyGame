@@ -126,8 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be9dc56fee26c4742ba88aff04595f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 6
-  MaxHealth: 6
+  Health: 8
+  MaxHealth: 8
   model: {fileID: 2506059094072163832}
   isPossessable: 1
   collideDamage: 1
@@ -379,6 +379,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2506059092821221662}
     m_Modifications:
+    - target: {fileID: 100014, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
+      propertyPath: m_Name
+      value: KatEnemyModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
+      propertyPath: m_Name
+      value: SimpleEnemyModel
+      objectReference: {fileID: 0}
     - target: {fileID: 400014, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -422,14 +430,6 @@ PrefabInstance:
     - target: {fileID: 400014, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100014, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
-      propertyPath: m_Name
-      value: KatEnemyModel
-      objectReference: {fileID: 0}
-    - target: {fileID: 100010, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
-      propertyPath: m_Name
-      value: SimpleEnemyModel
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 2c24a6dcb26e611469ede5df25420229, type: 3}
       propertyPath: m_LocalRotation.y

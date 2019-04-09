@@ -15,10 +15,10 @@ public abstract class Weapon : MonoBehaviour
 
 
     /* Initializes the timer.
-     */  
+     */
     protected void Awake()
     {
-        timer = 0;
+        timer = timeBetweenAttacks;
     }
 
 
