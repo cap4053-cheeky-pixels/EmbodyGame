@@ -32,14 +32,22 @@ public class GameManager : MonoBehaviour
     // The audio to play when the game is over
     [SerializeField] private AudioSource gameOverAudio;
 
+    // The audio to play during gameplay
+    [SerializeField] private AudioSource backgroundAudio;
+
+    // Used to hard stop the background audio (Boss battle)
+    public void StopBackgroundMusic()
+    {
+        backgroundAudio.Stop();
+    }
 
     /* Set up any subscription/initialization.
      */ 
     private void Awake()
     {
         player.deathEvent += GameOver;
+        backgroundAudio.Play();
     }
-
 
     /* Runs every frame and polls for pausing input.
      */
@@ -87,6 +95,7 @@ public class GameManager : MonoBehaviour
      */ 
     public void Restart()
     {
+        backgroundAudio.Stop();
         CursorManager.HideCursor();
         Time.timeScale = 1f;
         LevelIntro.nameOfSceneToLoad = "Level1";
@@ -112,6 +121,7 @@ public class GameManager : MonoBehaviour
         firstButtonForPause.interactable = false;
         firstButtonForGameOver.Select();
         gameOverCanvas.SetActive(true);
+        backgroundAudio.Stop();
         gameOverAudio.Play();
     }
 

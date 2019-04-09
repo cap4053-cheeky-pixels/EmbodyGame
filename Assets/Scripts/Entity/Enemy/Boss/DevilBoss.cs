@@ -55,6 +55,9 @@ public class DevilBoss : Boss
         // Set the ranged attack timer to the delay initially
         rangedAttackTimer = rangedWeapon.timeBetweenAttacks;
 
+        // Stop the game's background audio
+        gameManager?.StopBackgroundMusic();
+
         // Let the games begin
         SignalStartOfBossBattle();
     }
