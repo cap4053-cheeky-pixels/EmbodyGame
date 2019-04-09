@@ -16,6 +16,7 @@ public class BasicLaserWeapon : ProjectileWeapon
             // Spawn a projectile into the scene
             Vector3 spawnPos = new Vector3(0, upwardOffset, 0) + transform.position + transform.forward * forwardOffset;
             GameObject projectileInstance = Instantiate(projectile, spawnPos, transform.rotation);
+            if(transform.parent.gameObject.tag == "Player")
             fireAudio.Play();
             projectileInstance.tag = tag;
 
