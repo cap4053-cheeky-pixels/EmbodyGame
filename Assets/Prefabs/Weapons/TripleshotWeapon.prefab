@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4263799561533925868}
   - component: {fileID: 4263799561533925869}
-  - component: {fileID: 8401798072280800588}
   m_Layer: 0
   m_Name: TripleshotWeapon
   m_TagString: Untagged
@@ -28,7 +27,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.457891, z: 0.10166526}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 953381748005019144}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -44,27 +44,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c207e76d61621ee40bf15245647a3ff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
-  timeBetweenAttacks: 0.45
-  fireAudio: {fileID: 8401798072280800588}
+  damage: 2
+  timeBetweenAttacks: 1
+  fireAudio: {fileID: 0}
   projectile: {fileID: 2452410868603154768, guid: a28506f24a9cd7544bb1c828f16ebdfc,
     type: 3}
   speed: 15
   projectileLifetime: 5
   forwardOffset: 0.5
-  upwardOffset: 1
+  upwardOffset: 0
   angularOffset: 30
---- !u!82 &8401798072280800588
+--- !u!1 &8847005374441066647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 953381748005019144}
+  - component: {fileID: 4909246121077938669}
+  m_Layer: 0
+  m_Name: FireAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &953381748005019144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8847005374441066647}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.703, y: 0.61210907, z: -16.812666}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4263799561533925868}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &4909246121077938669
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4263799561533925866}
+  m_GameObject: {fileID: 8847005374441066647}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cb38fe4b08a2f4357bb79c355b193185, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f382c8d88094d524bb59045bf5260b92, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
