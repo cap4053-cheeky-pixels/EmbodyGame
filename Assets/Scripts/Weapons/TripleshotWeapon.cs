@@ -46,13 +46,14 @@ public class TripleshotWeapon : ProjectileWeapon
 
             // Spawn the right projectile into the scene at its angle offset
             GameObject projectileRightInstance = Instantiate(projectile, spawnForwardPos, transform.rotation);
-            if(transform.parent.gameObject.tag == "Player")
-            fireAudio.Play();
             projectileRightInstance.tag = tag;
             Projectile proRight = projectileRightInstance.GetComponent<Projectile>();
             proRight.velocity = forwardRightPos * speed;
             proRight.damage = damage;
             Destroy(projectileRightInstance, projectileLifetime);
+
+            // Play the fire audio
+            fireAudio.Play();
 
             // And of course, reset the timer
             timer = 0;

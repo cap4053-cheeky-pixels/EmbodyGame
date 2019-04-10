@@ -16,8 +16,6 @@ public class BasicLaserWeapon : ProjectileWeapon
             // Spawn a projectile into the scene
             Vector3 spawnPos = new Vector3(0, upwardOffset, 0) + transform.position + transform.forward * forwardOffset;
             GameObject projectileInstance = Instantiate(projectile, spawnPos, transform.rotation);
-            if(transform.parent.gameObject.tag == "Player")
-            fireAudio.Play();
             projectileInstance.tag = tag;
             projectileInstance.layer = LayerMask.NameToLayer(tag);
 
@@ -28,6 +26,9 @@ public class BasicLaserWeapon : ProjectileWeapon
 
             // Destroy the projectile once its lifetime elapses
             Destroy(projectileInstance, projectileLifetime);
+
+            // Play the fire audio
+            fireAudio.Play();
 
             // Reset the timer
             timer = 0;

@@ -17,8 +17,10 @@ public class BurstShooter : ProjectileWeapon
         if (burstRoutine != null) StopCoroutine(burstRoutine);
         burstRoutine = BurstCoroutine(tag, transform.forward);
         StartCoroutine(burstRoutine);
-        if(gameObject.tag == "Player")
+
+        // Play the fire audio
         fireAudio.Play();
+
         // Reset the timer
         timer = 0;
     }
