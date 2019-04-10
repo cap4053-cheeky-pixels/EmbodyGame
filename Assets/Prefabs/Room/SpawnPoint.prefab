@@ -90,8 +90,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3294d547e91613649aa0cc8dad9ec691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 0}
-  maxHealth: 4
-  speed: 2
+  enemyPrefabs: []
   scale: 1
   yRotation: 0
