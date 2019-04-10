@@ -4721,10 +4721,11 @@ MonoBehaviour:
   - {fileID: 4300002, guid: 371ed6c0dd75f6a4ebd1dfcb0b578b46, type: 3}
   - {fileID: 4300000, guid: 371ed6c0dd75f6a4ebd1dfcb0b578b46, type: 3}
   - {fileID: 4300010, guid: 371ed6c0dd75f6a4ebd1dfcb0b578b46, type: 3}
-  DestinationRadius: 5
+  DestinationRadius: 19
   SpawnHeight: 100
-  SourceRadius: 10
+  SourceRadius: 1
   TimeToImpact: 1
+  targetDelay: 1
   MeteorsPerSecondRange:
     Minimum: 4
     Maximum: 8
