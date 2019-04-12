@@ -277,7 +277,7 @@ MonoBehaviour:
   - 0.25
   - 0.15
   - 0.1
-  healthDropProbability: 0.3
+  healthDropProbability: 0.4
   xzSpawnVelocityMax: 5
   ySpawnVelocity: 0
   spawnHeight: 3.5
