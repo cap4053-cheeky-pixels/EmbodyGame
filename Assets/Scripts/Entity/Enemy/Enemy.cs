@@ -46,7 +46,10 @@ public class Enemy : Entity
     public override void ChangeHealthBy(int amount)
     {
         if (isDead) return;
-
+        
+        if(amount < 0)
+        DamageAudio.Play();
+        
         Health += amount;
         if (Health < 0) Health = 0;
 
@@ -88,7 +91,7 @@ public class Enemy : Entity
         isDead = true;
 
         BecomeEnvironmentalObstacle();
-
+        DeathAudio.Play();
         // Signal the death of this enemy
         deathEvent?.Invoke(gameObject);
 
