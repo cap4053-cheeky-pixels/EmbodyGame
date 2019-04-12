@@ -125,6 +125,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 8
   MaxHealth: 8
+  DeathAudio: {fileID: 9046230596338434879}
+  DamageAudio: {fileID: 6547293859400149397}
   model: {fileID: 124331788005006007}
   isPossessable: 1
   collideDamage: 1
@@ -282,7 +284,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -408,9 +410,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: 8f78e99a5e6e342cebec9da337c57b04, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.406
   m_Pitch: 1
   Loop: 0
   Mute: 0
