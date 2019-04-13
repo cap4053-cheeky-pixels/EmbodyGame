@@ -86,8 +86,6 @@ public class Possession : MonoBehaviour
         return;
         
         int heartdiff = player.Health - enemy.GetComponent<Enemy>().MaxHealth;
-        int fullhearts = (int) (heartdiff / 2);
-        int halfhearts = heartdiff % 2;
         
         //always assume the enemies max health
         player.MaxHealth = enemy.GetComponent<Enemy>().MaxHealth;
@@ -99,22 +97,11 @@ public class Possession : MonoBehaviour
         {
             player.Health = enemy.GetComponent<Enemy>().MaxHealth;
         }
+        //Unload Excess Hearts
+        GetComponent<SimpleHeartDrop>().DropHearts(heartdiff);
         
         //update HUD
         player.ChangeMaxHealthBy(0);
-        
-        //Unload Excess Hearts
-        if(heartdiff > 0)
-        {
-            for(int i = fullhearts; i > 0; i--)
-            {
-                GetComponent<SimpleHeartDrop>().DropHeart("Full");
-            }
-            if(halfhearts != 0)
-            {
-                GetComponent<SimpleHeartDrop>().DropHeart("Half");
-            }
-        }
         
         PossAudio.Play();
         
