@@ -24,6 +24,7 @@ public class RoomScript : MonoBehaviour
      */
     private void Awake()
     {
+        numEnemies = -1;
         spawner = spawnerObject.GetComponent<Spawner>();
         spawner.spawningComplete += OnEnemiesSpawned;
         playerWasHereBefore = false;        
