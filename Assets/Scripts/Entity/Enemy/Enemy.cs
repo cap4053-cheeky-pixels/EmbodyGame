@@ -11,9 +11,7 @@ public delegate void Died(GameObject who);
 public event Died deathEvent;
 
 private bool isDead;
-public bool IsDead() {
-        return isDead;
-}
+public bool IsDead() { return isDead; }
 public bool isPossessable = false;
 
 public int collideDamage = 1;
@@ -30,7 +28,7 @@ private NavMeshObstacle navMeshObstacle;
  */
 private void Awake()
 {
-        navMeshObstacle = GetComponent<NavMeshObstacle>();
+    navMeshObstacle = GetComponent<NavMeshObstacle>();
 }
 
 
@@ -39,7 +37,7 @@ private void Awake()
  */
 public override void ChangeMaxHealthBy(int amount)
 {
-        MaxHealth += amount;
+     MaxHealth += amount;
 }
 
 
@@ -47,26 +45,26 @@ public override void ChangeMaxHealthBy(int amount)
  */
 public override void ChangeHealthBy(int amount)
 {
-        if (isDead) return;
+    if (isDead) return;
 
-        if(amount < 0)
+    if(amount < 0)
+    {
+        if(damageAudio != null)
         {
-                if(DamageAudio != null)
-                {
-                        DamageAudio.Play();
-                }
+            damageAudio.Play();
         }
+    }
 
 
-        Health += amount;
-        if (Health < 0) Health = 0;
+    Health += amount;
+    if (Health < 0) Health = 0;
 
-        healthChangedEvent?.Invoke();
+    healthChangedEvent?.Invoke();
 
-        if (Health == 0)
-        {
-                OnEnemyDied();
-        }
+    if (Health == 0)
+    {
+        OnEnemyDied();
+    }
 }
 
 
@@ -74,9 +72,9 @@ public override void ChangeHealthBy(int amount)
  */
 private void OnCollisionEnter(Collision other)
 {
-        if (isDead || !other.gameObject.CompareTag("Player")) return;
+    if (isDead || !other.gameObject.CompareTag("Player")) return;
 
-        other.gameObject.GetComponent<Player>().ChangeHealthBy(-collideDamage);
+    other.gameObject.GetComponent<Player>().ChangeHealthBy(-collideDamage);
 }
 
 
@@ -84,10 +82,10 @@ private void OnCollisionEnter(Collision other)
  */
 private void BecomeEnvironmentalObstacle()
 {
-        if (navMeshObstacle != null)
-        {
-                navMeshObstacle.enabled = true;
-        }
+    if (navMeshObstacle != null)
+    {
+        navMeshObstacle.enabled = true;
+    }
 }
 
 
@@ -95,18 +93,20 @@ private void BecomeEnvironmentalObstacle()
  */
 private void OnEnemyDied()
 {
-        // Mark it as dead for any code that checks the status
-        isDead = true;
+    // Mark it as dead for any code that checks the status
+    isDead = true;
 
-        BecomeEnvironmentalObstacle();
-        if(DeathAudio != null)
-        {
-                DeathAudio.Play();
-        }
-        // Signal the death of this enemy
-        deathEvent?.Invoke(gameObject);
+    BecomeEnvironmentalObstacle();
 
-        // Call Entity.OnDeath()
-        OnDeath();
+    if (deathAudio != null)
+    {
+        deathAudio.Play();
+    }
+
+    // Signal the death of this enemy
+    deathEvent?.Invoke(gameObject);
+
+    // Call Entity.OnDeath()
+    OnDeath();
 }
 }

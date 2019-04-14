@@ -1937,6 +1937,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 120
   MaxHealth: 120
+  deathAudio: {fileID: 8775824933603385614}
+  damageAudio: {fileID: 0}
   model: {fileID: 3623955584563446959}
   isPossessable: 0
   collideDamage: 1
@@ -1953,7 +1955,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioTheme: {fileID: 1620434211917280839}
-  deathAudio: {fileID: 8775824933603385614}
   rangedDistance: 18
   rangedWeapon: {fileID: 4383480593671820873}
   meleeDistance: 4
@@ -1975,6 +1976,7 @@ MonoBehaviour:
   phaseTwoProps: {fileID: 197921236134390015, guid: 7ac4b5425eaebbe45833217016869d39,
     type: 3}
   timeToPhaseTwoAttack: 10
+  bossRoomCenter: {x: 0, y: 0, z: 40}
 --- !u!65 &5999082961572605887
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2587,6 +2589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 2
   timeBetweenAttacks: 1
+  fireAudio: {fileID: 0}
   weapon: {fileID: 3623955585305986208}
   meleeSound: {fileID: 396658304540375954}
 --- !u!1001 &6912911044429427119
