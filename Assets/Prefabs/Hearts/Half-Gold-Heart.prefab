@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 322259996769781333}
   - component: {fileID: 3267705902477749996}
   - component: {fileID: 2049601615118690481}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Half-Gold-Heart
   m_TagString: Heart
   m_Icon: {fileID: 0}
