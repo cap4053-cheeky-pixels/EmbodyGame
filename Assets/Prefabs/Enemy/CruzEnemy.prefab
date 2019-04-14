@@ -161,8 +161,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 10
   MaxHealth: 10
-  DeathAudio: {fileID: 5937452654104571674}
-  DamageAudio: {fileID: 5926110576534518195}
+  deathAudio: {fileID: 5937452654104571674}
+  damageAudio: {fileID: 0}
   model: {fileID: 1016939505023120831}
   isPossessable: 1
   collideDamage: 1

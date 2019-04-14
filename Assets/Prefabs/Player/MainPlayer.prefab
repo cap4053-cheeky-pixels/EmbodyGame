@@ -87,10 +87,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c8b440bbbfb44a489c51653bbefa646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 10
-  MaxHealth: 10
-  DeathAudio: {fileID: 1255597228532792087}
-  DamageAudio: {fileID: 5879820762478464858}
+  Health: 6
+  MaxHealth: 6
+  deathAudio: {fileID: 0}
+  damageAudio: {fileID: 0}
   model: {fileID: 1224860693315704524}
   invincibilityDurationSeconds: 1.5
   delayBetweenInvincibilityFlashes: 0.15
