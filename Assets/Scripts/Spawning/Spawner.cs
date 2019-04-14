@@ -67,7 +67,7 @@ public class Spawner : MonoBehaviour
         // Loop through each spawn point
         foreach (SpawnPoint spawnPoint in spawnPoints)
         {
-            GameObject enemyToSpawn = spawnPoint.enemyPrefab;
+            GameObject enemyToSpawn = spawnPoint.GetRandomEnemyToSpawn();
 
             // If an enemy is set to spawn at that point, go ahead and instantiate it
             if (enemyToSpawn != null)
@@ -82,17 +82,17 @@ public class Spawner : MonoBehaviour
         }
 
         spawningComplete?.Invoke(spawned);
-        HideSpawnPoints();
+        DestroySpawnPoints();
     }
 
 
-    /* Disables each spawn point so it no longer appears in game.
+    /* Removes each SpawnPoint belonging to this Spawner.
      */ 
-    private void HideSpawnPoints()
+    private void DestroySpawnPoints()
     {
         foreach(SpawnPoint spawnPoint in spawnPoints)
         {
-            spawnPoint.gameObject.SetActive(false);
+            Destroy(spawnPoint.gameObject);
         }
     }
 

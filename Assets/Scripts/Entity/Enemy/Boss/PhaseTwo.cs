@@ -16,6 +16,9 @@ public class PhaseTwo : MonoBehaviour
     // Regulates the intervals at which the phase two attack is used
     public float timeToPhaseTwoAttack;
 
+    // Boss room coordinates
+    public Vector3 bossRoomCenter = new Vector3(0, 0, 40);
+
 
     /* Called when the game starts. Disables the script until it's
      * enabled externally by the owner script.
@@ -51,7 +54,7 @@ public class PhaseTwo : MonoBehaviour
         // Meteor attack
         if (phaseTwoAttackTimer > timeToPhaseTwoAttack)
         {
-            Instantiate(phaseTwoAttack, GameObject.FindGameObjectWithTag("Player").transform);
+            Instantiate(phaseTwoAttack, bossRoomCenter, Quaternion.identity);
             phaseTwoAttackTimer = 0.0f;
         }
     }

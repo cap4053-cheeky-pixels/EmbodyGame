@@ -55,6 +55,9 @@ public class DevilBoss : Boss
         // Set the ranged attack timer to the delay initially
         rangedAttackTimer = rangedWeapon.timeBetweenAttacks;
 
+        // Stop the game's background audio
+        gameManager?.StopBackgroundMusic();
+
         // Let the games begin
         SignalStartOfBossBattle();
     }
@@ -82,7 +85,6 @@ public class DevilBoss : Boss
         animator.SetTrigger("DeathPose");
 
         audioTheme.Stop();
-        deathAudio.Play();
         
         // Prevent this script and the navmesh agent from doing anything else
         this.enabled = false;

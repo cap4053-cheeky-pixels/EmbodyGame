@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -45,7 +45,7 @@ public class BurstShooter : ProjectileWeapon
         Projectile projectileScript = projectileInstance.GetComponent<Projectile>();
         projectileScript.velocity = direction * speed;
         projectileScript.damage = damage;
-
+        fireAudio.Play();
         // Destroy the projectile once its lifetime elapses
         Destroy(projectileInstance, projectileLifetime);
     }

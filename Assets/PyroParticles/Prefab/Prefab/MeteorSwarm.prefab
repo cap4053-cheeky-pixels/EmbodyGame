@@ -4704,6 +4704,8 @@ MonoBehaviour:
   - {fileID: 19841648}
   - {fileID: 19873038}
   MeteorPrefab: {fileID: 164416, guid: 8aeb2c0224fe763499eed3ec0587162b, type: 3}
+  TargetPrefab: {fileID: 81926632738949473, guid: deda6e72f07244fdbb374b6b6857c26a,
+    type: 3}
   MeteorExplosionParticleSystem: {fileID: 19841648}
   MeteorShrapnelParticleSystem: {fileID: 19873038}
   MeteorMaterials:
@@ -4719,10 +4721,11 @@ MonoBehaviour:
   - {fileID: 4300002, guid: 371ed6c0dd75f6a4ebd1dfcb0b578b46, type: 3}
   - {fileID: 4300000, guid: 371ed6c0dd75f6a4ebd1dfcb0b578b46, type: 3}
   - {fileID: 4300010, guid: 371ed6c0dd75f6a4ebd1dfcb0b578b46, type: 3}
-  DestinationRadius: 5
+  DestinationRadius: 19
   SpawnHeight: 100
-  SourceRadius: 10
+  SourceRadius: 1
   TimeToImpact: 1
+  targetDelay: 1
   MeteorsPerSecondRange:
     Minimum: 4
     Maximum: 8

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,13 +12,16 @@ public abstract class Weapon : MonoBehaviour
 
     // Used for spreading out attacks in timeBetweenAttacks intervals
     protected float timer;
+    
+    //Audio that is played when this weapon is fired
+    public AudioSource fireAudio;
 
 
     /* Initializes the timer.
-     */  
+     */
     protected void Awake()
     {
-        timer = 0;
+        timer = timeBetweenAttacks;
     }
 
 

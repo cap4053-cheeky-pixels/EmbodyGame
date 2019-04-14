@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Possession : MonoBehaviour
 {
@@ -16,7 +17,8 @@ public class Possession : MonoBehaviour
     [SerializeField]
     private GameObject TheHaloPrefab;
     private bool HaloActive = false;
-    
+    [SerializeField]
+    private AudioSource PossAudio;
     
     // Start is called before the first frame update
     void Start()
@@ -57,7 +59,7 @@ public class Possession : MonoBehaviour
         }
         
     }
-
+    
     void HighLightEnemy()
     {
         targetedEnemy = NewEnemytoTarget;
@@ -76,19 +78,45 @@ public class Possession : MonoBehaviour
         HaloActive = false;
         targetedEnemy = null;
     }
-
+    
     //Actual possession takes place
     void TakePossessionAction(GameObject enemy){
         
         if(enemy == null)
         return;
         
+        int heartdiff = player.Health - enemy.GetComponent<Enemy>().MaxHealth;
+        int fullhearts = (int) (heartdiff / 2);
+        int halfhearts = heartdiff % 2;
+        
+        //always assume the enemies max health
         player.MaxHealth = enemy.GetComponent<Enemy>().MaxHealth;
-        player.Health = enemy.GetComponent<Enemy>().MaxHealth;
+        
+        /*if i possess an enemy, i should have no more than maxhealth
+         yet i should not heal if the enemy has more health than I do currently
+         */
+        if(heartdiff > 0)
+        {
+            player.Health = enemy.GetComponent<Enemy>().MaxHealth;
+        }
         
         //update HUD
         player.ChangeMaxHealthBy(0);
-        player.ChangeHealthBy(0);
+        
+        //Unload Excess Hearts
+        if(heartdiff > 0)
+        {
+            for(int i = fullhearts; i > 0; i--)
+            {
+                GetComponent<SimpleHeartDrop>().DropHeart("Full");
+            }
+            if(halfhearts != 0)
+            {
+                GetComponent<SimpleHeartDrop>().DropHeart("Half");
+            }
+        }
+        
+        PossAudio.Play();
         
         //Clone the enemy model within the player
         GameObject newModel = GameObject.Instantiate(enemy.GetComponent<Entity>().model,transform);
@@ -101,34 +129,31 @@ public class Possession : MonoBehaviour
         player.SetModel(newModel);
         player.GetComponent<IWeaponController>().SetWeaponInstance(newWeapon);
         
-        // Notify any OnPossession controllers of the possesssion before cleanup
-        NotifyOnPossessionControllers(enemy);
-        
         //Cleanup
+        // Detach the model and weapons
+        currentPlayerModel.transform.SetParent(null);
+        playerWeapon.transform.SetParent(null);
+        // Destroy the objects
         Destroy(currentPlayerModel);
         Destroy(playerWeapon);
         Destroy(enemy);
         
+        // Notify any OnPossession controllers of the possesssion
+        NotifyOnPossessionControllers();
     }
-
-    private void NotifyOnPossessionControllers(GameObject enemy)
+    
+    private void NotifyOnPossessionControllers()
     {
         // Notify player controllers
         foreach(IOnPossessionController iopc in GetComponents<IOnPossessionController>())
         {
             iopc.OnPossession();
         }
-        
-        // Notify enemy controllers
-        foreach(IOnPossessionController iopc in enemy.GetComponents<IOnPossessionController>())
-        {
-            iopc.OnPossession();
-        }
     }
-
+    
     //checks for nearby enemies
     GameObject FindEnemytoPossess(float radiuscheck){
-
+        
         Collider[] checkWhoNearby = Physics.OverlapSphere(transform.position,radiuscheck);
         //tracks shortest distance to colliders in the vicinity of player
         float distance = 0;

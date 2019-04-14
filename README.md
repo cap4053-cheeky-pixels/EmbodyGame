@@ -1,6 +1,19 @@
 # Embody
 
-Embody is a dungeon crawler where you play as a ghost that can possess any enemy that it defeats to unlock new attributes and an entirely new moveset.
+Embody is an indie dungeon crawler inspired by the Binding of Isaac where you play as a ghost that can possess dead foes to gain their attacks and attributes. Created as a course project for CAP 4053 Artificial Intelligence for Games (University of Florida).
+
+
+*Navigate rooms full of enemies, traps, and obstacles*
+
+![](Screenshots/ExampleRoom.PNG)
+
+*Possess dead enemies*
+
+![](Screenshots/Possession.PNG)
+
+*Meet your maker*
+
+![](Screenshots/Satan.PNG)
 
 ## Credits
 
@@ -16,6 +29,7 @@ Embody is a dungeon crawler where you play as a ghost that can possess any enemy
 - [Cubex enemy model by DimasAlclade](https://www.cgtrader.com/free-3d-models/various/various-models/cubex)
 - [Rock model by GRUMPNTUG](https://assetstore.unity.com/packages/3d/free-demo-rock-53146)
 - [Halo Shader and Prefab](https://hyunkell.com/blog/rts-style-unit-selection-in-unity-5/)
+- Floor and Wall Textures by Jacqueline (Buddy) Llerena
 
 ### Audio
 

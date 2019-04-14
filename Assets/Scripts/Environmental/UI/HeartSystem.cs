@@ -41,6 +41,7 @@ public class HeartSystem : MonoBehaviour
         maxAttainableHearts = heartImages.Length;
         AssociateWith(GameObject.FindWithTag("Player").GetComponent<Player>());
 
+        playerAtCriticalHealth = false;
         defaultHeartScale = heartImages[0].transform.localScale;
     }
 
@@ -68,8 +69,11 @@ public class HeartSystem : MonoBehaviour
         // Critical health
         if (player.Health <= 2 && player.Health != 0 && player.Health < player.MaxHealth)
         {
-            playerAtCriticalHealth = true;
-            StartCoroutine(BlinkCriticalHealth());
+            if(!playerAtCriticalHealth)
+            {
+                playerAtCriticalHealth = true;
+                StartCoroutine(BlinkCriticalHealth());
+            }
         }
         else
         {

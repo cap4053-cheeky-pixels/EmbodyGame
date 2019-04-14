@@ -12,6 +12,7 @@ public class ProjectileHitEffect : MonoBehaviour
     void Awake()
     {
         pro = GetComponent<Projectile>();
+        pro.OnHit += projectileOnHit;
     }
 
     void Emit(Vector3 position, Vector3 direction)
@@ -20,11 +21,8 @@ public class ProjectileHitEffect : MonoBehaviour
         Instantiate(hitParticleSystem, position + direction, Quaternion.LookRotation(direction));
     }
 
-    void OnTriggerEnter(Collider c)
+    void projectileOnHit(Vector3 position)
     {
-        if (c.tag != "Wall") return;
-
-        Vector3 position = c.ClosestPointOnBounds(transform.position);
         Vector3 direction = Vector3.Normalize(-pro.velocity);
         Emit(position, direction);
     }

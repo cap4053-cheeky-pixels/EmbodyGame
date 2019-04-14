@@ -29,11 +29,11 @@ TagManager:
   - Enemy
   - FireLayer
   - BackGround Image
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Obstacle
+  - PlayerProjectile
+  - EnemyProjectile
+  - Pickups
   - 
   - 
   - 

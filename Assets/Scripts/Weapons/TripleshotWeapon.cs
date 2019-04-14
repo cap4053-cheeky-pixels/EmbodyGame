@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,6 +30,7 @@ public class TripleshotWeapon : ProjectileWeapon
             // Spawn the forward-facing projectile into the scene
             GameObject projectileInstance = Instantiate(projectile, spawnForwardPos, transform.rotation);
             projectileInstance.tag = tag;
+            projectileInstance.layer = LayerMask.NameToLayer(tag);
             Projectile pro = projectileInstance.GetComponent<Projectile>();
             pro.velocity = forward * speed;
             pro.damage = damage;
@@ -42,7 +43,8 @@ public class TripleshotWeapon : ProjectileWeapon
             proLeft.velocity = forwardLeftPos * speed;
             proLeft.damage = damage;
             Destroy(projectileLeftInstance, projectileLifetime);
-
+            
+            fireAudio.Play();
             // Spawn the right projectile into the scene at its angle offset
             GameObject projectileRightInstance = Instantiate(projectile, spawnForwardPos, transform.rotation);
             projectileRightInstance.tag = tag;
