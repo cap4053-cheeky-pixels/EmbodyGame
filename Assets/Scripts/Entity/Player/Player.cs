@@ -67,14 +67,20 @@ public class Player : Entity
         // Start the invincibility coroutine if we take damage
         if (amount < 0)
         {
-            DamageAudio.Play();
+            if(damageAudio != null)
+            {
+                damageAudio.Play();
+            }
             StartCoroutine(BecomeTemporarilyInvincible());
         }
 
         // Player died
         if (Health <= 0)
         {
-            DeathAudio.Play();
+            if(deathAudio != null)
+            {
+                deathAudio.Play();
+            }
             deathEvent?.Invoke();
         }
     }

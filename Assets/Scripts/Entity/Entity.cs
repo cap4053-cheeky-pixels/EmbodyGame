@@ -11,10 +11,10 @@ public abstract class Entity : MonoBehaviour
     public int MaxHealth;
 
     // The Audio that should play upon entity death
-    public AudioSource DeathAudio;
+    public AudioSource deathAudio;
     
     // The Audio that should play when this entity incurs damage
-    public AudioSource DamageAudio;
+    public AudioSource damageAudio;
     
     // The model that's expected to be a child of this game object
     public GameObject model;
