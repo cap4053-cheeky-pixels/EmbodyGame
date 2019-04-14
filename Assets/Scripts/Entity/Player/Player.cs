@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -67,12 +67,14 @@ public class Player : Entity
         // Start the invincibility coroutine if we take damage
         if (amount < 0)
         {
+            DamageAudio.Play();
             StartCoroutine(BecomeTemporarilyInvincible());
         }
 
         // Player died
         if (Health <= 0)
         {
+            DeathAudio.Play();
             deathEvent?.Invoke();
         }
     }

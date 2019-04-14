@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +10,12 @@ public abstract class Entity : MonoBehaviour
     // The maximum health this entity can currently have
     public int MaxHealth;
 
+    // The Audio that should play upon entity death
+    public AudioSource DeathAudio;
+    
+    // The Audio that should play when this entity incurs damage
+    public AudioSource DamageAudio;
+    
     // The model that's expected to be a child of this game object
     public GameObject model;
     public void SetModel(GameObject model) { this.model = model; }

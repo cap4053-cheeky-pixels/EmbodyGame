@@ -161,6 +161,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 10
   MaxHealth: 10
+  DeathAudio: {fileID: 5937452654104571674}
+  DamageAudio: {fileID: 5926110576534518195}
   model: {fileID: 1016939505023120831}
   isPossessable: 1
   collideDamage: 1
@@ -364,7 +366,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -490,9 +492,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: 77f5fa674395644db87af667e04ae764, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.406
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -583,6 +585,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1016939505023120830}
     m_Modifications:
+    - target: {fileID: 100044, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
+      propertyPath: m_Name
+      value: CruzModel
+      objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -626,10 +632,6 @@ PrefabInstance:
     - target: {fileID: 400044, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100044, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
-      propertyPath: m_Name
-      value: CruzModel
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 7b8cf766c639f374c8e9dade4e5c115a, type: 3}
       propertyPath: m_Controller
