@@ -48,4 +48,4 @@ Embody is an indie dungeon crawler inspired by the Binding of Isaac where you pl
 - [Game over audio by DRFX](https://freesound.org/people/DRFX/sounds/341807/)
 - [Kat Laser fire - FX067.mp3](https://opengameart.org/content/sound-effects-sfx007)
 - [Snake Death - Snake hiss, short -zapsplat_animals_snake_hiss_short_14693.mp3](https://www.zapsplat.com/?s=snake)
--[Cruz Triple Shot laser1.mp3](https://opengameart.org/content/63-digital-sound-effects-lasers-phasers-space-etc)
+- [Cruz Triple Shot laser1.mp3](https://opengameart.org/content/63-digital-sound-effects-lasers-phasers-space-etc)
